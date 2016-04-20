@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <!--<meta http-equiv="Refresh" content="0;url=index.ashx" />-->
+    <style type="text/css">
+        div {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        p {
+            color: #0094ff;
+            font-weight: bold;
+            font-family: '微软雅黑';
+            font-size: 1em;
+        }
+
+        a {
+            color: #0094ff;
+        }
+
+            a:hover {
+                color: #ff6a00;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <h2><a name="ashx"></a>一般处理程序</h2>
+        <hr />
+        <p><a target="_blank" href="/ASHX/AIndex.ashx">01.初始一般处理程序</a></p>
+        <p><a target="_blank" href="/ASHX/BWriteHTML.ashx">02.向页面写入HTML</a></p>
+        <p><a target="_blank" href="/ASHX/CMyHtmlPage.ashx">03.IO静态模板的使用</a></p>
+        <p><a target="_blank" href="/ASHX/DGetMenuList.ashx">04.ADO数据库的操作</a></p>
+        <p>05.<a target="_blank" href="/ASHX/EGetTheMenuList.ashx?MType=大荤">Get</a>,<a href="#" id="postGo">Post</a>请求处理</p>
+        <p><a href="/ASHX/FRedirect.ashx">06.页面跳转Redirect</a></p>
+        <p><a target="_blank" href="/ASHX/GReferUrl.ashx">07.防盗链或网络营销</a></p>
+        <p><a target="_blank" href="/ASHX/HIpAddress.ashx">08.获取浏览器IP地址</a></p>
+        <hr />
+    </div>
+    <div><table id="dataList" align="center" border="1"></table></div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('#postGo').click(function () {
+            $.post('/ASHX/EPostTheMenuList.ashx', { MType: '大荤' }, function (data) {
+                data = eval(data);
+                var obj = $('#dataList');
+                obj.html('');
+                obj.append('');
+                for (var i = 0; i < data.length; i++) {
+                    obj.append('<tr><td>' + data[i].MName + '</td><td>' + data[i].MPrice + '</td><td>' + data[i].MType + '</td></tr>');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
