@@ -15,8 +15,6 @@ namespace CSharpStudy
             context.Response.End();
         }
 
-        
-
         public bool IsReusable
         {
             get
