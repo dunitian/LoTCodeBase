@@ -65,6 +65,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.网页基础", "6.网页�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A一般处理程序", "6.网页基础\A一般处理程序\A一般处理程序.csproj", "{5C3A3DA0-4119-43B2-9031-63CB211D9A6E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.其他系列", "7.其他系列", "{1F4EBDB8-1336-4C95-A3F8-CED1AE45BDEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.临时控制台", "1.临时控制台\1.临时控制台.csproj", "{B1BD6E3A-6A51-4459-A8A7-EF70A877F094}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +147,10 @@ Global
 		{5C3A3DA0-4119-43B2-9031-63CB211D9A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C3A3DA0-4119-43B2-9031-63CB211D9A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C3A3DA0-4119-43B2-9031-63CB211D9A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1BD6E3A-6A51-4459-A8A7-EF70A877F094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BD6E3A-6A51-4459-A8A7-EF70A877F094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BD6E3A-6A51-4459-A8A7-EF70A877F094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BD6E3A-6A51-4459-A8A7-EF70A877F094}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -173,5 +181,6 @@ Global
 		{215564C8-0686-4D38-B064-765B17FA6309} = {30C7082F-A6E3-4EE8-B7A6-B285DD917EC2}
 		{2675F5C5-0FF3-479B-9D1F-1343CF7F4B07} = {215564C8-0686-4D38-B064-765B17FA6309}
 		{5C3A3DA0-4119-43B2-9031-63CB211D9A6E} = {084E5BC5-C450-48C3-81C5-80A0AE3BCADF}
+		{B1BD6E3A-6A51-4459-A8A7-EF70A877F094} = {1F4EBDB8-1336-4C95-A3F8-CED1AE45BDEE}
 	EndGlobalSection
 EndGlobal

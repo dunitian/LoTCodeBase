@@ -81,11 +81,22 @@
     <Compile Include="ASHX\HIpAddress.ashx.cs">
       <DependentUpon>HIpAddress.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ASHX\ICookie.ashx.cs">
+      <DependentUpon>ICookie.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ASHX\JSession.ashx.cs">
+      <DependentUpon>JSession.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ASHX\Manager.ashx.cs">
+      <DependentUpon>Manager.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Common\DomainHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\dnt.jpg" />
     <Content Include="index.html" />
+    <Content Include="LoginPage\login.html" />
+    <Content Include="LoginPage\manager.html" />
     <Content Include="MyHtmlPage.html" />
     <Content Include="web.config" />
     <Content Include="ASHX\EGetTheMenuList.ashx" />
@@ -96,6 +107,9 @@
     <Content Include="ASHX\FRedirect.ashx" />
     <Content Include="ASHX\HIpAddress.ashx" />
     <Content Include="ASHX\GReferUrl.ashx" />
+    <Content Include="ASHX\ICookie.ashx" />
+    <Content Include="ASHX\JSession.ashx" />
+    <Content Include="ASHX\Manager.ashx" />
     <None Include="Properties\PublishProfiles\ASHX.pubxml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
