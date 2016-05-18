@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>简单聊天程序</title>
+    <style type="text/css">
+        .container {
+            background-color: #99CCFF;
+            border: thick solid #808080;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="message" />
+        <input type="button" id="sendmessage" value="Send" />
+        <input type="hidden" id="displayname" />
+        <ul id="discussion"></ul>
+    </div>
+    <script src="Scripts/jquery-1.8.3.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.js"></script>
+    <!--动态生成的-->
+    <script src="http://localhost:5438/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+            //日记记录
+            $.connection.hub.logging = true;
+
+            //设置hubs的url
+            $.connection.hub.url = "http://localhost:5438/signalr";
+
+            // 声明一个代理来引用该集线器。
+            var chat = $.connection.dntHub;
+
+            // 创建一个方法供服务端调用
+            chat.client.addMessage = function (name, message) {
+                var encodedName = $('<div />').text(name).html();
+                var encodedMsg = $('<div />').text(message).html();
+                $('#discussion').append('<li><strong>' + encodedName + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
+            };
+            //错误处理
+            chat.client.showError = function (connectionId, errorMsg) {
+                console.log('ConnectionId:' + connectionId + ',ErrorMessage:' + errorMsg)
+            }
+
+            $('#displayname').val('路人');
+
+            // 启动 connection
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    //调用服务器端方法
+                    chat.server.serviceSend($('#displayname').val(), $('#message').val());
+                });
+            });
+        });
+    </script>
+    <!--
+    总结一下：
+    1.先引入jq包，再引入signalR的js包，再引入signalR动态生成的hubs
+    2.设置signalR的hubs url地址：$.connection.hub.url =xxx
+    3.声明一个代理对象来引用集线器：var chat = $.connection.dntHub;
+    4.创建一个客户端方法：chat.client.xxxx=function(){}
+    5.启动并调用服务端方法：
+        $.connection.hub.start().done(function(){
+            chat.server.xxx()
+        });
+    -->
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>仿QQ聊天--我是逆天</title>
+    <link href="../Style/MyQQ.css" rel="stylesheet" />
+</head>
+<body>
+    <div><input id="inputMsg" /><input id="btn" type="button" value="发消息" /></div><br /><br />
+    <div id="main"></div>
+    <script src="../Scripts/jquery-2.2.1.min.js"></script>
+    <script src="../Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="http://localhost:5438/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+            var peopleHtml = [
+                '<div class="sender">',
+                '<div><img src="http://img.jfdown.com/jfdown/201403/ygald3wajct.jpg"></div>',
+                '<div><div class="left_triangle"></div>',
+                '<span>{msg}</span></div></div>'
+            ].join('');
+            var myHtml = [
+                '<div class="receiver">',
+                '<div><img src="http://tb.himg.baidu.com/sys/portrait/item/306c9328?t=1397975854"></div>',
+                '<div><div class="right_triangle"></div>',
+                '<span>{msg}</span></div></div>'
+            ].join('');
+            //设置hub的url
+            $.connection.hub.url = 'http://localhost:5438/signalr';
+            //申明一个代理
+            var qqProxy = $.connection.qQGroupHub;
+            //设置被服务端调用的客户端方法
+            qqProxy.client.sendMsg = function (msg) {
+                $('#main').append(peopleHtml.replace('{msg}', msg));
+            }
+            //启动连接
+            $.connection.hub.start().done(function () {
+                //调用服务端方法
+                qqProxy.server.joinGroup('逆天');
+                $('#btn').click(function () {
+                    var msg = $('#inputMsg').val();
+                    $('#main').append(myHtml.replace('{msg}', msg))
+                    qqProxy.server.groupSend('美女', msg);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
