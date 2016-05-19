@@ -18,120 +18,124 @@
     <![endif]-->
 </head>
 <body>
-    <div>
-        <aside class="sidebar">
-            <nav class="sidebar-nav">
-                <ul class="metisMenu" id="menu">
-                    <!--头像系列-->
-                    <li class="sidebar-nav-header">
-                        <div class="dropdown profile-element">
-                            <span><img alt="image" class="img-circle" src="/assets/img/logo.jpg"></span>
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
-                                <span class="clear">
-                                    <span class="block"><strong>dunitian</strong></span>
-                                    <span class="text-muted">超级管理员<b class="caret"></b></span>
-                                </span>
+    <div class="container">
+        <div class="row">
+            <aside class="sidebar col-sm-2">
+                <nav class="sidebar-nav">
+                    <ul class="metisMenu" id="menu">
+                        <!--头像系列-->
+                        <li class="sidebar-nav-header">
+                            <div class="dropdown profile-element">
+                                <span><img alt="image" class="img-circle" src="/assets/img/logo.jpg"></span>
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+                                    <span class="clear">
+                                        <span class="block"><strong>dunitian</strong></span>
+                                        <span class="text-muted">超级管理员<b class="caret"></b></span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="" href="#">个人资料</a>
+                                    </li>
+                                    <li>
+                                        <a class="" href="#">修改头像</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="/Login.html">安全退出</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--顶级分类-->
+                        <li>
+                            <a href="#">
+                                <i class="sidebar-nav-icon fa fa-home fa-lg"></i>
+                                <span class="sidebar-nav-item">dotNet</span>
+                                <i class="fa fa-lg arrow"></i>
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="collapse" style="height: 0px;">
                                 <li>
-                                    <a class="" href="#">个人资料</a>
-                                </li>
-                                <li>
-                                    <a class="" href="#">修改头像</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="/Login.html">安全退出</a>
+                                    <a href="#">
+                                        <span>Web</span>
+                                        <span class="fa arrow"></span>
+                                    </a>
+                                    <ul class="collapse">
+                                        <li class="sidebar-nav-item"><a href="#">MVC</a></li>
+                                        <li class="sidebar-nav-item"><a href="#">WebApi</a></li>
+                                    </ul>
                                 </li>
                             </ul>
-                        </div>
-                    </li>
-                    <!--顶级分类-->
-                    <li>
-                        <a href="#">
-                            <i class="sidebar-nav-icon fa fa-home fa-lg"></i>
-                            <span class="sidebar-nav-item">dotNet</span>
-                            <i class="fa fa-lg arrow"></i>
-                        </a>
-                        <ul class="collapse" style="height: 0px;">
-                            <li>
-                                <a href="#">
-                                    <span>Web</span>
-                                    <span class="fa arrow"></span>
-                                </a>
-                                <ul class="collapse">
-                                    <li class="sidebar-nav-item"><a href="#">MVC</a></li>
-                                    <li class="sidebar-nav-item"><a href="#">WebApi</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <!--顶级分类-->
-                    <li class="active">
-                        <a href="#">
-                            <i class="sidebar-nav-icon fa fa-columns fa-lg"></i>
-                            <span class="sidebar-nav-item">SQL</span>
-                            <i class="fa fa-lg arrow"></i>
-                        </a>
-                        <ul class="collapse">
-                            <li><a href="#">MySql</a></li>
-                            <li><a href="#">SqlServer</a></li>
-                        </ul>
-                    </li>
-                    <!--顶级分类-->
-                    <li class="active">
-                        <a href="#">
-                            <i class="sidebar-nav-icon fa fa-bar-chart-o fa-lg"></i>
-                            <span class="sidebar-nav-item">Server</span>
-                            <i class="fa fa-lg arrow"></i>
-                        </a>
-                        <ul class="collapse">
-                            <li><a href="#">Linux</a></li>
-                            <li>
-                                <a href="#">
-                                    <span>Windows</span>
-                                    <i class="fa fa-lg arrow"></i>
-                                </a>
-                                <ul>
-                                    <li class="sidebar-nav-item"><a href="#">Windows 10</a></li>
-                                    <li class="sidebar-nav-item"><a href="#">Windows xp</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        <article>
-            <!--<nav class="navbar navbar-inverse navbar-fixed-top">
-             </nav>-->
-        </article>
-        <footer style="clear:left;">
-            <br />
-            <h4>
-                <i class="fa fa-home"></i>
-                <i class="fa fa-edit"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-flask"></i>
-                <i class="fa fa-table"></i>
-                <i class="fa fa-magic"></i>
-                <i class="fa fa-globe"></i>
-                <i class="fa fa-laptop"></i>
-                <i class="fa fa-sitemap"></i>
-                <i class="fa fa-files-o"></i>
-                <i class="fa fa-diamond"></i>
-                <i class="fa fa-cutlery"></i>
-                <i class="fa fa-columns"></i>
-                <i class="fa fa-desktop"></i>
-                <i class="fa fa-database"></i>
-                <i class="fa fa-th-large"></i>
-                <i class="fa fa-envelope"></i>
-                <i class="fa fa-picture-o"></i>
-                <i class="fa fa-pie-chart"></i>
-                <i class="fa fa-bar-chart-o"></i>
-                <i class="fa fa-shopping-cart"></i>
-            </h4>
-        </footer>
+                        </li>
+                        <!--顶级分类-->
+                        <li class="active">
+                            <a href="#">
+                                <i class="sidebar-nav-icon fa fa-columns fa-lg"></i>
+                                <span class="sidebar-nav-item">SQL</span>
+                                <i class="fa fa-lg arrow"></i>
+                            </a>
+                            <ul class="collapse">
+                                <li><a href="#">MySql</a></li>
+                                <li><a href="#">SqlServer</a></li>
+                            </ul>
+                        </li>
+                        <!--顶级分类-->
+                        <li class="active">
+                            <a href="#">
+                                <i class="sidebar-nav-icon fa fa-bar-chart-o fa-lg"></i>
+                                <span class="sidebar-nav-item">Server</span>
+                                <i class="fa fa-lg arrow"></i>
+                            </a>
+                            <ul class="collapse">
+                                <li><a href="#">Linux</a></li>
+                                <li>
+                                    <a href="#">
+                                        <span>Windows</span>
+                                        <i class="fa arrow"></i>
+                                    </a>
+                                    <ul>
+                                        <li class="sidebar-nav-item"><a href="#">Windows 10</a></li>
+                                        <li class="sidebar-nav-item"><a href="#">Windows xp</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <article class="col-sm-10">
+                <header class="navbar navbar-inverse navbar-static-top">
+                    <nav>
+                    </nav>
+                </header>
+            </article>
+            <footer style="clear:left;">
+                <br />
+                <h4>
+                    <i class="fa fa-home"></i>
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-flask"></i>
+                    <i class="fa fa-table"></i>
+                    <i class="fa fa-magic"></i>
+                    <i class="fa fa-globe"></i>
+                    <i class="fa fa-laptop"></i>
+                    <i class="fa fa-sitemap"></i>
+                    <i class="fa fa-files-o"></i>
+                    <i class="fa fa-diamond"></i>
+                    <i class="fa fa-cutlery"></i>
+                    <i class="fa fa-columns"></i>
+                    <i class="fa fa-desktop"></i>
+                    <i class="fa fa-database"></i>
+                    <i class="fa fa-th-large"></i>
+                    <i class="fa fa-envelope"></i>
+                    <i class="fa fa-picture-o"></i>
+                    <i class="fa fa-pie-chart"></i>
+                    <i class="fa fa-bar-chart-o"></i>
+                    <i class="fa fa-shopping-cart"></i>
+                </h4>
+            </footer>
+        </div>
     </div>
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
