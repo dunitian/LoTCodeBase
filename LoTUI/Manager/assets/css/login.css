@@ -12,7 +12,7 @@ h1 {
     font-weight: 700;
     text-shadow: 0 1px 4px rgba(0,0,0,.2);
 }
-form {
+#form {
     position: relative;
     width: 305px;
     margin: 15px auto 0 auto;
