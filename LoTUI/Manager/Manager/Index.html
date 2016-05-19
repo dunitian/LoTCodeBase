@@ -14,12 +14,32 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 <body>
     <aside class="sidebar">
         <nav class="sidebar-nav">
             <ul class="metisMenu" id="menu">
+                <!--头像系列-->
+                <li class="sidebar-nav-header">
+                    <div class="dropdown profile-element">
+                        <span><img alt="image" class="img-circle" src="/assets/img/logo.jpg"></span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+                            <span class="clear">
+                                <span class="block"><strong>dunitian</strong></span>
+                                <span class="text-muted">超级管理员<b class="caret"></b></span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li>
+                                <a class="" href="#">个人资料</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="login.html">安全退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <!--顶级分类-->
                 <li>
                     <a href="#">
@@ -30,12 +50,12 @@
                     <ul class="collapse" style="height: 0px;">
                         <li>
                             <a href="#">
-                                <span class="sidebar-nav-item">Web</span>
+                                <span>Web</span>
                                 <span class="fa arrow"></span>
                             </a>
                             <ul class="collapse">
-                                <li class="sidebar-nav-item2"><a href="#">MVC</a></li>
-                                <li class="sidebar-nav-item2"><a href="#">WebApi</a></li>
+                                <li class="sidebar-nav-item"><a href="#">MVC</a></li>
+                                <li class="sidebar-nav-item"><a href="#">WebApi</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -63,12 +83,12 @@
                         <li><a href="#">Linux</a></li>
                         <li>
                             <a href="#">
-                                <span class="sidebar-nav-item">Windows</span>
+                                <span>Windows</span>
                                 <i class="fa fa-lg arrow"></i>
                             </a>
                             <ul>
-                                <li><a href="#">Windows 10</a></li>
-                                <li><a href="#">Windows xp</a></li>
+                                <li class="sidebar-nav-item"><a href="#">Windows 10</a></li>
+                                <li class="sidebar-nav-item"><a href="#">Windows xp</a></li>
                             </ul>
                         </li>
                     </ul>
