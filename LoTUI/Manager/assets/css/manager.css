@@ -2,6 +2,12 @@
 /*Article*/
 article{padding:0 !important; border:1px solid blue;}
 article nav{}
+.navbar {border: 0;}
+.navbar-default {background-color: transparent;border-color: #2f4050;}
+.navbar-top-links li {display: inline-block;}
+.navbar-top-links li:last-child {margin-right: 40px;}
+.body-small .navbar-top-links li:last-child {margin-right: 0;}
+.navbar-top-links li a {padding: 20px 10px;min-height: 50px;}
 /*Menu*/
 .sidebar {float:left;display: block;min-width:165px;background: #292828;}
 .content {display: block;overflow: hidden;width: auto;}
@@ -31,3 +37,7 @@ article nav{}
 @media screen and (max-width: 736px){
 .sidebar-nav-header .dropdown-menu{margin-left: 35%;}
 }
+
+/*public*/
+.lot-white {color:white;}
+.lot-gray{color:#B7B1B1;}
