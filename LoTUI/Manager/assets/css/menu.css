@@ -57,6 +57,8 @@
 }
 /*add*/
 .sidebar-nav-header{padding: 33px 25px 20px 25px;text-align:center;background-color: #292828;}
+.sidebar-nav-header ul a{border-top:none;text-shadow:none;color:black;}
+.sidebar-nav-header ul a:hover{color:#fa8200;}
 .block{display: block;}
 /*bug*/
 .arrow{float:right;line-height:1.42857}
