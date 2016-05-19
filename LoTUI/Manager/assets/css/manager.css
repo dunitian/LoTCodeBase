@@ -1,13 +1,19 @@
 ﻿.container{width: 100%;}
 /*Article*/
-article{padding:0 !important; border:1px solid blue;}
-article nav{}
-.navbar {border: 0;}
-.navbar-default {background-color: transparent;border-color: #2f4050;}
+article{padding:0 !important;}
 .navbar-top-links li {display: inline-block;}
 .navbar-top-links li:last-child {margin-right: 40px;}
-.body-small .navbar-top-links li:last-child {margin-right: 0;}
 .navbar-top-links li a {padding: 20px 10px;min-height: 50px;}
+.navbar-top-links .dropdown-menu li {display: block;}
+.navbar-top-links .dropdown-menu li a {padding: 8px 20px;min-height: 0;}
+.navbar-top-links .dropdown-menu li a div {white-space: normal;}
+.navbar-top-links .dropdown-messages,.navbar-top-links .dropdown-tasks,.navbar-top-links .dropdown-alerts {width: 310px;min-width: 0;}
+.navbar-top-links .dropdown-messages {margin-left: 5px;}
+.navbar-top-links .dropdown-tasks {margin-left: -59px;}
+.navbar-top-links .dropdown-alerts {margin-left: -123px;}
+.navbar-top-links .dropdown-user {right: 0;left: auto;}
+.dropdown-messages-box img.img-circle {width: 50px;height: 50px;}
+
 /*Menu*/
 .sidebar {float:left;display: block;min-width:165px;background: #292828;}
 .content {display: block;overflow: hidden;width: auto;}
@@ -22,22 +28,25 @@ article nav{}
 .sidebar-nav-item {padding-left: 5px;}
 .sidebar-nav-icon {padding-right: 5px;}
 #rtlh3 small {transform: rotateY(180deg);display: inline-block;}
-/*add*/
 .sidebar-nav-header{padding: 33px 25px 20px 25px;text-align:center;background-color: #292828;}
 .sidebar-nav-header ul a{border-top:none;text-shadow:none;color:black;}
 .sidebar-nav-header ul a:hover{color:#fa8200;}
 .block{display: block;}
-/*bug*/
+/*Menu bug*/
 .arrow{float:right;line-height:1.42857}
 .fa.arrow:before{ content:"\f104" }
 .active>a>.fa.arrow:before{content:"\f107"}
-/*Menu end*/
+
+/*public*/
+.lot-font12{font-size:12px;}
+.lot-font13{font-size:13px;}
+.lot-black{color: inherit;}
+.lot-white {color:white;}
+.lot-gray{color:#B7B1B1;}
+.lot-p{text-indent:4px;}
+
 
 /*mobil*/
 @media screen and (max-width: 736px){
 .sidebar-nav-header .dropdown-menu{margin-left: 35%;}
 }
-
-/*public*/
-.lot-white {color:white;}
-.lot-gray{color:#B7B1B1;}
