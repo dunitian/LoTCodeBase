@@ -1,6 +1,7 @@
 ﻿.container{width: 100%;}
 /*Article*/
 article{padding:0 !important;}
+/*top-nav*/
 .navbar-top-links li {display: inline-block;}
 .navbar-top-links li:last-child {margin-right: 40px;}
 .navbar-top-links li a {padding: 20px 10px;min-height: 50px;}
@@ -13,8 +14,10 @@ article{padding:0 !important;}
 .navbar-top-links .dropdown-alerts {margin-left: -123px;}
 .navbar-top-links .dropdown-user {right: 0;left: auto;}
 .dropdown-messages-box img.img-circle {width: 50px;height: 50px;}
-
-/*Menu min-width:165px;*/
+.navbar-right{margin-right: 0;}
+/*Main*/
+#main{height: calc(100%);overflow: hidden; border:2px solid red;}
+/*Menu*/
 .sidebar {display: block;background: #292828;}
 .content {display: block;overflow: hidden;width: auto;}
 .sidebar-nav {border-bottom: 1px solid rgba(0, 0, 0, 0.3);background-image: -webkit-linear-gradient(left, color-stop(#333333 10px), color-stop(#222222 10px));background-image: linear-gradient(to right, #333333 10px, #222222 10px);background-repeat: repeat-x;filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff333333', endColorstr='#ff222222', GradientType=1);}
