@@ -1,5 +1,4 @@
-﻿#main,aside,.container { border:2px solid red;}
-.container{width: 100%;}
+﻿.container{width: 100%;}
 /*Article*/
 article{padding:0 !important;position: absolute !important;top: 0;right: 0;bottom: 0;overflow-y:auto;}
 header{margin-bottom:0 !important;}
@@ -53,7 +52,7 @@ aside{position: absolute !important;top: 0;bottom: 0;overflow-y:auto;}
 .lot-gray{color:#B7B1B1;}
 .lot-p{text-indent:4px;}
 
-/*mobil*/
+/*mobile*/
 @media screen and (max-width: 990px){
 article,aside{position:relative !important;}
 .col-sm-2{width:100%;}
