@@ -59,8 +59,8 @@
                                         <span class="fa arrow"></span>
                                     </a>
                                     <ul class="collapse">
-                                        <li class="sidebar-nav-item"><a href="#">MVC</a></li>
-                                        <li class="sidebar-nav-item"><a href="#">WebApi</a></li>
+                                        <li class="sidebar-nav-item"><a href="#" lot-url="/Manager/Total.html">MVC</a></li>
+                                        <li class="sidebar-nav-item"><a href="#" lot-url="/Manager/Total.html">WebApi</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -73,8 +73,8 @@
                                 <i class="fa fa-lg arrow"></i>
                             </a>
                             <ul class="collapse">
-                                <li><a href="#">MySql</a></li>
-                                <li><a href="#">SqlServer</a></li>
+                                <li><a href="#" lot-url="/Manager/Total.html">MySql</a></li>
+                                <li><a href="#" lot-url="/Manager/Total.html">SqlServer</a></li>
                             </ul>
                         </li>
                         <!--顶级分类-->
@@ -85,15 +85,36 @@
                                 <i class="fa fa-lg arrow"></i>
                             </a>
                             <ul class="collapse">
-                                <li><a href="#">Linux</a></li>
+                                <li><a href="#" lot-url="/Manager/Total.html">Linux</a></li>
                                 <li>
                                     <a href="#">
                                         <span>Windows</span>
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul>
-                                        <li class="sidebar-nav-item"><a href="#">Windows 10</a></li>
-                                        <li class="sidebar-nav-item"><a href="#">Windows xp</a></li>
+                                        <li class="sidebar-nav-item"><a href="#" lot-url="/Manager/Total.html">Windows 10</a></li>
+                                        <li class="sidebar-nav-item"><a href="#" lot-url="/Manager/Total.html">Windows xp</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--顶级分类-->
+                        <li class="active">
+                            <a href="#">
+                                <i class="sidebar-nav-icon fa fa-bar-chart-o fa-lg"></i>
+                                <span class="sidebar-nav-item">常用功能</span>
+                                <i class="fa fa-lg arrow"></i>
+                            </a>
+                            <ul class="collapse">
+                                <li><a href="#" lot-url="/Manager/Total.html">统计页面</a></li>
+                                <li>
+                                    <a href="#">
+                                        <span>表单系列</span>
+                                        <i class="fa arrow"></i>
+                                    </a>
+                                    <ul>
+                                        <li class="sidebar-nav-item"><a href="#" lot-url="/Manager/List.html">列表页面</a></li>
+                                        <li class="sidebar-nav-item"><a href="#" lot-url="/Manager/Edit.html">编辑页面</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -213,7 +234,7 @@
                     </ul>
                 </header>
                 <div id="main">
-                    <iframe id="ifrContent" scrolling="auto" frameborder="0" src="/Manager/Temp.html"></iframe>
+                    <iframe id="ifrContent" scrolling="auto" frameborder="0" src="/Manager/Total.html"></iframe>
                 </div>
             </article>
             <footer style="clear:left;">
@@ -250,6 +271,13 @@
     <script type="text/javascript">
         $(function () {
             $('#menu').metisMenu();
+        });
+        $('ul.collapse li a').click(function () {
+           var url= $(this).attr('lot-url');
+           if (url) {
+               console.log(url);
+               $('#ifrContent').attr('src', url);
+           }
         });
     </script>
 </body>
