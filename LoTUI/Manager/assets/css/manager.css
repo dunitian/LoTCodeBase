@@ -43,7 +43,6 @@ aside{position: absolute !important;top: 0;bottom: 0;overflow-y:auto;}
 .arrow{float:right;line-height:1.42857}
 .fa.arrow:before{ content:"\f104" }
 .active>a>.fa.arrow:before{content:"\f107"}
-
 /*public*/
 .lot-font12{font-size:12px;}
 .lot-font13{font-size:13px;}
