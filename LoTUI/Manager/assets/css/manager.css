@@ -1,7 +1,7 @@
 ﻿#main,aside,.container { border:2px solid red;}
 .container{width: 100%;}
 /*Article*/
-article{padding:0 !important;position: absolute !important;top: 0;right: 0;bottom: 0;}
+article{padding:0 !important;position: absolute !important;top: 0;right: 0;bottom: 0;overflow-y:auto;}
 header{margin-bottom:0 !important;}
 /*top-nav*/
 .navbar-top-links li {display: inline-block;}
@@ -18,9 +18,9 @@ header{margin-bottom:0 !important;}
 .dropdown-messages-box img.img-circle {width: 50px;height: 50px;}
 .navbar-right{margin-right: 0;}
 /*Main*/
-#main{}
+#main{height:auto;}
 /*Menu*/
-aside{position: absolute !important;top: 0;bottom: 0;}
+aside{position: absolute !important;top: 0;bottom: 0;overflow-y:auto;}
 .sidebar {display: block;background: #292828;}
 .content {display: block;overflow: hidden;width: auto;}
 .sidebar-nav {border-bottom: 1px solid rgba(0, 0, 0, 0.3);background-image: -webkit-linear-gradient(left, color-stop(#333333 10px), color-stop(#222222 10px));background-image: linear-gradient(to right, #333333 10px, #222222 10px);background-repeat: repeat-x;filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff333333', endColorstr='#ff222222', GradientType=1);}
