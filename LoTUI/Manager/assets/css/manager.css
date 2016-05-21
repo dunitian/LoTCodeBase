@@ -19,6 +19,7 @@ header{margin-bottom:0 !important;}
 .navbar-right{margin-right: 0;}
 /*Main*/
 #main{height:auto;}
+#ifrContent{width:100%;height:100%;position:absolute;}
 /*Menu*/
 aside{position: absolute !important;top: 0;bottom: 0;overflow-y:auto;}
 .sidebar {display: block;background: #292828;}
