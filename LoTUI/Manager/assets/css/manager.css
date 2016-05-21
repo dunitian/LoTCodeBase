@@ -1,6 +1,7 @@
 ﻿.container{width: 100%;}
 /*Article*/
 article{padding:0 !important;}
+header{margin-bottom:0 !important;}
 /*top-nav*/
 .navbar-top-links li {display: inline-block;}
 .navbar-top-links li:last-child {margin-right: 40px;}
@@ -16,7 +17,7 @@ article{padding:0 !important;}
 .dropdown-messages-box img.img-circle {width: 50px;height: 50px;}
 .navbar-right{margin-right: 0;}
 /*Main*/
-#main{height: calc(100%);overflow: hidden; border:2px solid red;}
+#main{height: calc(100%);overflow: hidden; border:2px solid red;height:700px;}
 /*Menu*/
 .sidebar {display: block;background: #292828;}
 .content {display: block;overflow: hidden;width: auto;}
