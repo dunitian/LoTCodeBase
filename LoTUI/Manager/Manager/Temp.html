@@ -5,30 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LoT.UI Login Page</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!--bootstrap-table-->
+    <link href="/open/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-        div{
-            border:2px solid blue;
-        }
-    </style>
 </head>
 <body>
-    <div class="container" style="width:100%;">
-        <div class="row">
-            <div class="col-sm-2">
-                <p style="height:500px"></p>
-            </div>
-            <div class="col-sm-10">
-                <p style="height:500px"></p>
-            </div>
+    <div style="position:absolute;top:20px;left:10px;right:10px;">
+        <div id="toolbar" class="btn-group">
+            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i></button>
+            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-heart"></i></button>
+            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i></button>
         </div>
+        <table id="table"></table>
     </div>
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--bootstrap-table-->
+    <script src="/open/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="/open/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $('#table').bootstrapTable({
+                toolbar: '#toolbar',                        //自定工具
+                method: 'get',                              //请求方式
+                url: '/Demo/data.json',                     //请求地址
+                queryParams: { searchText: '' },            //传递参数
+                height: 500,                                //表格高度
+                pagination: true,                           //启用分页
+                pageSize: 10,                               //每页条数
+                pageList: [20, 50, 100, 200, 500],          //显示条数
+                search: true,                               //启用搜索
+                searchOnEnterKey: true,                     //回车搜索
+                strictSearch: true,                         //精确搜索（默认模糊）
+                showColumns: true,                          //内容选框
+                showRefresh: true,                          //启用刷新
+                clickToSelect: true,                        //单行选中
+                showPaginationSwitch: true,                 //条数显示
+                maintainSelected: true,                     //记住选中（分页或搜索时保留选中状态）
+                striped: true,                              //隔行变色
+                //escape: true,                               //转义HTML（不需要自己转义了）
+                columns: [
+                    {
+                        checkbox: true,
+                    },
+                    {
+                        title: '序列号',
+                        align: 'center',
+                        sortable: true,
+                        formatter: function (value, row, index) {
+                            return index + 1;
+                        }
+                    },
+                    {
+                        field: 'SName',
+                        title: '超市名',
+                        align: 'center',
+                        sortable: true,
+                    },
+                    {
+                        field: 'MName',
+                        title: '菜单名',
+                        align: 'center',
+                        sortable: true
+                    },
+                   {
+                       field: 'MPrice',     //字段名
+                       title: '价格点',     //标题名
+                       align: 'center',    //列数据对齐方式
+                       sortable: true,     //是否支持排序
+                       formatter: function (value, row, index) {
+                           //保留小数点两位
+                           var s = value.toString();
+                           var rs = s.indexOf('.');
+                           if (rs < 0) {
+                               rs = s.length;
+                               s += '.';
+                           }
+                           while (s.length <= rs + 2) {
+                               s += '0';
+                           }
+                           return s;
+                       }
+                   },
+                   {
+                       field: 'MType',
+                       title: '所属类',
+                       align: 'center',
+                       sortable: true
+                   }
+                ],
+                select: true
+            });
+        });
+    </script>
 </body>
 </html>

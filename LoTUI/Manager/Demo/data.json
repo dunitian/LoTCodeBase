@@ -1,0 +1,1286 @@
+﻿[
+  {
+    "SName": "茂业",
+    "MName": "白鲫鱼",
+    "MPrice": 9.99,
+    "MType": "大荤"
+  },
+  {
+    "MName": "肥肉馅",
+    "MPrice": 10.99,
+    "MType": "大荤",
+    "SName": "茂业"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "肥肉馅",
+    "MPrice": 7.9,
+    "MType": "大荤"
+  },
+  {
+    "SName": "好又多",
+    "MName": "后腿肉",
+    "MPrice": 13.98,
+    "MType": "大荤"
+  },
+  {
+    "SName": "好又多",
+    "MName": "鸡肉",
+    "MPrice": 11.88,
+    "MType": "大荤"
+  },
+  {
+    "SName": "好又多",
+    "MName": "鲫鱼",
+    "MPrice": 10.88,
+    "MType": "大荤"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "精肉馅",
+    "MPrice": 14.5,
+    "MType": "大荤"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "精腿肉",
+    "MPrice": 16.8,
+    "MType": "大荤"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "牛腿肉",
+    "MPrice": 26.5,
+    "MType": "大荤"
+  },
+  {
+    "SName": "好又多",
+    "MName": "排骨",
+    "MPrice": 18.88,
+    "MType": "大荤"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "前小排",
+    "MPrice": 15.5,
+    "MType": "大荤"
+  },
+  {
+    "SName": "茂业",
+    "MName": "瘦肉",
+    "MPrice": 14.98,
+    "MType": "大荤"
+  },
+  {
+    "SName": "茂业",
+    "MName": "瘦肉馅",
+    "MPrice": 14.98,
+    "MType": "大荤"
+  },
+  {
+    "SName": "茂业",
+    "MName": "汤骨",
+    "MPrice": 15.8,
+    "MType": "大荤"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "汤骨",
+    "MPrice": 12.8,
+    "MType": "大荤"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "五花肉",
+    "MPrice": 12.58,
+    "MType": "大荤"
+  },
+  {
+    "SName": "好又多",
+    "MName": "五花肉",
+    "MPrice": 14.98,
+    "MType": "大荤"
+  },
+  {
+    "SName": "好又多",
+    "MName": "小排",
+    "MPrice": 13.98,
+    "MType": "大荤"
+  },
+  {
+    "SName": "茂业",
+    "MName": "小排",
+    "MPrice": 13.99,
+    "MType": "大荤"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "小排",
+    "MPrice": 13.9,
+    "MType": "大荤"
+  },
+  {
+    "SName": "好又多",
+    "MName": "鸭血",
+    "MPrice": 2.68,
+    "MType": "大荤"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "中排",
+    "MPrice": 19.8,
+    "MType": "大荤"
+  },
+  {
+    "SName": "茂业",
+    "MName": "猪肝",
+    "MPrice": 8.98,
+    "MType": "大荤"
+  },
+  {
+    "SName": "好又多",
+    "MName": "猪肝",
+    "MPrice": 9.88,
+    "MType": "大荤"
+  },
+  {
+    "SName": "茂业",
+    "MName": "八宝粥",
+    "MPrice": 6.58,
+    "MType": "谷物"
+  },
+  {
+    "SName": "茂业",
+    "MName": "大红枣",
+    "MPrice": 19.98,
+    "MType": "谷物"
+  },
+  {
+    "SName": "茂业",
+    "MName": "东北大米",
+    "MPrice": 2.59,
+    "MType": "谷物"
+  },
+  {
+    "SName": "好又多",
+    "MName": "粉皮",
+    "MPrice": 2.0,
+    "MType": "谷物"
+  },
+  {
+    "SName": "好又多",
+    "MName": "海带结",
+    "MPrice": 3.0,
+    "MType": "谷物"
+  },
+  {
+    "SName": "茂业",
+    "MName": "核桃",
+    "MPrice": 19.98,
+    "MType": "谷物"
+  },
+  {
+    "SName": "茂业",
+    "MName": "黑米",
+    "MPrice": 4.99,
+    "MType": "谷物"
+  },
+  {
+    "SName": "茂业",
+    "MName": "花生米",
+    "MPrice": 6.98,
+    "MType": "谷物"
+  },
+  {
+    "SName": "好又多",
+    "MName": "饺皮",
+    "MPrice": 2.38,
+    "MType": "谷物"
+  },
+  {
+    "SName": "好又多",
+    "MName": "老豆腐",
+    "MPrice": 2.38,
+    "MType": "谷物"
+  },
+  {
+    "SName": "茂业",
+    "MName": "莲子",
+    "MPrice": 55.98,
+    "MType": "谷物"
+  },
+  {
+    "SName": "好又多",
+    "MName": "凉粉",
+    "MPrice": 1.8,
+    "MType": "谷物"
+  },
+  {
+    "SName": "好又多",
+    "MName": "凉皮",
+    "MPrice": 2.5,
+    "MType": "谷物"
+  },
+  {
+    "SName": "好又多",
+    "MName": "面条",
+    "MPrice": 2.38,
+    "MType": "谷物"
+  },
+  {
+    "SName": "好又多",
+    "MName": "水豆腐",
+    "MPrice": 1.38,
+    "MType": "谷物"
+  },
+  {
+    "SName": "茂业",
+    "MName": "苏北大米",
+    "MPrice": 2.19,
+    "MType": "谷物"
+  },
+  {
+    "SName": "好又多",
+    "MName": "土豆粉",
+    "MPrice": 1.5,
+    "MType": "谷物"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "新米",
+    "MPrice": 2.28,
+    "MType": "谷物"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "德芙252g",
+    "MPrice": 33.8,
+    "MType": "零食"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "士力架460",
+    "MPrice": 29.9,
+    "MType": "零食"
+  },
+  {
+    "SName": "好又多",
+    "MName": "白菜",
+    "MPrice": 1.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "白萝卜",
+    "MPrice": 1.68,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "白萝卜",
+    "MPrice": 1.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "包菜",
+    "MPrice": 2.88,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "菠菜",
+    "MPrice": 2.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "菠菜",
+    "MPrice": 5.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "菠菜",
+    "MPrice": 4.0,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "菠菜",
+    "MPrice": 4.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "薄皮椒",
+    "MPrice": 7.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "菜豆",
+    "MPrice": 7.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "春笋",
+    "MPrice": 3.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "茨菇",
+    "MPrice": 4.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "茨菇",
+    "MPrice": 4.8,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "葱",
+    "MPrice": 6.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "大白菜",
+    "MPrice": 2.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "大蒜",
+    "MPrice": 4.9,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "大蒜",
+    "MPrice": 7.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "大蒜",
+    "MPrice": 9.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "刀豆",
+    "MPrice": 9.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "刀豆",
+    "MPrice": 9.8,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "地瓜",
+    "MPrice": 1.38,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "冬瓜",
+    "MPrice": 4.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "冬瓜",
+    "MPrice": 4.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "冬笋",
+    "MPrice": 1.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "冬笋",
+    "MPrice": 3.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "豆芽",
+    "MPrice": 2.38,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "番茄",
+    "MPrice": 4.8,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "黑茄子",
+    "MPrice": 4.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "红苋菜",
+    "MPrice": 2.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "红洋葱",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "胡萝卜",
+    "MPrice": 1.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "胡萝卜",
+    "MPrice": 3.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "胡萝卜",
+    "MPrice": 3.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "胡萝卜",
+    "MPrice": 1.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "葫芦",
+    "MPrice": 3.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "花菜",
+    "MPrice": 2.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "花菜",
+    "MPrice": 6.8,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "黄瓜",
+    "MPrice": 9.0,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "黄瓜",
+    "MPrice": 2.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "黄瓜",
+    "MPrice": 6.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "黄瓜",
+    "MPrice": 3.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "黄瓜",
+    "MPrice": 2.68,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "鸡毛菜",
+    "MPrice": 3.54,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "鸡毛菜",
+    "MPrice": 4.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "金针菇",
+    "MPrice": 4.6,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "金针菇",
+    "MPrice": 4.5,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "金针菇",
+    "MPrice": 12.8,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "韭菜",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "韭菜",
+    "MPrice": 2.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "韭菜",
+    "MPrice": 3.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "韭菜",
+    "MPrice": 2.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "空心菜",
+    "MPrice": 10.79,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "空心菜",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "苦瓜",
+    "MPrice": 5.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "老姜",
+    "MPrice": 3.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "莲藕",
+    "MPrice": 3.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "毛白菜",
+    "MPrice": 1.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "木耳",
+    "MPrice": 3.5,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "南瓜",
+    "MPrice": 2.38,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "南瓜",
+    "MPrice": 3.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "南瓜",
+    "MPrice": 1.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "泡菜",
+    "MPrice": 13.9,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "平菇",
+    "MPrice": 2.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "茄子",
+    "MPrice": 3.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "茄子",
+    "MPrice": 7.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "芹菜",
+    "MPrice": 2.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "芹菜",
+    "MPrice": 4.38,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "芹菜",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "芹菜",
+    "MPrice": 4.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "青菜",
+    "MPrice": 2.39,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "青菜",
+    "MPrice": 3.48,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "青菜",
+    "MPrice": 2.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "青椒",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "山药",
+    "MPrice": 4.28,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "山药",
+    "MPrice": 2.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "山药",
+    "MPrice": 3.28,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "山药",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "山芋",
+    "MPrice": 2.38,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "山芋",
+    "MPrice": 1.69,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "上海青",
+    "MPrice": 6.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "生菜",
+    "MPrice": 4.5,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "生菜",
+    "MPrice": 3.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "生菜",
+    "MPrice": 1.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "生瓜",
+    "MPrice": 2.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "生姜",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "丝瓜",
+    "MPrice": 8.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "丝瓜",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "四季豆",
+    "MPrice": 5.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "四季豆",
+    "MPrice": 9.8,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "蒜苗",
+    "MPrice": 9.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "蒜苗",
+    "MPrice": 4.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "蒜苗",
+    "MPrice": 10.5,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "蒜苔",
+    "MPrice": 8.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "蒜苔",
+    "MPrice": 7.8,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "茼蒿",
+    "MPrice": 3.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "土豆",
+    "MPrice": 3.38,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "土豆",
+    "MPrice": 2.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "土豆",
+    "MPrice": 4.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "莴苣",
+    "MPrice": 3.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "莴苣",
+    "MPrice": 3.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "莴苣",
+    "MPrice": 4.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "莴苣",
+    "MPrice": 3.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "西红柿",
+    "MPrice": 6.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "西红柿",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "西葫芦",
+    "MPrice": 3.4,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "西葫芦",
+    "MPrice": 5.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "西兰花",
+    "MPrice": 9.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "西兰花",
+    "MPrice": 8.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "细菜",
+    "MPrice": 1.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "鲜木耳",
+    "MPrice": 3.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "香菜",
+    "MPrice": 9.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "香菜",
+    "MPrice": 6.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "香菜",
+    "MPrice": 9.68,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "香菜",
+    "MPrice": 1.9,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "香葱",
+    "MPrice": 3.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "香葱",
+    "MPrice": 7.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "香菇",
+    "MPrice": 14.8,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "香菇",
+    "MPrice": 14.8,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "香菇",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "小青菜",
+    "MPrice": 4.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "洋葱",
+    "MPrice": 5.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "洋葱",
+    "MPrice": 3.69,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "洋葱",
+    "MPrice": 3.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "油麦菜",
+    "MPrice": 2.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "玉米",
+    "MPrice": 6.98,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "芋头",
+    "MPrice": 2.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "芋头",
+    "MPrice": 2.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "芋头",
+    "MPrice": 2.58,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "欧尚",
+    "MName": "圆茄子",
+    "MPrice": 5.9,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "紫薯",
+    "MPrice": 5.8,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "茂业",
+    "MName": "紫薯",
+    "MPrice": 3.99,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "紫薯",
+    "MPrice": 4.95,
+    "MType": "蔬菜"
+  },
+  {
+    "SName": "好又多",
+    "MName": "菠萝",
+    "MPrice": 2.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "茂业",
+    "MName": "菠萝",
+    "MPrice": 2.69,
+    "MType": "水果"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "菠萝",
+    "MPrice": 5.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "橙子",
+    "MPrice": 5.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "茂业",
+    "MName": "橙子",
+    "MPrice": 2.99,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "橙子",
+    "MPrice": 2.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "大芒果",
+    "MPrice": 12.8,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "哈密瓜",
+    "MPrice": 4.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "火龙果",
+    "MPrice": 5.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "金桔",
+    "MPrice": 5.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "茂业",
+    "MName": "精品香蕉",
+    "MPrice": 3.99,
+    "MType": "水果"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "橘子",
+    "MPrice": 2.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "梨子",
+    "MPrice": 2.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "茂业",
+    "MName": "梨子",
+    "MPrice": 2.99,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "梨子",
+    "MPrice": 2.38,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "芦柑",
+    "MPrice": 1.38,
+    "MType": "水果"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "芒果",
+    "MPrice": 8.8,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "猕猴桃",
+    "MPrice": 7.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "木瓜",
+    "MPrice": 4.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "柠檬",
+    "MPrice": 9.8,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "苹果",
+    "MPrice": 2.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "苹果",
+    "MPrice": 3.58,
+    "MType": "水果"
+  },
+  {
+    "SName": "茂业",
+    "MName": "苹果",
+    "MPrice": 2.99,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "圣女果",
+    "MPrice": 3.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "西瓜",
+    "MPrice": 4.58,
+    "MType": "水果"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "西瓜",
+    "MPrice": 5.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "香瓜",
+    "MPrice": 4.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "香蕉",
+    "MPrice": 2.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "香蕉",
+    "MPrice": 7.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "茂业",
+    "MName": "香蕉",
+    "MPrice": 2.69,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "小芒果",
+    "MPrice": 7.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "雪莲果",
+    "MPrice": 3.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "油桃",
+    "MPrice": 11.8,
+    "MType": "水果"
+  },
+  {
+    "SName": "好又多",
+    "MName": "柚子",
+    "MPrice": 1.98,
+    "MType": "水果"
+  },
+  {
+    "SName": "家乐福",
+    "MName": "草鸡蛋",
+    "MPrice": 22.7,
+    "MType": "小荤"
+  },
+  {
+    "SName": "茂业",
+    "MName": "草鸡蛋",
+    "MPrice": 3.99,
+    "MType": "小荤"
+  },
+  {
+    "SName": "好又多",
+    "MName": "鸡蛋",
+    "MPrice": 3.9,
+    "MType": "小荤"
+  },
+  {
+    "SName": "茂业",
+    "MName": "洋鸡蛋",
+    "MPrice": 3.79,
+    "MType": "小荤"
+  }
+]
