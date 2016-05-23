@@ -44,6 +44,7 @@ aside{position: absolute !important;top: 0;bottom: 0;overflow-y:auto;}
 .fa.arrow:before{ content:"\f104" }
 .active>a>.fa.arrow:before{content:"\f107"}
 /*public*/
+#lotResult {position: fixed;top: 1em;right: 1em;}
 .lot-font12{font-size:12px;}
 .lot-font13{font-size:13px;}
 .lot-black{color: inherit;}

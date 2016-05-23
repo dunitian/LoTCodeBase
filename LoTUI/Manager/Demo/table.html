@@ -16,13 +16,13 @@
 <body>
     <div style="position:absolute;top:20px;left:10px;right:10px;">
         <h2>事件（添加，修改，批量删除，批量恢复）+ 列表页</h2>
-        <div class="alert alert-success" id="lotResult" style="display:none;position: fixed;top: 1em;right: 1em;"></div>
-        <div id="lotToolbar" class="btn-group">
-            <button type="button" class="btn btn-default" id="lotadd"><i class="glyphicon glyphicon-plus"></i></button>
-            <button type="button" class="btn btn-default" id="lotrerecover"><i class="glyphicon glyphicon-share-alt"></i></button>
-            <button type="button" class="btn btn-default" id="lotremove"><i class="glyphicon glyphicon-trash"></i></button>
+        <div class="alert alert-success" id="lotResult"></div>
+        <div id="toolbar" class="btn-group">
+            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i></button>
+            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-share-alt"></i></button>
+            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i></button>
         </div>
-        <table id="lotTable"></table>
+        <table id="table"></table>
     </div>
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -30,11 +30,9 @@
     <script src="/open/bootstrap-table/bootstrap-table.min.js"></script>
     <script src="/open/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
     <script type="text/javascript">
-        //JSON.parse(str)     用于从一个字符串中解析出json对象
-        //JSON.stringify(obj) 用于从一个对象解析出字符串
         $(document).ready(function () {
-            $('#lotTable').bootstrapTable({
-                toolbar: '#lotToolbar',                        //自定工具
+             $('#table').bootstrapTable({
+                toolbar: '#toolbar',                        //自定工具
                 method: 'get',                              //请求方式
                 url: '/Demo/data.json',                     //请求地址
                 queryParams: { searchText: '' },            //传递参数
@@ -54,7 +52,7 @@
                 //escape: true,                               //转义HTML（不需要自己转义了）
                 columns: [
                     {
-                        checkbox: true
+                        checkbox: true,
                     },
                     {
                         field: 'Id',
@@ -124,51 +122,9 @@
         });
 
         //事件系列:http://jsfiddle.net/e3nk137y/2106/
-        $('#lotTable').on('load-error.bs.table', function (e, status) {
-            showMsg('加载出错，请刷新页面');
+        $('#table').on('load-error.bs.table', function (e, status) {
+            $('#lotResult').text('Event: load-error.bs.table');
         });
-
-        //添加信息
-        $('#lotadd').click(function () {
-            location.href = 'Edit.html';
-        });
-
-        //批量恢复
-        $('#lotrerecover').click(function () {
-            var ids = getSelectIds();
-            if (ids) {
-                console.log(ids);
-            }
-        });
-
-        //批量删除
-        $('#lotremove').click(function () {
-            var ids = getSelectIds();
-            if (ids) {
-                console.log(ids);
-            }
-        });
-
-        //获取选中项Ids
-        function getSelectIds() {
-            var objs = $('#lotTable').bootstrapTable('getSelections');
-            var ids = '';
-            for (var i = 0; i < objs.length; i++) {
-                ids += objs[i].Id + ',';
-            }
-            ids = ids.substring(0, ids.length - 1);
-            return ids;
-        }
-
-        //消息提醒
-        var lotmsg = $('#lotResult');
-        function showMsg(obj) {
-            lotmsg.css('display', '');
-            lotmsg.text(obj);
-            setTimeout(function () {
-                lotmsg.css('display', 'none');
-            }, 3000);
-        }
     </script>
 </body>
 </html>
