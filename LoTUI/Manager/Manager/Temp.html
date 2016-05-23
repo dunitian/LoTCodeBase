@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LoT.UI Login Page</title>
+    <title>LoT.UI</title>
     <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <!--bootstrap-table-->
     <link href="/open/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
@@ -15,8 +15,7 @@
 </head>
 <body>
     <div style="position:absolute;top:20px;left:10px;right:10px;">
-        <h2>事件（添加，修改，批量删除，批量恢复）+ 列表页</h2>
-        <div class="alert alert-success" id="lotResult" style="display:none;position: fixed;top: 1em;right: 1em;"></div>
+        <div class="alert alert-info" id="lotResult" style="display:none;position: fixed;top: 1em;right: 1em;z-index:999;"></div>
         <div id="lotToolbar" class="btn-group">
             <button type="button" class="btn btn-default" id="lotadd"><i class="glyphicon glyphicon-plus"></i></button>
             <button type="button" class="btn btn-default" id="lotrerecover"><i class="glyphicon glyphicon-share-alt"></i></button>
@@ -32,9 +31,10 @@
     <script type="text/javascript">
         //JSON.parse(str)     用于从一个字符串中解析出json对象
         //JSON.stringify(obj) 用于从一个对象解析出字符串
+        var lotTab = $('#lotTable');
         $(document).ready(function () {
-            $('#lotTable').bootstrapTable({
-                toolbar: '#lotToolbar',                        //自定工具
+            lotTab.bootstrapTable({
+                toolbar: '#lotToolbar',                     //自定工具
                 method: 'get',                              //请求方式
                 url: '/Demo/data.json',                     //请求地址
                 queryParams: { searchText: '' },            //传递参数
@@ -44,7 +44,7 @@
                 pageList: [20, 50, 100, 200, 500],          //显示条数
                 search: true,                               //启用搜索
                 searchOnEnterKey: true,                     //回车搜索
-                strictSearch: true,                         //精确搜索（默认模糊）
+                //strictSearch: true,                       //精确搜索（默认模糊）
                 showColumns: true,                          //内容选框
                 showRefresh: true,                          //启用刷新
                 clickToSelect: true,                        //单行选中
@@ -54,6 +54,7 @@
                 //escape: true,                               //转义HTML（不需要自己转义了）
                 columns: [
                     {
+                        field: 'State',
                         checkbox: true
                     },
                     {
@@ -107,14 +108,10 @@
                        },
                        events: {
                            'click .edit': function (e, value, row, index) {
-                               console.log(row.Id);
-                               console.log(value, row, index);
-                               console.log(JSON.stringify(row));
+                               location.href = 'Edit.html?id=' + row.Id;
                            },
                            'click .remove': function (e, value, row, index) {
-                               console.log(row.Id);
-                               console.log(value, row, index);
-                               console.log(JSON.stringify(row));
+                               updateData(row.Id, 99);
                            }
                        }
                    }
@@ -123,9 +120,12 @@
             });
         });
 
-        //事件系列:http://jsfiddle.net/e3nk137y/2106/
-        $('#lotTable').on('load-error.bs.table', function (e, status) {
-            showMsg('加载出错，请刷新页面');
+        //事件系列: http://jsfiddle.net/e3nk137y/2106/
+        lotTab.on('load-success.bs.table', function (e, data) {
+            showMsg('加载成功，欢迎光临');
+        })
+        .on('load-error.bs.table', function (e, status) {
+            showMsg('加载出错，请刷新下');
         });
 
         //添加信息
@@ -137,27 +137,35 @@
         $('#lotrerecover').click(function () {
             var ids = getSelectIds();
             if (ids) {
-                console.log(ids);
+                updateData(ids, 1);
             }
         });
-
         //批量删除
         $('#lotremove').click(function () {
+            //$("input[name='btSelectItem']:checked").each(function () { $(this).parents("tr").remove(); });
             var ids = getSelectIds();
             if (ids) {
-                console.log(ids);
+                updateData(ids, 99);
             }
         });
-
+        //批量更新数据
+        function updateData(ids, status) {
+            console.log(ids);
+            //更新数据库
+            //$.post('', { ids: ids, status: status }, function (data) {
+            //    if (data != 'false') {
+            //        showMsg(data);
+            //    }
+            //});
+            //重新加载数据
+            tableLoad();
+        }
         //获取选中项Ids
         function getSelectIds() {
-            var objs = $('#lotTable').bootstrapTable('getSelections');
-            var ids = '';
-            for (var i = 0; i < objs.length; i++) {
-                ids += objs[i].Id + ',';
-            }
-            ids = ids.substring(0, ids.length - 1);
-            return ids;
+            var ids = $.map(lotTab.bootstrapTable('getSelections'), function (row) {
+                return row.Id;
+            });
+            return ids.join(',');;
         }
 
         //消息提醒
@@ -168,6 +176,14 @@
             setTimeout(function () {
                 lotmsg.css('display', 'none');
             }, 3000);
+        }
+
+        //数据加载
+        function tableLoad() {
+            console.log('load');
+            //$.post('', function (data) {
+            //    lotTab.bootstrapTable('load', data);
+            //});
         }
     </script>
 </body>
