@@ -71,7 +71,7 @@
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!--<script src="/open/easydialog/easydialog.2.5.min.js" async></script>-->
-    <script src="/open/easydialog/easydialog.js" async></script>
+    <script src="/open/easydialog/easydialog.2.5.min.js" async></script>
     <script src="/open/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
     <script src="/open/bootstrap-datepicker/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="/open/bootstrap-table/bootstrap-table.min.js"></script>
@@ -185,7 +185,7 @@
         $('#lotrerecover').click(function () {
             var ids = getSelectIds();
             if (ids) {
-                showYesNoMsg('确定删除？', function () {
+                showYesNoMsg('确定恢复？', function () {
                     updateData(ids, 1);
                 });
             }
