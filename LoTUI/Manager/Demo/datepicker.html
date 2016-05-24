@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LoT.UI Login Page</title>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href="/open/bootstrap-datepicker/bootstrap-datepicker.1.6.3.min.css" rel="stylesheet" />
+    <link href="/open/bootstrap-datepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -19,13 +19,13 @@
     </div>
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="/open/bootstrap-datepicker/bootstrap-datepicker.1.6.1.min.js"></script>
-    <script src="/open/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script src="/open/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="/open/bootstrap-datepicker/bootstrap-datetimepicker.zh-CN.js"></script>
     <script type="text/javascript">
         //时间控件
         $(function () {
-            $('.lot-time').datepicker({
-                format: "yyyy-mm-dd",
+            $('.lot-time').datetimepicker({
+                format: "yyyy-mm-dd hh:ii",
                 todayBtn: "linked",
                 language: "zh-CN",
                 autoclose: true

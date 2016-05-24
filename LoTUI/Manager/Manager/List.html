@@ -8,7 +8,7 @@
     <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <!--bootstrap-table-->
     <link href="/open/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
-    <link href="/open/bootstrap-datepicker/bootstrap-datepicker.1.6.3.min.css" rel="stylesheet" />
+    <link href="/open/bootstrap-datepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="/assets/css/common.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -47,9 +47,9 @@
                 <div class="col-lg-4"></div>
                 <div class="col-lg-3">
                     <div class="btn-group">
-                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i> 查询</button>
-                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-repeat"></i> 重置</button>
                         <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-export"></i> 导出</button>
+                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-repeat"></i> 重置</button>
+                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i> 查询</button>
                     </div>
                 </div>
             </div>
@@ -72,8 +72,8 @@
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!--<script src="/open/easydialog/easydialog.2.5.min.js" async></script>-->
     <script src="/open/easydialog/easydialog.js" async></script>
-    <script src="/open/bootstrap-datepicker/bootstrap-datepicker.1.6.1.min.js"></script>
-    <script src="/open/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script src="/open/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="/open/bootstrap-datepicker/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="/open/bootstrap-table/bootstrap-table.min.js"></script>
     <script src="/open/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
     <script type="text/javascript">
@@ -249,8 +249,8 @@
 
         //时间控件
         $(function () {
-            $('.lot-time').datepicker({
-                format: "yyyy-mm-dd",
+            $('.lot-time').datetimepicker({
+                format: "yyyy-mm-dd hh:ii",
                 todayBtn: "linked",
                 language: "zh-CN",
                 autoclose: true
