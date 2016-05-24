@@ -4,17 +4,245 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LoT.UI Login Page</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <title>LoT.UI</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!--bootstrap-table-->
+    <link href="/open/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="/assets/css/common.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
-    <h1 style="color:black;">List，文本框+按钮+下拉列表+时间选择器+表格系列</h1>
+    <header class="panel panel-default">
+        <div class="panel-heading">条件查询</div>
+        <article class="panel-body">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <div class="input-group"><span class="input-group-addon">笔记标题</span><input type="text" class="form-control" placeholder="请输入标题名..."></div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">数据状态</span>
+                        <select class="form-control">
+                            <option value="1">正常数据</option>
+                            <option value="99">已删数据</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <div class="input-group"><span class="input-group-addon">开始时间</span><input type="text" class="form-control" placeholder="请选择开始时间..."></div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="input-group"><span class="input-group-addon">结束时间</span><input type="text" class="form-control" placeholder="请选择结束时间..."></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-3">
+                    <div class="btn-group">
+                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i> 查询</button>
+                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-repeat"></i> 重置</button>
+                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-export"></i> 导出</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </header>
+
+    <footer class="panel panel-default">
+        <div class="panel-heading">数据列表</div>
+        <article class="panel-body">
+            <div id="lotToolbar" class="btn-group">
+                <button type="button" class="btn btn-default" id="lotadd"><i class="glyphicon glyphicon-plus"></i></button>
+                <button type="button" class="btn btn-default" id="lotrerecover"><i class="glyphicon glyphicon-share-alt"></i></button>
+                <button type="button" class="btn btn-default" id="lotremove"><i class="glyphicon glyphicon-trash"></i></button>
+            </div>
+            <table id="lotTable"></table>
+        </article>
+    </footer>
+
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--<script src="/open/easydialog/easydialog.2.5.min.js" async></script>-->
+    <script src="/open/easydialog/easydialog.js" async></script>
+    <script src="/open/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="/open/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript">
+        //JSON.parse(str)     用于从一个字符串中解析出json对象
+        //JSON.stringify(obj) 用于从一个对象解析出字符串
+        var lotTab = $('#lotTable');
+        $(document).ready(function () {
+            lotTab.bootstrapTable({
+                toolbar: '#lotToolbar',                     //自定工具
+                method: 'get',                              //请求方式
+                url: '/Demo/data.json',                     //请求地址
+                queryParams: { searchText: '' },            //传递参数
+                height: 500,                                //表格高度
+                pagination: true,                           //启用分页
+                pageSize: 10,                               //每页条数
+                pageList: [20, 50, 100, 200, 500],          //显示条数
+                search: true,                               //启用搜索
+                searchOnEnterKey: true,                     //回车搜索
+                //strictSearch: true,                       //精确搜索（默认模糊）
+                showColumns: true,                          //内容选框
+                showRefresh: true,                          //启用刷新
+                clickToSelect: true,                        //单行选中
+                showPaginationSwitch: true,                 //条数显示
+                maintainSelected: true,                     //记住选中（分页或搜索时保留选中状态）
+                striped: true,                              //隔行变色
+                //escape: true,                               //转义HTML（不需要自己转义了）
+                columns: [
+                    {
+                        field: 'State',
+                        checkbox: true
+                    },
+                    {
+                        field: 'Id',
+                        title: '序列号',
+                        align: 'center',
+                        sortable: true
+                    },
+                    {
+                        field: 'SName',
+                        title: '超市名',
+                        align: 'center',
+                        sortable: true,
+                    },
+                    {
+                        field: 'MName',
+                        title: '菜单名',
+                        align: 'center',
+                        sortable: true
+                    },
+                   {
+                       field: 'MPrice',                           //字段名字
+                       title: '价格点',                           //标题名字
+                       align: 'center',                           //对齐方式
+                       sortable: true,                            //支持排序
+                       formatter: function (value, row, index) {  //格式方法
+                           //保留小数点两位
+                           var s = value.toString();
+                           var rs = s.indexOf('.');
+                           if (rs < 0) {
+                               rs = s.length;
+                               s += '.';
+                           }
+                           while (s.length <= rs + 2) {
+                               s += '0';
+                           }
+                           return s;
+                       }
+                   },
+                   {
+                       field: 'MType',
+                       title: '所属类',
+                       align: 'center',
+                       sortable: true
+                   },
+                   {
+                       title: '单操作',
+                       align: 'center',
+                       formatter: function (value, row, index) {
+                           return '<a href="#' + row.Id + '" class="edit glyphicon glyphicon-pencil"></a>&nbsp;&nbsp;<a href="#" class="remove glyphicon glyphicon-trash"></a>';
+                       },
+                       events: {
+                           'click .edit': function (e, value, row, index) {
+                               location.href = 'Edit.html?id=' + row.Id;
+                           },
+                           'click .remove': function (e, value, row, index) {
+                               updateData(row.Id, 99);
+                           }
+                       }
+                   }
+                ],
+                select: true
+            });
+        });
+
+        //事件系列: http://jsfiddle.net/e3nk137y/2106/
+        lotTab.on('load-success.bs.table', function (e, data) {
+            showMsg('加载成功，欢迎光临',500);
+        })
+        .on('load-error.bs.table', function (e, status) {
+            showMsg('加载出错，刷新试试');
+        });
+
+        //添加信息
+        $('#lotadd').click(function () {
+            location.href = 'Edit.html';
+        });
+
+        //批量恢复
+        $('#lotrerecover').click(function () {
+            var ids = getSelectIds();
+            if (ids) {
+                showYesNoMsg('确定删除？', function () {
+                    updateData(ids, 1);
+                });
+            }
+        });
+        //批量删除
+        $('#lotremove').click(function () {
+            //$("input[name='btSelectItem']:checked").each(function () { $(this).parents("tr").remove(); });
+            var ids = getSelectIds();
+            if (ids) {
+                showYesNoMsg('确定删除？', function () {
+                    updateData(ids, 99);
+                });
+            }
+        });
+        //批量更新数据
+        function updateData(ids, status) {
+            console.log(ids);
+            //更新数据库
+            //$.post('', { ids: ids, status: status }, function (data) {
+            //    if (data != 'false') {
+            //        showMsg(data);
+            //    }
+            //});
+            showMsg('操作成功');
+            //重新加载数据
+            tableLoad();
+        }
+        //获取选中项Ids
+        function getSelectIds() {
+            var ids = $.map(lotTab.bootstrapTable('getSelections'), function (row) {
+                return row.Id;
+            });
+            return ids.join(',');;
+        }
+
+        //消息提醒
+        function showMsg(obj,time) {
+            if (obj) {
+                if (!time) { time = 1000;}
+                easyDialog.open({ container: { content: obj }, autoClose: time });
+            }
+        }
+        //选择对话框
+        function showYesNoMsg(obj, myFunc) {
+            if (obj) {
+                easyDialog.open({ container: { content: obj, yesFn: myFunc, noFn: true } });
+            }
+        }
+        $(document).on("click", "#overlay", function () {
+            $(this).fadeOut(200);
+            easyDialog.close();
+        });
+
+        //数据加载
+        function tableLoad() {
+            //console.log('load');
+            //$.post('', function (data) {
+            //    lotTab.bootstrapTable('load', data);
+            //});
+        }
+    </script>
 </body>
 </html>
