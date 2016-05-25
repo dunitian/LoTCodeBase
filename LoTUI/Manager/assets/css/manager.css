@@ -48,10 +48,11 @@ aside{position: absolute !important;top: 0;bottom: 0;overflow-y:auto;}
 .lot-font12{font-size:12px;}
 .lot-font13{font-size:13px;}
 .lot-black{color: inherit;}
-.lot-white {color:white;}
-.lot-gray{color:#B7B1B1;}
 .lot-p{text-indent:4px;}
-
+/*滚动条*/
+/*::-webkit-scrollbar-track {background-color: #F5F5F5;}
+::-webkit-scrollbar {width: 6px;background-color: #F5F5F5;}
+::-webkit-scrollbar-thumb {background-color: #999;}*/
 /*mobile*/
 @media screen and (max-width: 990px){
 article,aside{position:relative !important;}
@@ -63,4 +64,5 @@ article,aside{position:relative !important;}
 @media screen and (max-width: 590px) {
 .navbar-top-links{float:right;}
 .navbar-top-links li:first-child{display:none;}
+ul.navbar-header {display:none;}
 }
