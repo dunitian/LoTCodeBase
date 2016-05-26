@@ -19,14 +19,18 @@
     <script type="text/javascript">
         //1.uploader初始化。 auto-是否自动上传
         var uploader = WebUploader.create({
-            auto: true,
             server: '/Home/Upload',
             swf: '/open/webuploader/Uploader.swf',
             pick: '#lot-picker',
-            compress:true,
-            chunked: true,// 分片上传(断点续传)
-            paste: document.body,//启动剪贴板
-            dnd: $('#lot-uploader'),//启动拖拽
+            auto: true,                         //自动上传
+            chunked: true,                      //断点续传-单个默认5M
+            duplicate: true,                    //文件去除
+            //prepareNextFile: true,              //提前准备下一个文件（可选，单文件不建议开）
+            paste: document.body,               //启动剪贴板（可选）
+            dnd: $('#lot-uploader'),            //启动拖拽（可选）
+            fileNumLimit: 10,                    //文件总数量
+            fileSingleSizeLimit: 10240 * 1024,  //单个文件最大值
+            //formData: { test: 'test' },         //自定义参数表，每次发送都会发送此对象中的参数
             accept: {
                 title: 'Images',
                 extensions: 'gif,jpg,jpeg,bmp,png',
@@ -53,6 +57,10 @@
                 }
                 $img.attr('src', src);
             }, 100, 100);
+            //计算文件MD5
+            uploader.md5File(file).then(function (val) {
+                console.log('md5:',val,'-',file.name);
+            });
         });
 
         //3.文件上传过程中创建进度条实时显示。
@@ -65,6 +73,15 @@
             }
             $percent.css('width', percentage * 100 + '%');
         });
+
+        ////自定义参数表，每次发送都会发送此对象中的参数
+        //uploader.on('uploadBeforeSend', function (block, data) {
+        //    // block为分块数据。
+        //    // file为分块对应的file对象。
+        //    var file = block.file;
+        //    // 修改data可以控制发送哪些携带数据。
+        //    data.uid = 123;
+        //});
 
         //4.文件上传成功，给item添加成功class, 用样式标记上传成功。
         uploader.on('uploadSuccess', function (file) {
