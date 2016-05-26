@@ -23,14 +23,14 @@
             swf: '/open/webuploader/Uploader.swf',
             pick: '#lot-picker',
             auto: true,                         //自动上传
-            chunked: true,                      //断点续传-单个默认5M
+            //chunked: true,                    //断点续传-单个默认5M
             duplicate: true,                    //文件去除
-            //prepareNextFile: true,              //提前准备下一个文件（可选，单文件不建议开）
+            prepareNextFile: true,              //提前准备下一个文件（可选，单文件不建议开）
             paste: document.body,               //启动剪贴板（可选）
             dnd: $('#lot-uploader'),            //启动拖拽（可选）
-            fileNumLimit: 10,                    //文件总数量
+            fileNumLimit: 10,                   //文件总数量
             fileSingleSizeLimit: 10240 * 1024,  //单个文件最大值
-            //formData: { test: 'test' },         //自定义参数表，每次发送都会发送此对象中的参数
+            //formData: { },                    //自定义参数表，每次发送都会发送此对象中的参数
             accept: {
                 title: 'Images',
                 extensions: 'gif,jpg,jpeg,bmp,png',
@@ -43,7 +43,7 @@
             var $li = $(
                     '<div id="' + file.id + '" class="file-item thumbnail">' +
                         '<img>' +
-                        '<div class="info info-top">Szie：' + Math.floor(file.size / 1024) + 'kb' + '</div>' +
+                        '<div class="info info-top">Szie：' + Base.formatSize(1024, 0) + 'kb' + '</div>' +
                         '<div class="info info-bot">' + file.name + '</div>' +
                     '</div>'
                     ),
@@ -73,15 +73,6 @@
             }
             $percent.css('width', percentage * 100 + '%');
         });
-
-        ////自定义参数表，每次发送都会发送此对象中的参数
-        //uploader.on('uploadBeforeSend', function (block, data) {
-        //    // block为分块数据。
-        //    // file为分块对应的file对象。
-        //    var file = block.file;
-        //    // 修改data可以控制发送哪些携带数据。
-        //    data.uid = 123;
-        //});
 
         //4.文件上传成功，给item添加成功class, 用样式标记上传成功。
         uploader.on('uploadSuccess', function (file) {

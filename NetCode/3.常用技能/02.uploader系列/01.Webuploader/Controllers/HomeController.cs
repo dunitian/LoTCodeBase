@@ -12,7 +12,7 @@ namespace _01.Webuploader.Controllers
         /// 文件上传
         /// </summary>
         /// <returns></returns>
-        public ActionResult Upload(string path,string md5,string obj)
+        public ActionResult Upload(string md5,string id, string name, string type, string lastModifiedDate, int size, HttpPostedFileBase file)
         {
             return View();
         }
