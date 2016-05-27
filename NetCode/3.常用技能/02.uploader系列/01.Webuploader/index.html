@@ -23,15 +23,15 @@
             server: '/Home/Upload',
             swf: '/open/webuploader/Uploader.swf',
             pick: '#lot-picker',
-            auto: true,                         //自动上传
-            //chunked: true,                    //断点续传-单个默认5M
-            duplicate: true,                    //文件去除
-            prepareNextFile: true,              //提前准备下一个文件（可选，单文件不建议开）
-            paste: document.body,               //启动剪贴板（可选）
-            dnd: $('#lot-uploader'),            //启动拖拽（可选）
-            fileNumLimit: 10,                   //文件总数量
-            fileSingleSizeLimit: 10240 * 1024 * 10,  //单个文件最大值
-            //formData: { },                    //自定义参数表，每次发送都会发送此对象中的参数
+            auto: true,                     //自动上传
+            //chunked: true,                //断点续传-单个默认5M
+            duplicate: false,               //文件去重
+            prepareNextFile: true,          //提前准备下一个文件（可选，单文件不建议开）
+            //formData: { },                //自定义参数表，每次请求都会发送这些参数
+            paste: document.body,           //启动剪贴板（可选）
+            dnd: $('#lot-uploader'),        //启动拖拽（可选）
+            fileNumLimit: 5,                //文件总数量
+            fileSingleSizeLimit: 10485760,  //单个文件最大值（IIS默认<=4M,可自行设置：httpRuntime的maxRequestLength）
             accept: {
                 title: 'Images',
                 extensions: 'gif,jpg,jpeg,bmp,png',
@@ -58,7 +58,7 @@
                 }
                 $img.attr('src', src);
             }, 100, 100);
-            ////计算文件MD5
+            ////计算文件MD5（可加）
             //uploader.md5File(file).then(function (val) {
             //    console.log('md5:',val,'-',file.name);
             //});
@@ -84,21 +84,28 @@
             }
         });
 
-        //5.文件上传失败，显示上传出错。
+        //5.失败系列的处理
+        //5.1添加失败处理
+        uploader.on('error', function (log) {
+            switch (log) {
+                case 'F_EXCEED_SIZE':
+                    addMsg('文件10M以内'); break;
+                case 'Q_EXCEED_NUM_LIMIT':
+                    addMsg('已超最大上传数'); break;
+                case 'Q_TYPE_DENIED':
+                    addMsg('文件类型不正确'); break;
+                case 'F_DUPLICATE':
+                    addMsg('文件已经被添加'); break;
+                default:
+                    addMsg('文件添加失败~'); break;
+            }
+        });
+        //5.2上传失败处理
         uploader.on('uploadError', function (file) {
-            console.log(file.size)
             showMsg(file, '上传失败');
         });
 
-        //6.完成上传完了，成功或者失败，先删除进度条。
-        uploader.on('uploadComplete', function (file) {
-            $('#' + file.id).find('.progress').remove();
-        });
-
-        uploader.on('error', function (handler) {
-            alert(handler);
-        });
-
+        //错误信息显示
         function showMsg(file, msg) {
             var $li = $('#' + file.id), $error = $li.find('div.error');
             //避免重复创建
@@ -106,6 +113,13 @@
                 $error = $('<div class="error"></div>').appendTo($li);
             }
             $error.text(msg);
+        }
+        //错误信息提示
+        function addMsg(msg) {
+            $('#lot-uploader').prepend('<h3 class="temp-log" style="color:red;">' + msg + '</h3>')
+            setTimeout(function () {
+                $('.temp-log').remove();
+            }, 2000);
         }
     </script>
 </body>

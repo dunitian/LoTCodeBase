@@ -91,6 +91,8 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="open\webuploader\ok.png" />
+    <Content Include="open\webuploader\progress.png" />
     <Content Include="open\webuploader\Uploader.swf" />
     <Content Include="open\webuploader\webuploader.0.2.1.min.css" />
     <Content Include="open\webuploader\webuploader.0.2.1.min.js" />
@@ -108,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="lotFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
