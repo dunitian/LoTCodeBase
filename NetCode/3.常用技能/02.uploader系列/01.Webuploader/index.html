@@ -86,7 +86,8 @@
 
         //5.文件上传失败，显示上传出错。
         uploader.on('uploadError', function (file) {
-            showMsg(file,'上传失败');
+            console.log(file.size)
+            showMsg(file, '上传失败');
         });
 
         //6.完成上传完了，成功或者失败，先删除进度条。
@@ -94,7 +95,11 @@
             $('#' + file.id).find('.progress').remove();
         });
 
-        function showMsg(file,msg) {
+        uploader.on('error', function (handler) {
+            alert(handler);
+        });
+
+        function showMsg(file, msg) {
             var $li = $('#' + file.id), $error = $li.find('div.error');
             //避免重复创建
             if (!$error.length) {
