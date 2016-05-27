@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <meta charset="utf-8" />
+    <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/open/webuploader/webuploader.0.2.1.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -29,7 +30,7 @@
             paste: document.body,               //启动剪贴板（可选）
             dnd: $('#lot-uploader'),            //启动拖拽（可选）
             fileNumLimit: 10,                   //文件总数量
-            fileSingleSizeLimit: 10240 * 1024,  //单个文件最大值
+            fileSingleSizeLimit: 10240 * 1024 * 10,  //单个文件最大值
             //formData: { },                    //自定义参数表，每次发送都会发送此对象中的参数
             accept: {
                 title: 'Images',
@@ -43,7 +44,7 @@
             var $li = $(
                     '<div id="' + file.id + '" class="file-item thumbnail">' +
                         '<img>' +
-                        '<div class="info info-top">Szie：' + Base.formatSize(1024, 0) + 'kb' + '</div>' +
+                        '<div class="info info-top">Szie：' + Math.floor(file.size / 1024) + 'kb' + '</div>' +
                         '<div class="info info-bot">' + file.name + '</div>' +
                     '</div>'
                     ),
@@ -57,10 +58,10 @@
                 }
                 $img.attr('src', src);
             }, 100, 100);
-            //计算文件MD5
-            uploader.md5File(file).then(function (val) {
-                console.log('md5:',val,'-',file.name);
-            });
+            ////计算文件MD5
+            //uploader.md5File(file).then(function (val) {
+            //    console.log('md5:',val,'-',file.name);
+            //});
         });
 
         //3.文件上传过程中创建进度条实时显示。
