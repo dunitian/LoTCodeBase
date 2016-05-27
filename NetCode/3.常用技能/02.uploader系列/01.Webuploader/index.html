@@ -76,25 +76,32 @@
         });
 
         //4.文件上传成功，给item添加成功class, 用样式标记上传成功。
-        uploader.on('uploadSuccess', function (file) {
-            $('#' + file.id).addClass('upload-state-done');
+        uploader.on('uploadSuccess', function (file, data) {
+            if (data.status) {
+                $('#' + file.id).addClass('upload-state-done');
+            } else {
+                showMsg(file, data.msg);
+            }
         });
 
         //5.文件上传失败，显示上传出错。
         uploader.on('uploadError', function (file) {
-            var $li = $('#' + file.id),
-                $error = $li.find('div.error');
-            //避免重复创建
-            if (!$error.length) {
-                $error = $('<div class="error"></div>').appendTo($li);
-            }
-            $error.text('上传失败');
+            showMsg(file,'上传失败');
         });
 
         //6.完成上传完了，成功或者失败，先删除进度条。
         uploader.on('uploadComplete', function (file) {
             $('#' + file.id).find('.progress').remove();
         });
+
+        function showMsg(file,msg) {
+            var $li = $('#' + file.id), $error = $li.find('div.error');
+            //避免重复创建
+            if (!$error.length) {
+                $error = $('<div class="error"></div>').appendTo($li);
+            }
+            $error.text(msg);
+        }
     </script>
 </body>
 </html>
