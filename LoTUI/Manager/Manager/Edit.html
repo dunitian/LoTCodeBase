@@ -9,6 +9,7 @@
     <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/css/common.css" rel="stylesheet" />
     <link href="/open/lotUploader/lotuploader1.0.1.min.css" rel="stylesheet" />
+    <link href="/open/bootstrap-select/bootstrap-select.1.10.min.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -41,22 +42,6 @@
                             <input type="text" class="form-control" id="hitCount" placeholder="请输入浏览量...">
                         </div>
                     </div>
-                    <!--SEO关键字-->
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">SEO Key：</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="seoKeywords" placeholder="关键词1,关键词2,关键词3">
-                        </div>
-                        <label class="lot-blue">本篇文章的关键词（一般都是搜索关键词）</label>
-                    </div>
-                    <!--SEO关键字-->
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">SEO Des：</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="sedescription" placeholder="请输入Seo详细描述...">
-                        </div>
-                        <label class="lot-blue">本篇文章大概内容（尽量控制在150字内）</label>
-                    </div>
                     <!--推送到主页-->
                     <div class="form-group">
                         <label class="col-sm-2 control-label">推荐类型：</label>
@@ -74,11 +59,58 @@
                         <div class="col-sm-6">
                             <span style="float:left;width:160px;"><span id="lot-uploader"></span></span><img id="displayPic" style="width:60px;height:33px;" />
                         </div>
-                    </div>                    
+                    </div>
+                    <!--笔记内容-->
                     <div class="form-group">
-                       <label class="col-sm-2 control-label">文章内容：</label>
+                        <label class="col-sm-2 control-label">笔记内容：</label>
                         <div class="col-sm-6">
+                            <script id="container" name="content" type="text/plain">
+                            </script>
+                        </div>
+                    </div>
+                    <!--Tag标签-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Tag 标签：</label>
+                        <div class="col-sm-6">
+                            <select id="tag" class="lot-tagSelect form-control" multiple data-live-search="true">
+                                <optgroup label="SQL">
+                                    <option>MySql</option>
+                                    <option>Sqlite</option>
+                                    <option>SQLServer</option>
+                                </optgroup>
+                                <optgroup label="Other">
+                                    <option>C#</option>
+                                    <option>EF</option>
+                                    <option>MVC</option>
+                                    <option>Dapper</option>
+                                    <option>Ado.Net</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <!--SEO关键字-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">SEO Key：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="seoKeywords" placeholder="关键词1,关键词2,关键词3">
+                        </div>
+                        <label class="lot-blue">本篇文章的关键词（一般都是搜索关键词）</label>
+                    </div>
+                    <!--SEO关键字-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">SEO Des：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="sedescription" placeholder="请输入Seo详细描述...">
+                        </div>
+                        <label class="lot-blue">本篇文章大概内容（尽量控制在150字内）</label>
+                    </div>
 
+                    <!--表单提交-->
+                    <div class="form-group">
+                        <label class="col-sm-2"></label>
+                        <div class="col-sm-6">
+                            <button class="btn btn-success lot-form-btn">提 交</button>
+                            <button class="btn btn-success lot-form-btn">返 回</button>
                         </div>
                     </div>
                 </form>
@@ -88,10 +120,15 @@
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="/open/lotUploader/lotuploader1.0.1.min.js"></script>
+    <script type="text/javascript" src="http://ueditor.baidu.com/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="http://ueditor.baidu.com/ueditor/ueditor.all.min.js"></script>
+    <script src="/open/bootstrap-select/bootstrap-select.1.10.min.js"></script>
+
     <script type="text/javascript">
+        //实例化上传控件
         $.lotuploader({
             lotDocId: 'lot-uploader',
-            lotUrl: '服务器Post地址',
+            lotUrl: '服务器地址',
             oneFile: true,
             fileSize: 1024 * 1024 * 5,
             btnStr: '点我就上传默认展图',
@@ -105,6 +142,27 @@
                 }, 2000);
             }
         });
+
+        //实例化编辑器
+        var ue = UE.getEditor('container');
+        $('#gohome').click(function () {
+            //判断是否有内容
+            if (ue.hasContents()) {
+                var ueHtml = ue.getContent();
+                var ueText = ue.getContentTxt();
+                console.log('HTML内容：', ueHtml);
+                console.log('Text内容：', ueText);
+                $.post('服务器地址', { ueHtml: ueHtml, ueText: ueText }, function (data) {
+
+                });
+                ue.execCommand("clearlocaldata");//清空草稿箱
+            } else {
+                alert('请输入内容！');
+            }
+        });
+
+        //实例化Tag标签
+        $('.lot-tagSelect').selectpicker();
     </script>
 </body>
 </html>

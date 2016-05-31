@@ -6,6 +6,7 @@ article.panel-body .row:last-child{padding-bottom:0;}
 .checkbox label{padding-top:0px;}
 .lot-red{color:red;}
 .lot-blue{color:#4787ed;}
+.lot-form-btn{padding: 12px 33px;margin-right:40px;}
 /*easydialog*/
 button::-moz-focus-inner{ border:0; padding:0; margin:0; }
 .easyDialog_wrapper{ width:320px; color:#444; font-weight:bold; border:3px solid rgba(0,0,0,0); -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; -webkit-box-shadow:0 0 10px rgba(0,0,0,0.4); -moz-box-shadow:0 0 10px rgba(0,0,0,0.4); box-shadow:0 0 10px rgba(0,0,0,0.4); display:none; font-family:"Microsoft yahei", Arial; }
