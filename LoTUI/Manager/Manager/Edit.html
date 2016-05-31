@@ -57,25 +57,28 @@
                         </div>
                         <label class="lot-blue">本篇文章大概内容（尽量控制在150字内）</label>
                     </div>
-                    <!--展览小图-->
+                    <!--推送到主页-->
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">展览小图：</label>
-                        <div class="col-sm-6">
-                            <span style="float:left;width:160px;"><span id="lot-uploader"></span></span><img id="displayPic" style="width:60px;height:33px;" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-9">
+                        <label class="col-sm-2 control-label">推荐类型：</label>
+                        <div class="col-sm-9">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox"> Remember me
+                                    <input type="checkbox" id="push">推送到主页
                                 </label>
                             </div>
                         </div>
                     </div>
+                    <!--展览小图-->
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Sign in</button>
+                        <label class="col-sm-2 control-label" style="padding-top:13px;">展览小图：</label>
+                        <div class="col-sm-6">
+                            <span style="float:left;width:160px;"><span id="lot-uploader"></span></span><img id="displayPic" style="width:60px;height:33px;" />
+                        </div>
+                    </div>                    
+                    <div class="form-group">
+                       <label class="col-sm-2 control-label">文章内容：</label>
+                        <div class="col-sm-6">
+
                         </div>
                     </div>
                 </form>
@@ -93,7 +96,7 @@
             fileSize: 1024 * 1024 * 5,
             btnStr: '点我就上传默认展图',
             lotSuccessFunc: function (data) {
-                //方法主体
+                $('#displayPic').attr('src', data);
             },
             lotErrorFunc: function (msg) {
                 $('#lot-uploader').append('<div class="lot-temp" style="color:red">' + msg + '</div> ');

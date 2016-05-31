@@ -3,6 +3,7 @@ article.panel-body .row{padding-bottom:2em;}
 article.panel-body .row:first-child{padding-top:1em;}
 article.panel-body .row:last-child{padding-bottom:0;}
 .form-group label{padding-top: 5px;}
+.checkbox label{padding-top:0px;}
 .lot-red{color:red;}
 .lot-blue{color:#4787ed;}
 /*easydialog*/
