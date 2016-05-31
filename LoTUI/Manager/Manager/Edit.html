@@ -4,18 +4,58 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LoT.UI Login Page</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <title>Edit，提示框+上传控件（文件+图片）+富文本编辑器+单、复选按钮+下拉列表</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/common.css" rel="stylesheet" />
+    <link href="/open/lotUploader/lotuploader1.0.min.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
-    <h1 style="color:black;">Edit，提示框+上传控件（文件+图片）+富文本编辑器+单、复选按钮+下拉列表</h1>
-    
+    <header class="panel panel-default">
+        <div class="panel-heading">表单页面</div>
+        <article class="panel-body container">
+            <div class="row">
+                <div class="input-group"><span class="input-group-addon">笔记标题</span><input type="text" class="form-control" placeholder="请输入标题名..."></div>
+            </div>
+            <div class="row">
+                <div class="input-group"><span class="input-group-addon">笔记作者</span><input type="text" class="form-control" placeholder="请输入作者名..."></div>
+            </div>
+            <div class="row">
+                <div class="input-group"><span class="input-group-addon">页面浏览</span><input type="text" class="form-control" placeholder="请输入浏览量..."></div>
+            </div>
+            <div class="row">
+                <div class="input-group"><span class="input-group-addon">展览小图</span><span class="input-group-addon"><img id="DisplayPhoto" style="width:50px;height:30px;"></span><span id="lot-uploader"></span></div>
+            </div>
+            <div class="row">
+                <div class="input-group"><span class="input-group-addon">页面浏览</span><input type="text" class="form-control" placeholder="请输入浏览量..."></div>
+            </div>
+        </article>
+    </header>
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/open/lotUploader/lotuploader1.0.1.js"></script>
+    <!--<script src="/open/lotUploader/lotuploader1.0.min.js"></script>-->
+    <script type="text/javascript">
+        $.lotuploader({
+            lotDocId: 'lot-uploader',
+            lotUrl: '服务器Post地址',
+            oneFile: true,
+            fileSize: 1024 * 1024 * 5,
+            btnStr: '点我就上传默认展图',
+            lotSuccessFunc: function (file,data) {
+                //方法主体
+            },
+            lotErrorFunc: function (msg) {
+                $('#lot-uploader').append('<div class="lot-temp" style="color:red">' + msg + '</div> ');
+                setTimeout(function () {
+                    $('.lot-temp').remove();
+                }, 2000);
+            }
+        });
+    </script>
 </body>
 </html>

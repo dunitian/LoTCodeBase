@@ -1,5 +1,6 @@
 ﻿header.panel,article.panel,footer.panel {margin: 2.5em;}
 article.panel-body .row{padding-bottom:2em;}
+article.panel-body .row:first-child{padding-top:1em;}
 article.panel-body .row:last-child{padding-bottom:0;}
 /*easydialog*/
 button::-moz-focus-inner{ border:0; padding:0; margin:0; }

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>百度编辑器</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <!-- 加载编辑器的容器 -->
+    <script id="container" name="content" type="text/plain">
+    </script>
+    <button id="gohome">提交信息</button>
+    <!-- 配置文件 -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ueditor.baidu.com/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="http://ueditor.baidu.com/ueditor/ueditor.all.min.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+        $('#gohome').click(function () {
+            //判断是否有内容
+            if (ue.hasContents()) {
+                var ueHtml = ue.getContent();
+                var ueText = ue.getContentTxt();
+                console.log('HTML内容：', ueHtml);
+                console.log('Text内容：', ueText);
+                $.post('/xxx', { ueHtml: ueHtml, ueText: ueText }, function (data) {
+
+                });
+                ue.execCommand("clearlocaldata");//清空草稿箱
+            } else {
+                alert('请输入内容！');
+            }
+        });
+    </script>
+</body>
+</html>
