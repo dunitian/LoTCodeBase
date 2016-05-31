@@ -8,7 +8,7 @@
     <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/css/common.css" rel="stylesheet" />
-    <link href="/open/lotUploader/lotuploader1.0.min.css" rel="stylesheet" />
+    <link href="/open/lotUploader/lotuploader1.0.1.min.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -17,28 +17,74 @@
 <body>
     <header class="panel panel-default">
         <div class="panel-heading">表单页面</div>
-        <article class="panel-body container">
+        <article class="panel-body">
             <div class="row">
-                <div class="input-group"><span class="input-group-addon">笔记标题</span><input type="text" class="form-control" placeholder="请输入标题名..."></div>
-            </div>
-            <div class="row">
-                <div class="input-group"><span class="input-group-addon">笔记作者</span><input type="text" class="form-control" placeholder="请输入作者名..."></div>
-            </div>
-            <div class="row">
-                <div class="input-group"><span class="input-group-addon">页面浏览</span><input type="text" class="form-control" placeholder="请输入浏览量..."></div>
-            </div>
-            <div class="row">
-                <div class="input-group"><span class="input-group-addon">展览小图</span><span class="input-group-addon"><img id="DisplayPhoto" style="width:50px;height:30px;"></span><span id="lot-uploader"></span></div>
-            </div>
-            <div class="row">
-                <div class="input-group"><span class="input-group-addon">页面浏览</span><input type="text" class="form-control" placeholder="请输入浏览量..."></div>
+                <form class="form-horizontal">
+                    <!--笔记标题-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">笔记标题：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="title" placeholder="请输入标题名...">
+                        </div>
+                    </div>
+                    <!--笔记作者-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">笔记作者：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="author" placeholder="请输入作者名...">
+                        </div>
+                    </div>
+                    <!--页面浏览-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">页面浏览：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="hitCount" placeholder="请输入浏览量...">
+                        </div>
+                    </div>
+                    <!--SEO关键字-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">SEO Key：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="seoKeywords" placeholder="关键词1,关键词2,关键词3">
+                        </div>
+                        <label class="lot-blue">本篇文章的关键词（一般都是搜索关键词）</label>
+                    </div>
+                    <!--SEO关键字-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">SEO Des：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="sedescription" placeholder="请输入Seo详细描述...">
+                        </div>
+                        <label class="lot-blue">本篇文章大概内容（尽量控制在150字内）</label>
+                    </div>
+                    <!--展览小图-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">展览小图：</label>
+                        <div class="col-sm-6">
+                            <span style="float:left;width:160px;"><span id="lot-uploader"></span></span><img id="displayPic" style="width:60px;height:33px;" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-9">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Sign in</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </article>
     </header>
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="/open/lotUploader/lotuploader1.0.1.js"></script>
-    <!--<script src="/open/lotUploader/lotuploader1.0.min.js"></script>-->
+    <script src="/open/lotUploader/lotuploader1.0.1.min.js"></script>
     <script type="text/javascript">
         $.lotuploader({
             lotDocId: 'lot-uploader',
@@ -46,7 +92,7 @@
             oneFile: true,
             fileSize: 1024 * 1024 * 5,
             btnStr: '点我就上传默认展图',
-            lotSuccessFunc: function (file,data) {
+            lotSuccessFunc: function (data) {
                 //方法主体
             },
             lotErrorFunc: function (msg) {

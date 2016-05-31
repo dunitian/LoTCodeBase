@@ -5,18 +5,14 @@
     <title></title>
     <meta charset="utf-8" />
     <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/open/lotUploader/lotuploader1.0.min.css" rel="stylesheet" />
+    <link href="/open/lotUploader/lotuploader1.0.1.min.css" rel="stylesheet" />
 </head>
 <body>
     <div id="lot-uploader"></div>
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
-    <script src="/open/lotUploader/lotuploader1.0.min.js"></script>
+    <script src="/open/lotUploader/lotuploader1.0.1.min.js"></script>
     <script type="text/javascript">
-        //必填参数：ID，Server地址
-        $.lotuploader('lot-uploader', '服务器Post地址');
-
-        //选填参数：count最大上传数（默认5），Size文件大小（默认10M）
-        //$.lotuploader('lot-uploader', '/Home/Upload', 1, 1024 * 1024 * 4);
+        $.lotuploader({ lotDocId: 'lot-uploader', lotUrl: '/Home/Upload' });
     </script>
 </body>
 </html>
