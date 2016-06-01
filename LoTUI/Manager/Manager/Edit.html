@@ -9,7 +9,7 @@
     <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/css/common.css" rel="stylesheet" />
     <link href="/open/lotUploader/lotuploader1.0.1.min.css" rel="stylesheet" />
-    <link href="/open/bootstrap-select/bootstrap-select.1.10.min.css" rel="stylesheet" />
+    <link href="/open/select2/select2.min.css" rel="stylesheet" />
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -20,7 +20,7 @@
         <div class="panel-heading">表单页面</div>
         <article class="panel-body">
             <div class="row">
-                <form class="form-horizontal">
+                <div class="form-horizontal">
                     <!--笔记标题-->
                     <div class="form-group">
                         <label class="col-sm-2 control-label">笔记标题：</label>
@@ -72,7 +72,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Tag 标签：</label>
                         <div class="col-sm-6">
-                            <select id="tag" class="lot-tagSelect form-control" multiple data-live-search="true">
+                            <select id="tag" class="lot-tagSelect form-control" multiple>
                                 <optgroup label="SQL">
                                     <option>MySql</option>
                                     <option>Sqlite</option>
@@ -100,7 +100,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">SEO Des：</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="sedescription" placeholder="请输入Seo详细描述...">
+                            <input type="text" class="form-control" id="seodescription" placeholder="请输入Seo详细描述...">
                         </div>
                         <label class="lot-blue">本篇文章大概内容（尽量控制在150字内）</label>
                     </div>
@@ -108,11 +108,11 @@
                     <div class="form-group">
                         <label class="col-sm-2"></label>
                         <div class="col-sm-6">
-                            <button class="btn btn-success lot-form-btn">提 交</button>
-                            <button class="btn btn-success lot-form-btn">返 回</button>
+                            <button id="form-success" class="btn btn-success lot-form-btn">提 交</button>
+                            <button id="form-gohome" class="btn btn-success lot-form-btn">返 回</button>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </article>
     </header>
@@ -121,7 +121,7 @@
     <script src="/open/lotUploader/lotuploader1.0.1.min.js"></script>
     <script type="text/javascript" src="http://ueditor.baidu.com/ueditor/ueditor.config.js"></script>
     <script type="text/javascript" src="http://ueditor.baidu.com/ueditor/ueditor.all.min.js"></script>
-    <script src="/open/bootstrap-select/bootstrap-select.1.10.min.js"></script>
+    <script src="/open/select2/select2.min.js"></script>
 
     <script type="text/javascript">
         //实例化上传控件
@@ -144,26 +144,46 @@
 
         //实例化编辑器
         var ue = UE.getEditor('container');
-        $('#gohome').click(function () {
-            //判断是否有内容
-            if (ue.hasContents()) {
-                var ueHtml = ue.getContent();
-                var ueText = ue.getContentTxt();
-                console.log('HTML内容：', ueHtml);
-                console.log('Text内容：', ueText);
-                $.post('服务器地址', { ueHtml: ueHtml, ueText: ueText }, function (data) {
-
-                });
-                ue.execCommand("clearlocaldata");//清空草稿箱
-            } else {
-                alert('请输入内容！');
-            }
-        });
 
         //实例化Tag标签
-        $('.lot-tagSelect').selectpicker(
-            { tags: true }
-            );
+        $('#tag').select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+
+        //提交表单
+        $('#form-success').click(function () {
+            //标题
+            var title = $('#title').val();
+            //作者
+            var author = $('#author').val();
+            //浏览量
+            var hitCount = $('#hitCount').val();
+            //是否推送到主页
+            var push = $('#push').is(':checked');
+            //文章展览小图
+            var displayPic = $('#displayPic').attr('src');
+            //编辑器内容
+            var ueHtml = '';
+            var ueText = '';
+            if (ue.hasContents()) {
+                ueHtml = ue.getContent();
+                ueText = ue.getContentTxt();
+                ue.execCommand("clearlocaldata");//清空草稿箱
+            } else {
+                //alert('文章主体内容不能为空！');
+            }
+            //标签
+            var tags = $.map($('#tag').select2("data"), function (row) {
+                return row.text;
+            });
+            var tag = tags.join(',');
+            //SEO关键词
+            var seoKeywords = $('#seoKeywords').val();
+            //SEO详细描述
+            var seodescription = $('#seodescription').val();
+            console.log(title,author,hitCount,push,displayPic,ueHtml,ueText,tag,seoKeywords,seodescription)
+        });
     </script>
 </body>
 </html>
