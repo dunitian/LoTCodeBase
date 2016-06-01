@@ -104,7 +104,6 @@
                         </div>
                         <label class="lot-blue">本篇文章大概内容（尽量控制在150字内）</label>
                     </div>
-
                     <!--表单提交-->
                     <div class="form-group">
                         <label class="col-sm-2"></label>
@@ -162,7 +161,9 @@
         });
 
         //实例化Tag标签
-        $('.lot-tagSelect').selectpicker();
+        $('.lot-tagSelect').selectpicker(
+            { tags: true }
+            );
     </script>
 </body>
 </html>

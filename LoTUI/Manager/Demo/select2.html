@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="/open/select2/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <select style="width:50%;" id="lot-tagSelect" multiple>
+        <optgroup label="SQL">
+            <option>MySql</option>
+            <option>Sqlite</option>
+            <option>SQLServer</option>
+        </optgroup>
+        <optgroup label="Other">
+            <option>C#</option>
+            <option>EF</option>
+            <option>MVC</option>
+            <option>Dapper</option>
+            <option>Ado.Net</option>
+        </optgroup>
+    </select>
+    <button id="btn">获取选中项的值</button>
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/open/select2/select2.min.js"></script>
+    <script type="text/javascript">
+        $('#lot-tagSelect').select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        $('#btn').click(function () {
+            var ids = $.map($('#lot-tagSelect').select2("data"), function (row) {
+                return row.text;
+            });
+            alert(ids.join(','));
+        });
+    </script>
+</body>
+</html>
