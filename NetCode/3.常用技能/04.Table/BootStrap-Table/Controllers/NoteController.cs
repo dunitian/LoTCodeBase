@@ -34,6 +34,7 @@ namespace BootStrap_Table.Controllers
         {
             StringBuilder sqlWhere = new StringBuilder();
             var p = DapperDataAsync.GetDynamicParameters();
+            var p2 = DapperDataAsync.GetDynamicParameters();
             StringBuilder sqlStr = new StringBuilder("select NId,NTitle,NAuthor,NHitCount,NPush,NDataStatus,NCreateTime,NUpdateTime from NoteInfo");
             StringBuilder sqlCount = new StringBuilder("select count(1) from NoteInfo");
 
@@ -64,11 +65,12 @@ namespace BootStrap_Table.Controllers
 
             sqlStr.Append(sqlWhere.ToString());
             sqlCount.Append(sqlWhere.ToString());
+            p2.AddDynamicParams(p);
 
             #region 分页系列
             if (model.Offset == 0 && model.PageSize == 0)//不分页
             {
-                return await PageLoadAsync<NoteInfo>(sqlStr.ToString(), p, sqlCount.ToString(), p);
+                return await PageLoadAsync<NoteInfo>(sqlStr.ToString(), p, sqlCount.ToString(), p2);
             }
             if (model.Offset < 0) { model.Offset = 0; }
             if (model.PageSize < 1) { model.PageSize = 10; }
@@ -78,7 +80,7 @@ namespace BootStrap_Table.Controllers
             p.Add("PageSize", model.PageSize);
             sqlStr.Insert(0, "select * from(select row_number() over(order by NCreateTime) Id,* from (");
             sqlStr.Append(") TempA) as TempInfo where Id<= @PageIndex * @PageSize and Id>(@PageIndex-1)*@PageSize");
-            return await PageLoadAsync<NoteInfo>(sqlStr.ToString(), p, sqlCount.ToString(), p);
+            return await PageLoadAsync<NoteInfo>(sqlStr.ToString(), p, sqlCount.ToString(), p2);
             #endregion
         }
         #endregion
