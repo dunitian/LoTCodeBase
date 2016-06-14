@@ -99,6 +99,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Table.sql" />
     <Content Include="assets\css\common.css" />
     <Content Include="assets\js\common.min.js" />
     <Content Include="assets\js\datapattern.js" />
@@ -124,9 +125,7 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="web.config" />
   </ItemGroup>
