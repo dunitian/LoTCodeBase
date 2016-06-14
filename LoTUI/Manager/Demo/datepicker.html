@@ -18,6 +18,7 @@
         <div class="input-group">
             <span class="input-group-addon">时间</span><input type="text" class="form-control lot-time" placeholder="请选择时间...">
         </div>
+        <button id="btn">获取时间</button>
     </div>
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -32,7 +33,10 @@
                 language: "zh-CN",
                 autoclose: true
             });
-        })
+        });
+        $('#btn').click(function () {
+            console.log($('.lot-time').val());
+        });
     </script>
 </body>
 </html>

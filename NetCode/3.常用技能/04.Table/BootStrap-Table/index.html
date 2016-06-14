@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>笔记列表页面</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!--bootstrap-table-->
+    <link href="//cdn.bootcss.com/bootstrap-table/1.10.1/bootstrap-table.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/smalot-bootstrap-datetimepicker/2.3.11/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="assets/css/common.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header class="panel panel-default">
+        <div class="panel-heading">条件查询</div>
+        <article class="panel-body">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <div class="input-group"><span class="input-group-addon">笔记标题</span><input type="text" class="form-control" id="title" placeholder="请输入标题名..."></div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">数据状态</span>
+                        <select class="form-control" id="dataStatus">
+                            <option value="1">正常数据</option>
+                            <option value="99">已删数据</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <div class="input-group"><span class="input-group-addon">开始时间</span><input type="text" class="form-control lot-time" id="startTime" placeholder="请选择开始时间..."></div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="input-group"><span class="input-group-addon">结束时间</span><input type="text" class="form-control lot-time" id="endTime" placeholder="请选择结束时间..."></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-3">
+                    <div class="btn-group">
+                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-export"></i> 导出</button>
+                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-repeat"></i> 重置</button>
+                        <button class="btn btn-default" type="button" id="search"><i class="glyphicon glyphicon-search"></i> 查询</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </header>
+    <footer class="panel panel-default">
+        <div class="panel-heading">数据列表</div>
+        <article class="panel-body">
+            <div id="lotToolbar" class="btn-group">
+                <button type="button" class="btn btn-default" id="lotadd"><i class="glyphicon glyphicon-plus"></i></button>
+                <button type="button" class="btn btn-default" id="lotrerecover"><i class="glyphicon glyphicon-share-alt"></i></button>
+                <button type="button" class="btn btn-default" id="lotremove"><i class="glyphicon glyphicon-trash"></i></button>
+            </div>
+            <table id="lotTable"></table>
+        </article>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/smalot-bootstrap-datetimepicker/2.3.11/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="//cdn.bootcss.com/smalot-bootstrap-datetimepicker/2.3.11/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap-table/1.10.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="assets/js/common.min.js"></script>
+    <script src="assets/js/datapattern.js"></script>
+    <script type="text/javascript">
+        var lotTab = $('#lotTable');
+        $(document).ready(function () {
+            lotTab.bootstrapTable({
+                toolbar: '#lotToolbar',                     //自定工具
+                method: 'post',                             //请求方式
+                url: '/Note/Query',                         //请求地址
+                queryParams: queryParams,                   //传递参数
+                height: 500,                                //表格高度
+                pagination: true,                           //启用分页
+                pageSize: 10,                               //每页条数
+                pageList: [20, 50, 100, 200, 500],          //显示条数
+                sidePagination: "server",                   //控件类型（默认是客户类型）
+                search: true,                               //启用搜索
+                searchOnEnterKey: true,                     //回车搜索
+                //strictSearch: false,                      //精确搜索（默认模糊）
+                showColumns: true,                          //内容选框
+                showRefresh: true,                          //启用刷新
+                clickToSelect: true,                        //单行选中
+                showPaginationSwitch: true,                 //条数显示
+                maintainSelected: true,                     //记住选中（分页或搜索时保留选中状态）
+                striped: true,                              //隔行变色
+                //escape: true,                               //转义HTML（不需要自己转义了）
+                columns: [
+                    {
+                        field: 'State',
+                        checkbox: true
+                    },
+                    {
+                        field: 'NId',
+                        title: '编号',
+                        align: 'center',
+                        sortable: true
+                    },
+                    {
+                        field: 'NTitle',
+                        title: '标题',
+                        align: 'center',
+                        sortable: true,
+                    },
+                    {
+                        field: 'NAuthor',
+                        title: '作者',
+                        align: 'center',
+                        sortable: true
+                    },
+                    {
+                        field: 'NHitCount',
+                        title: '浏览量',
+                        align: 'center',
+                        sortable: true
+                    },
+                   {
+                       field: 'NCreateTime',                      //字段名字
+                       title: '创建时间',                         //标题名字
+                       align: 'center',                           //对齐方式
+                       sortable: true,                            //支持排序
+                       formatter: function (value, row, index) {  //格式方法
+                           return getDate(value);
+                       }
+                   },
+                   {
+                       field: 'NUpdateTime',
+                       title: '更新时间',
+                       align: 'center',
+                       sortable: true,
+                       formatter: function (value, row, index) {
+                           return getDate(value);
+                       }
+                   },
+                   {
+                       field: 'NPush',
+                       title: '推送主页',
+                       align: 'center',
+                       sortable: true,
+                       formatter: function (value, row, index) {
+                           if (value = 'true') {
+                               return '推送';
+                           } else {
+                               return '不推送';
+                           }
+                       }
+                   },
+                   {
+                       field: 'NDataStatus',
+                       title: '状态',
+                       align: 'center',
+                       sortable: true,
+                       formatter: function (value, row, index) {
+                           if (value == 99) {
+                               return '<font style="color:red">已删</font>'
+                           } else {
+                               return '正常';
+                           }
+                       }
+                   },
+                   {
+                       title: '单操作',
+                       align: 'center',
+                       formatter: function (value, row, index) {
+                           return '<a href="#' + row.NId + '" class="edit glyphicon glyphicon-pencil"></a>&nbsp;&nbsp;<a href="#" class="remove glyphicon glyphicon-trash"></a>';
+                       },
+                       events: {
+                           'click .edit': function (e, value, row, index) {
+                               location.href = '/Note/Edit?id=' + row.NId;
+                           },
+                           'click .remove': function (e, value, row, index) {
+                               updateData(row.NId, 99);
+                           }
+                       }
+                   }
+                ],
+                select: true
+            });
+        });
+
+        //事件系列: http://jsfiddle.net/e3nk137y/2106/
+        lotTab.on('load-error.bs.table', function (e, status) {
+            showMsg('加载出错，刷新试试');
+        });
+
+        //时间控件
+        $(function () {
+            $('.lot-time').datetimepicker({
+                format: "yyyy-mm-dd hh:ii",
+                todayBtn: "linked",
+                language: "zh-CN",
+                autoclose: true
+            });
+        });
+
+        //消息提醒
+        function showMsg(obj, time) {
+            if (obj) {
+                if (!time) { time = 1000; }
+                easyDialog.open({ container: { content: obj }, autoClose: time });
+            }
+        }
+        //选择对话框
+        function showYesNoMsg(obj, myFunc) {
+            if (obj) {
+                easyDialog.open({ container: { content: obj, yesFn: myFunc, noFn: true } });
+            }
+        }
+        $(document).on("click", "#overlay", function () {
+            $(this).fadeOut(200);
+            easyDialog.close();
+        });
+
+        //查询参数
+        function queryParams(params) {
+            return getArray(params.limit, params.offset, params.search);
+        }
+
+        //格式化时间
+        function getDate(value) {
+            return new Date(parseInt(value.replace("/Date(", "").replace(")/", ""), 10)).pattern("yyyy-MM-dd hh:mm");
+        }
+
+        //返回键值对数组
+        function getArray(pageSize, offset, title) {
+            var startTime = $('#startTime').val();
+            var endTime = $('#endTime').val();
+            var dataStatus = $('#dataStatus').val();
+            if (new Date(startTime) > new Date(endTime)) {
+                showMsg("开始时间不能大于结束时间！", 500);
+                return false;
+            }
+            console.log('title:',title)
+            if (!title) {
+                title = $('#title').val();
+            }
+            return { PageSize: pageSize, Offset: offset, Title: title, NTitle: title, StartTime: startTime, EndTime: endTime, DataStatus: dataStatus };
+        }
+
+        //条件查询
+        $('#search').click(function () {
+            $.post('/Note/Query', getArray(10, 0, $('#title').val()), function (data) {
+                if (!data.Status) {
+                    showMsg(data.Msg, 1000);
+                }
+                lotTab.bootstrapTable('load', data);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LoT.UI Edit</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/select2/4.0.3/css/select2.min.css" rel="stylesheet">
+    <link href="/assets/css/common.css" rel="stylesheet" />
+    <link href="/open/lotUploader/lotuploader1.0.1.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header class="panel panel-default">
+        <div class="panel-heading">表单页面</div>
+        <article class="panel-body">
+            <div class="row">
+                <div class="form-horizontal">
+                    <!--笔记标题-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">笔记标题：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="title" placeholder="请输入标题名...">
+                        </div>
+                    </div>
+                    <!--笔记作者-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">笔记作者：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="author" placeholder="请输入作者名...">
+                        </div>
+                    </div>
+                    <!--页面浏览-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">页面浏览：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="hitCount" placeholder="请输入浏览量...">
+                        </div>
+                    </div>
+                    <!--推送到主页-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">推荐类型：</label>
+                        <div class="col-sm-9">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="push">推送到主页
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--展览小图-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" style="padding-top:13px;">展览小图：</label>
+                        <div class="col-sm-6">
+                            <span style="float:left;width:160px;"><span id="lot-uploader"></span></span><img id="displayPic" style="width:60px;height:33px;" />
+                        </div>
+                    </div>
+                    <!--笔记内容-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">笔记内容：</label>
+                        <div class="col-sm-6">
+                            <script id="container" name="content" type="text/plain">
+                            </script>
+                        </div>
+                    </div>
+                    <!--Tag标签-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Tag 标签：</label>
+                        <div class="col-sm-6">
+                            <select id="tag" class="lot-tagSelect form-control" multiple>
+                                <optgroup label="SQL">
+                                    <option>MySql</option>
+                                    <option>Sqlite</option>
+                                    <option>SQLServer</option>
+                                </optgroup>
+                                <optgroup label="Other">
+                                    <option>C#</option>
+                                    <option>EF</option>
+                                    <option>MVC</option>
+                                    <option>Dapper</option>
+                                    <option>Ado.Net</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <!--SEO关键字-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">SEO Key：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="seoKeywords" placeholder="关键词1,关键词2,关键词3">
+                        </div>
+                        <label class="lot-blue">本篇文章的关键词（一般都是搜索关键词）</label>
+                    </div>
+                    <!--SEO关键字-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">SEO Des：</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="seodescription" placeholder="请输入Seo详细描述...">
+                        </div>
+                        <label class="lot-blue">本篇文章大概内容（尽量控制在150字内）</label>
+                    </div>
+                    <!--表单提交-->
+                    <div class="form-group">
+                        <label class="col-sm-2"></label>
+                        <div class="col-sm-6">
+                            <button id="form-success" class="btn btn-success lot-form-btn">提 交</button>
+                            <button id="form-gohome" class="btn btn-success lot-form-btn">返 回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </header>
+    <script src="//cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/assets/js/common.min.js"></script>
+    <script src="/open/lotUploader/lotuploader1.0.1.min.js"></script>
+    <script src="//ueditor.baidu.com/ueditor/ueditor.config.js"></script>
+    <script src="//ueditor.baidu.com/ueditor/ueditor.all.min.js"></script>
+    <script src="//cdn.bootcss.com/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript">
+        //实例化上传控件
+        $.lotuploader({
+            lotDocId: 'lot-uploader',
+            lotUrl: '服务器地址',
+            oneFile: true,
+            fileSize: 1024 * 1024 * 5,
+            btnStr: '点我就上传默认展图',
+            lotSuccessFunc: function (data) {
+                $('#displayPic').attr('src', data);
+            },
+            lotErrorFunc: function (msg) {
+                $('#lot-uploader').append('<div class="lot-temp" style="color:red">' + msg + '</div> ');
+                setTimeout(function () {
+                    $('.lot-temp').remove();
+                }, 2000);
+            }
+        });
+
+        //实例化编辑器
+        var ue = UE.getEditor('container');
+
+        //实例化Tag标签
+        $('#tag').select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+
+        //提交表单
+        $('#form-success').click(function () {
+            //标题
+            var title = $('#title').val();
+            //作者
+            var author = $('#author').val();
+            //浏览量
+            var hitCount = $('#hitCount').val();
+            //是否推送到主页
+            var push = $('#push').is(':checked');
+            //文章展览小图
+            var displayPic = $('#displayPic').attr('src');
+            //编辑器内容
+            var ueHtml = '';
+            var ueText = '';
+            if (ue.hasContents()) {
+                ueHtml = ue.getContent();
+                ueText = ue.getContentTxt();
+                ue.execCommand("clearlocaldata");//清空草稿箱
+            } else {
+                //alert('文章主体内容不能为空！');
+            }
+            //标签
+            var tags = $.map($('#tag').select2("data"), function (row) {
+                return row.text;
+            });
+            var tag = tags.join(',');
+            //SEO关键词
+            var seoKeywords = $('#seoKeywords').val();
+            //SEO详细描述
+            var seodescription = $('#seodescription').val();
+            console.log(title,author,hitCount,push,displayPic,ueHtml,ueText,tag,seoKeywords,seodescription)
+        });
+    </script>
+</body>
+</html>
