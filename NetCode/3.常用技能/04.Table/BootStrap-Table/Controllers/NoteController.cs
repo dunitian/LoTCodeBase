@@ -76,9 +76,19 @@ namespace BootStrap_Table.Controllers
             if (model.PageSize < 1) { model.PageSize = 10; }
             model.PageIndex = model.Offset / model.PageSize + 1;
 
+            //Order by
+            if (model.OrderStr.IsNullOrWhiteSpace())
+            {
+                p.Add("OrderStr", "NCreateTime");
+            }
+            else
+            {
+                p.Add("OrderStr", model.OrderStr);
+            }
+
             p.Add("PageIndex", model.PageIndex);
             p.Add("PageSize", model.PageSize);
-            sqlStr.Insert(0, "select * from(select row_number() over(order by NCreateTime) Id,* from (");
+            sqlStr.Insert(0, "select * from(select row_number() over(order by @OrderStr) Id,* from (");
             sqlStr.Append(") TempA) as TempInfo where Id<= @PageIndex * @PageSize and Id>(@PageIndex-1)*@PageSize");
             return await PageLoadAsync<NoteInfo>(sqlStr.ToString(), p, sqlCount.ToString(), p2);
             #endregion

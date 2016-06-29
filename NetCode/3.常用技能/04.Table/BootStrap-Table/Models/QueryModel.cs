@@ -21,6 +21,10 @@ namespace BootStrap_Table.Models
         /// </summary>
         public string Title { get; set; }
         /// <summary>
+        /// 排序
+        /// </summary>
+        public string OrderStr { get; set; }
+        /// <summary>
         /// 开始时间
         /// </summary>
         public DateTime StartTime { get; set; }
@@ -28,7 +32,6 @@ namespace BootStrap_Table.Models
         /// 结束时间
         /// </summary>
         public DateTime EndTime { get; set; }
-
         /// <summary>
         /// 状态
         /// </summary>

@@ -113,7 +113,7 @@
                         field: 'NTitle',
                         title: '标题',
                         align: 'center',
-                        sortable: true,
+                        sortable: true
                     },
                     {
                         field: 'NAuthor',
@@ -199,7 +199,7 @@
         //时间控件
         $(function () {
             $('.lot-time').datetimepicker({
-                format: "yyyy-mm-dd hh:ii",
+                format: "yyyy-mm-dd hh:mm",
                 todayBtn: "linked",
                 language: "zh-CN",
                 autoclose: true
@@ -226,7 +226,12 @@
 
         //查询参数
         function queryParams(params) {
-            return getArray(params.limit, params.offset, params.search);
+            var order = " ";
+            if (params.sort) {
+                order = params.sort + ' ' + params.order;
+            }
+
+            return getArray(params.limit, params.offset, params.search, order);
         }
 
         //格式化时间
@@ -235,7 +240,7 @@
         }
 
         //返回键值对数组
-        function getArray(pageSize, offset, title) {
+        function getArray(pageSize, offset, title, order) {
             var startTime = $('#startTime').val();
             var endTime = $('#endTime').val();
             var dataStatus = $('#dataStatus').val();
@@ -243,11 +248,14 @@
                 showMsg("开始时间不能大于结束时间！", 500);
                 return false;
             }
-            console.log('title:',title)
             if (!title) {
                 title = $('#title').val();
             }
-            return { PageSize: pageSize, Offset: offset, Title: title, NTitle: title, StartTime: startTime, EndTime: endTime, DataStatus: dataStatus };
+            if (!order) {
+                console.log(order);
+                order = " ";
+            }
+            return { PageSize: pageSize, Offset: offset, Title: title, NTitle: title, StartTime: startTime, EndTime: endTime, DataStatus: dataStatus, OrderStr: order };
         }
 
         //条件查询
