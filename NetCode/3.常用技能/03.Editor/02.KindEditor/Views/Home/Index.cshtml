@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>kindeditor简单使用</title>
+    @*引用的2个css开始*@
+    <link rel="stylesheet" href="/Script/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="/Script/kindeditor/plugins/code/prettify.css" />
+    @*引用的2个css结束*@
+</head>
+<body>
+    <div>我这边只是简单演示一些开发中经常用的东西，里面还有很多功能可以自己摸索</div>
+    <div>
+        <textarea rows="20" cols="50" id="editor_id" name="content" style="width: 403px; height: 300px;"></textarea>
+    </div>
+    <div><input type="button" value="提交" onclick="save();" /></div>
+
+    <script src="/Script/jquery-1.8.3.min.js"></script>
+
+    @*引用的几个js文件开始*@
+    <script charset="utf-8" src="/Script/kindeditor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="/Script/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="/Script/kindeditor/plugins/code/prettify.js"></script>
+    @*引用的几个js文件结束*@
+
+    <script type="text/javascript">
+        //文本编辑器初始化
+        var editor = "";
+        KindEditor.ready(function (K) {
+            editor = K.create('#editor_id', {
+                uploadJson: '/Script/kindeditor/upload_json.ashx',
+                fileManagerJson: '/Script/kindeditor/file_manager_json.ashx',
+                allowFileManager: true
+            });
+        });
+
+        //保存文本编辑器里面的内容
+        function save() {
+            var editorTxt = $.trim(escape(editor.html()));
+            if (editorTxt.length < 1) {
+                alert('内容不能为空');
+                return false;
+            } else {
+                //Ajax Post请求
+                $.post('@Url.Action("Add")', { editorTxt: editorTxt }, function (data) {
+                    if (data == "ok") {
+                        window.location.href = '@Url.Action("Show")';
+                    } else {
+                        alert(data);
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>kindeditor显示指定文本</title>
+    @*引用的2个css开始*@
+    <link rel="stylesheet" href="/Script/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="/Script/kindeditor/plugins/code/prettify.css" />
+    @*引用的2个css结束*@
+</head>
+<body>
+    <div>
+        <textarea rows="20" cols="50" id="editor_id" name="content" style="width: 403px; height: 300px;">
+            @Html.Raw(ViewBag.editorTxt)
+        </textarea>
+        @Html.Raw(ViewBag.editorTxt)
+    </div>
+
+    @*引用的几个js文件开始*@
+    <script charset="utf-8" src="/Script/kindeditor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="/Script/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="/Script/kindeditor/plugins/code/prettify.js"></script>
+    @*引用的几个js文件结束*@
+
+    <script type="text/javascript">
+        //文本编辑器初始化
+        var editor = "";
+        KindEditor.ready(function (K) {
+            editor = K.create('#editor_id', {
+                uploadJson: '/Script/kindeditor/upload_json.ashx',
+                fileManagerJson: '/Script/kindeditor/file_manager_json.ashx',
+                allowFileManager: true
+            });
+        });
+    </script>
+</body>
+</html>
