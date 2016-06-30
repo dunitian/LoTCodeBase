@@ -12,7 +12,7 @@ public static class Config
     private static bool noCache = true;
     private static JObject BuildItems()
     {
-        var json = File.ReadAllText(HttpContext.Current.Server.MapPath("config.json"));
+        var json = File.ReadAllText(HttpContext.Current.Request.MapPath("config.json"));
         return JObject.Parse(json);
     }
 

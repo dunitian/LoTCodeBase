@@ -64,7 +64,7 @@ public class UploadHandler : Handler
         Result.OriginFileName = uploadFileName;
 
         var savePath = PathFormatter.Format(uploadFileName, UploadConfig.PathFormat);
-        var localPath = Server.MapPath(savePath);
+        var localPath = Request.MapPath(savePath);
         try
         {
             if (!Directory.Exists(Path.GetDirectoryName(localPath)))
