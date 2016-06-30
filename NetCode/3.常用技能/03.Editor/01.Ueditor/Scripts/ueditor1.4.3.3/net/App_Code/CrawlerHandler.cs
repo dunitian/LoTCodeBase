@@ -24,7 +24,7 @@ public class CrawlerHandler : Handler
             });
             return;
         }
-        Crawlers = Sources.Select(x => new Crawler(x, Server).Fetch()).ToArray();
+        Crawlers = Sources.Select(x => new Crawler(x, Request).Fetch()).ToArray();
         WriteJson(new
         {
             state = "SUCCESS",
@@ -44,13 +44,13 @@ public class Crawler
     public string ServerUrl { get; set; }
     public string State { get; set; }
 
-    private HttpServerUtility Server { get; set; }
+    private HttpRequest Request { get; set; }
 
 
-    public Crawler(string sourceUrl, HttpServerUtility server)
+    public Crawler(string sourceUrl, HttpRequest request)
     {
         this.SourceUrl = sourceUrl;
-        this.Server = server;
+        this.Request = request;
     }
 
     public Crawler Fetch()
@@ -74,7 +74,7 @@ public class Crawler
                 return this;
             }
             ServerUrl = PathFormatter.Format(Path.GetFileName(this.SourceUrl), Config.GetString("catcherPathFormat"));
-            var savePath = Server.MapPath(ServerUrl);
+            var savePath = Request.MapPath(ServerUrl);
             if (!Directory.Exists(Path.GetDirectoryName(savePath)))
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(savePath));
