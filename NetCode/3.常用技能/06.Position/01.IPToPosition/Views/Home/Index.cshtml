@@ -1,0 +1,14 @@
+﻿@{ViewBag.Title = "IP定位的案例"; }
+@{
+    if (ViewBag.infos != null)
+    {
+        foreach (var item in ViewBag.infos)
+        {
+            <h1>@item</h1>
+        }
+    }
+    else
+    {
+        <h1>IP有问题</h1>
+    }
+}

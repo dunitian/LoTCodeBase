@@ -172,6 +172,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Manager", "..\LoTUI\Manager
 		SlnRelativePath = "..\LoTUI\Manager\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.IPToPosition", "3.常用技能\06.Position\01.IPToPosition\01.IPToPosition.csproj", "{C542ED98-90BC-4919-8274-33987F5D7ADE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -370,6 +372,10 @@ Global
 		{C39574ED-296C-45C7-8A9D-953E7A50A494}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C39574ED-296C-45C7-8A9D-953E7A50A494}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{C39574ED-296C-45C7-8A9D-953E7A50A494}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C542ED98-90BC-4919-8274-33987F5D7ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C542ED98-90BC-4919-8274-33987F5D7ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C542ED98-90BC-4919-8274-33987F5D7ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C542ED98-90BC-4919-8274-33987F5D7ADE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -442,5 +448,6 @@ Global
 		{52FA556D-F28A-4F84-B7D1-F96643704523} = {9865EA93-944E-4187-9049-C53F1E9F2F30}
 		{21F46016-6247-4D50-BD13-FA0E2846F310} = {8005734C-C156-4FDD-B9BD-245A4C26688F}
 		{C39574ED-296C-45C7-8A9D-953E7A50A494} = {21F46016-6247-4D50-BD13-FA0E2846F310}
+		{C542ED98-90BC-4919-8274-33987F5D7ADE} = {ED8FD338-D2AE-436D-8756-8C0AF49A3CA0}
 	EndGlobalSection
 EndGlobal
