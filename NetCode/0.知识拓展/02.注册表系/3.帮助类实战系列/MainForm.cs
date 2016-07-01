@@ -17,7 +17,7 @@ namespace _3.帮助类实战系列
         /// <param name="e"></param>
         private void btn1_Click(object sender, EventArgs e)
         {
-            var form = new Form1();
+            var form = new TestForm();
             form.Show();
         }
 

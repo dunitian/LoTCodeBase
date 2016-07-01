@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace _2.创建修改注册表
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         public RegistryKey Reg { get; set; }
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             //初始化
@@ -87,7 +87,7 @@ namespace _2.创建修改注册表
                 //if (KeyIsNull(dntReg)) return;
                 //dntReg.DeleteValue("web", false);
                 #endregion
-                Reg.DeleteSubKeyTree("dnt",false);
+                Reg.DeleteSubKeyTree("dnt", false);
                 rtxt.AppendText("删除成功\n");
             }
             catch (ArgumentException ex)
@@ -99,16 +99,6 @@ namespace _2.创建修改注册表
         private void clearlog_Click(object sender, EventArgs e)
         {
             rtxt.Clear();
-        }
-
-        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
-
-        private void rtxt_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
