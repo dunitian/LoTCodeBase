@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace LoTLibrary._00Com
+namespace LoTLibrary
 {
     public static partial class ValidationHelper
     {

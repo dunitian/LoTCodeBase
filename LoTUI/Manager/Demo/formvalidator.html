@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FormValidator使用</title>
+    <link href="/open/formvalidator/validatorAuto.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form method="post" id="register">
+        <div>
+            <p><span>注册！</span> 欢迎注册！</p>
+            <ul>
+                <li>
+                    <span> 你的昵称：</span>
+                    <input id="RegUserName" name="UserName" type="text">
+                </li>
+                <li>
+                    <span> 输入密码：</span>
+                    <input id="LoginUserPwd" name="LoginUserPwd" type="password">
+                </li>
+                <li>
+                    <span> 确认密码：</span>
+                    <input id="LoginUserPwds" name="LoginUserPwds" type="password">
+                </li>
+                <li>
+                    <span> 手机号码：</span>
+                    <input id="Mobile" name="Mobile" type="text">
+                </li>
+                <li>
+                    <span> 邮箱地址：</span>
+                    <input id="Email" name="Email" type="text">
+                </li>
+                <li>
+                    <span>  问题答案：</span>
+                    <input id="Answer" name="Answer" type="text">
+                </li>
+                <li style="padding-bottom:0px;">
+                    <span>&nbsp;</span>
+                    <input id="mybtn" type="button" value="创建账号" onclick="register();">
+                </li>
+            </ul>
+        </div>
+    </form>
+
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/open/formvalidator/formValidator-9.0.1.min.js" type="text/javascript"></script>
+    <script src="/open/formvalidator/formValidatorRegex.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            //校验对象
+            var validator = {
+                init: function () {
+                    this.action();
+                },
+                action: function () {
+                    $.formValidator.initConfig({ formID: "register", autoTip: true, onError: function (msg) { }, inIframe: true });
+                    $("#RegUserName").formValidator({ onShow: "用户名", onFocus: "请输入用户名", onCorrect: " " }).inputValidator({ min: 1, onError: "用户名不能为空" }).regexValidator({ dataType: "enum", regExp: "username", onError: "只允许输入6-12位字母、数字、下划线" });
+                    $("#LoginUserPwd").formValidator({ onShow: "6-12位字符密码 (字母、数字、下划线)", onFocus: "请输入6-12位字母、数字、下划线", onCorrect: " " }).inputValidator({ min: 6, max: 12, onError: "请输入6-12位字母、数字、下划线" }).regexValidator({ dataType: "enum", regExp: "username", onError: "只允许输入6-12位字母、数字、下划线" });
+                    $("#LoginUserPwds").formValidator({ onShow: "6-12位字符密码 (字母、数字、下划线)", onFocus: "请输入6-12位字母、数字、下划线", onCorrect: " " }).inputValidator({ min: 6, max: 12, onError: "只允许输入6-12位字母、数字、下划线" }).compareValidator({ desID: "LoginUserPwd", operateor: "=", dataType: "enum", onError: "密码不一致" });
+                    $("#Mobile").formValidator({ onShow: "常用的手机号码", onFocus: "请输入正确的电话号码", onCorrect: " " }).regexValidator({ dataType: "enum", regExp: "mobile", onError: "请输入正确的手机号码" });
+                    $("#Email").formValidator({ onShow: "帐号绑定的邮箱", onFocus: "输入您的绑定邮箱", onCorrect: " " }).regexValidator({ dataType: "enum", regExp: "email", onError: "邮箱格式不正确" });
+                    $("#Answer").formValidator({ onShow: "密保问题答案", onFocus: "为您的密保问题设置答案", onCorrect: " " }).inputValidator({ min: 1, empty: { leftEmpty: false, rightEmpty: false, emptyError: "" }, onError: "密保答案不能为空" });
+                    $.formValidator.reloadAutoTip();
+                }
+            };
+            validator.init();
+        });
+
+        //注册验证
+        function register() {
+            if ($.formValidator.pageIsValid("1")) {
+                alert('恭喜完成验证！');
+            }
+        }
+    </script>
+</body>
+</html>
