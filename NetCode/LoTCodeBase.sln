@@ -149,6 +149,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.增删改查注册表", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.帮助类实战系列", "0.知识拓展\02.注册表系\3.帮助类实战系列\3.帮助类实战系列.csproj", "{52FA556D-F28A-4F84-B7D1-F96643704523}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.WebBase", "00.WebBase", "{21F46016-6247-4D50-BD13-FA0E2846F310}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Manager", "..\LoTUI\Manager\", "{C39574ED-296C-45C7-8A9D-953E7A50A494}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_2438"
+		Debug.AspNetCompiler.PhysicalPath = "..\LoTUI\Manager\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2438\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_2438"
+		Release.AspNetCompiler.PhysicalPath = "..\LoTUI\Manager\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2438\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2438"
+		SlnRelativePath = "..\LoTUI\Manager\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -343,6 +366,10 @@ Global
 		{52FA556D-F28A-4F84-B7D1-F96643704523}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52FA556D-F28A-4F84-B7D1-F96643704523}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52FA556D-F28A-4F84-B7D1-F96643704523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C39574ED-296C-45C7-8A9D-953E7A50A494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C39574ED-296C-45C7-8A9D-953E7A50A494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C39574ED-296C-45C7-8A9D-953E7A50A494}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C39574ED-296C-45C7-8A9D-953E7A50A494}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -413,5 +440,7 @@ Global
 		{1AEC107E-A582-4902-974B-27ECC228221C} = {9865EA93-944E-4187-9049-C53F1E9F2F30}
 		{88103041-580D-4539-B765-8F18AE781DAA} = {9865EA93-944E-4187-9049-C53F1E9F2F30}
 		{52FA556D-F28A-4F84-B7D1-F96643704523} = {9865EA93-944E-4187-9049-C53F1E9F2F30}
+		{21F46016-6247-4D50-BD13-FA0E2846F310} = {8005734C-C156-4FDD-B9BD-245A4C26688F}
+		{C39574ED-296C-45C7-8A9D-953E7A50A494} = {21F46016-6247-4D50-BD13-FA0E2846F310}
 	EndGlobalSection
 EndGlobal
