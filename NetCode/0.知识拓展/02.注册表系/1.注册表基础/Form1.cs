@@ -17,7 +17,7 @@ namespace _1.注册表基础
         //      SubKeyCount 获取子项个数
 
         //方法：
-        //      OpenSubKey(string name)             获取子项 RegistryKey（只读）
+        //      OpenSubKey(string name,bool b)      获取子项 RegistryKey，b为true时代表可写
         //      GetSubKeyNames()                    获取所有子项名称的字符串数组
         //      GetValueNames()                     检索包含与此项关联的所有值名称的字符串数组
         //      GetValue(string name)               获取指定名称,不存在名称/值对，则返回 null
