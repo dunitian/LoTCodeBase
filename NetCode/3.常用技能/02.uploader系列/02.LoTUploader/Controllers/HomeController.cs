@@ -23,7 +23,7 @@ namespace _02.LoTUploader.Controllers
 
             string path = string.Format("{0}/{1}", "/lotFiles", DateTime.Now.ToString("yyyy-MM-dd"));
             string fileName = string.Format("{0}{1}", Guid.NewGuid().ToString("N"), fileExt);
-            string sqlPath = string.Format("{0}{1}", path, fileName);
+            string sqlPath = string.Format("{0}/{1}", path, fileName);
             string dirPath = Request.MapPath(path);
 
             if (!Directory.Exists(dirPath)) { Directory.CreateDirectory(dirPath); }

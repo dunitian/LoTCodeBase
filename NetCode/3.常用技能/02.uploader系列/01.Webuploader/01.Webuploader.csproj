@@ -110,7 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="lotFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
