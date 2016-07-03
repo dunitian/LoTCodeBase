@@ -174,7 +174,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Manager", "..\LoTUI\Manager
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.IPToPosition", "3.常用技能\06.Position\01.IPToPosition\01.IPToPosition.csproj", "{C542ED98-90BC-4919-8274-33987F5D7ADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.WangEditor", "03.WangEditor\03.WangEditor.csproj", "{D1C9B56E-955D-4F99-B71A-4193DCD7CD1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.WangEditor", "3.常用技能\03.Editor\03.WangEditor\03.WangEditor.csproj", "{D1C9B56E-955D-4F99-B71A-4193DCD7CD1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
