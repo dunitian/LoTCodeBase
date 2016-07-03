@@ -392,6 +392,7 @@
     <Content Include="Scripts\ueditor1.4.3.3\third-party\video-js\font\vjs.eot" />
     <Content Include="Scripts\ueditor1.4.3.3\third-party\video-js\font\vjs.ttf" />
     <Content Include="Scripts\ueditor1.4.3.3\third-party\video-js\font\vjs.woff" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -402,7 +403,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

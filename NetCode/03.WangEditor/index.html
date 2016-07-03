@@ -7,7 +7,7 @@
     <link href="Script/WangEditor/css/wangEditor.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="edit"></div>
+    <div id="edit" style="min-height:20em"></div>
     <br />
     <input id="btn1" type="button" value="获取HTML" />&nbsp;&nbsp;
     <input id="btn2" type="button" value="获取Text" />
@@ -15,10 +15,12 @@
     <script src="//cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="Script/WangEditor/js/wangEditor.min.js"></script>
     <script type="text/javascript">
-
-        var editor = new wangEditor('edit');
+        // 为页面所有的editor配置全局的密钥
+        //wangEditor.config.mapAk = 'xxxxxxxxxxxxxx';
         // 阻止输出log
         //wangEditor.config.printLog = false;
+
+        var editor = new wangEditor('edit');
         // 取消粘贴过滤
         //editor.config.pasteFilter = false;
         // 只粘贴纯文本
