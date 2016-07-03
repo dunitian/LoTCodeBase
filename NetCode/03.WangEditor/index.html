@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>WangEditor</title>
+    <meta charset="utf-8" />
+    <link href="Script/WangEditor/css/wangEditor.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="edit"></div>
+    <br />
+    <input id="btn1" type="button" value="获取HTML" />&nbsp;&nbsp;
+    <input id="btn2" type="button" value="获取Text" />
+    <div id="msg"></div>
+    <script src="//cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="Script/WangEditor/js/wangEditor.min.js"></script>
+    <script type="text/javascript">
+
+        var editor = new wangEditor('edit');
+        // 阻止输出log
+        //wangEditor.config.printLog = false;
+        // 取消粘贴过滤
+        //editor.config.pasteFilter = false;
+        // 只粘贴纯文本
+        //editor.config.pasteText = true;
+        // 上传图片路径
+        editor.config.uploadImgUrl = '/Home/Upload';
+        // 设置统一参数名
+        editor.config.uploadImgFileName = 'file';
+        // 配置自定义参数
+        //editor.config.uploadParams = {
+        //    token: '123',
+        //    user: 'abc'
+        //};
+        // 设置 headers
+        //editor.config.uploadHeaders = {
+        //'Accept': 'text/x-json'
+        //};
+        //编辑器创建
+        editor.create();
+
+        $('#btn1').click(function () {
+            // 获取编辑器区域完整html代码
+            var html = editor.$txt.html();
+            $('#msg').html(html);
+        });
+
+        $('#btn2').click(function () {
+            // 获取编辑器纯文本内容
+            var text = editor.$txt.text();
+            // 获取格式化后的纯文本
+            //var formatText = editor.$txt.formatText();
+            $('#msg').html(text);
+        });
+    </script>
+</body>
+</html>
