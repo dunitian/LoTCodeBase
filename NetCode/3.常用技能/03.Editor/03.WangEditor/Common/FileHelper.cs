@@ -2,26 +2,20 @@
 
 public static class FileHelper
 {
-    /*文件扩展名说明 仅参考
-        *4946/104116 txt
-        *7173        gif 
-        *255216      jpg
-        *13780       png
-        *6677        bmp
-        *239187      aspx,asp,sql
-        *208207      xls.doc.ppt
-        *6063        xml
-        *6033        htm,html
-        *4742        js
-        *8075        xlsx,zip,pptx,mmap,zip
-        *8297        rar   
-        *01          accdb,mdb
-        *7790        exe,dll           
-        *5666        psd 
-        *255254      rdp 
-        *10056       bt种子 
-        *64101       bat 
-        *4059        sgf
+    /*头文件参考：（我自己测是如有偏差请联系我）
+        7790：exe，dll
+
+        5666：psd
+        6677：bmp
+        7173：gif
+        13780：png
+        255216：jpg,jpeg
+        
+
+        8297：rar
+        55122：7z
+        8075：docx，xlsx，pptx，vsdx，mmap，xmind，“zip”
+        208207：doc，xls，ppt，mpp，vsd
    */
     /// <summary>
     /// 判断扩展名是否是指定类型---默认是判断图片格式，符合返回true
@@ -41,16 +35,14 @@ public static class FileHelper
         {
             using (var reader = new BinaryReader(stream))
             {
+                byte[] buff = new byte[2];
                 try
                 {
                     //读取每个文件的头两个字节
-                    for (int i = 0; i < 2; i++)
-                    {
-                        byte buffer = reader.ReadByte();
-                        fileclass += buffer.ToString();
-                    }
+                    reader.Read(buff, 0, 2);
+                    fileclass = buff[0].ToString() + buff[1].ToString();
                 }
-                catch { return false; }
+                catch (System.Exception ex) { return false; }
             }
         }
         #endregion
@@ -65,8 +57,6 @@ public static class FileHelper
             }
         }
         #endregion
-
         return result;
     }
-
 }

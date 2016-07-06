@@ -22,7 +22,7 @@ namespace _01.Webuploader.Controllers
             string filterStr = ".gif,.jpg,.jpeg,.bmp,.png";
             string fileExt = Path.GetExtension(file.FileName).ToLower();
             if (!filterStr.Contains(fileExt)) { return Json(new { status = false, msg = "图片格式不对" }); }
-            //防止黑客恶意绕过，从根本上判断下文件后缀
+            //防止黑客恶意绕过，判断下文件头文件
             if (!file.InputStream.CheckingExt())
             {
                 //todo：一次危险记录
