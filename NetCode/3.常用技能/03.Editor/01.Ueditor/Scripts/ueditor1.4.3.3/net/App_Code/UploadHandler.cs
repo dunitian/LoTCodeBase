@@ -34,6 +34,7 @@ public class UploadHandler : Handler
         else
         {
             var file = Request.Files[UploadConfig.UploadFieldName];
+            if (file == null) { return; }
             uploadFileName = file.FileName;
 
             if (!CheckFileType(uploadFileName))
@@ -111,7 +112,7 @@ public class UploadHandler : Handler
             case UploadState.TypeNotAllow:
                 return "不允许的文件格式";
             case UploadState.NetworkError:
-                return "网络错误"; 
+                return "网络错误";
         }
         return "未知错误";
     }
