@@ -179,6 +179,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00.Uploader", "3.常用技能\02.uploader系列\00.Uploader\00.Uploader.csproj", "{7D153FFD-4C9D-40A0-92DF-0314830EED35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12..邮件系列", "12..邮件系列", "{D13F378D-BA1C-403C-BBAC-FC6983A917A7}"
+	ProjectSection(SolutionItems) = preProject
+		index.html = index.html
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.3提升技能", "3.3提升技能", "{0ED5A390-84CD-4253-AC3C-1671EBAB7284}"
 EndProject
@@ -201,6 +204,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11.验证码系", "11.验证码系", "{FC181F6F-0145-4A7F-AC72-3D391A7E7B3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Email", "3.常用技能\07.Email\Email\1.Email.csproj", "{1A661876-D190-479C-8A3C-21B9EF0126D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0.QQEmail", "3.常用技能\07.Email\QQEmail\0.QQEmail.csproj", "{6597F1E2-84A0-40EB-8140-A2F7B207885F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -416,6 +421,10 @@ Global
 		{1A661876-D190-479C-8A3C-21B9EF0126D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A661876-D190-479C-8A3C-21B9EF0126D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A661876-D190-479C-8A3C-21B9EF0126D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6597F1E2-84A0-40EB-8140-A2F7B207885F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6597F1E2-84A0-40EB-8140-A2F7B207885F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6597F1E2-84A0-40EB-8140-A2F7B207885F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6597F1E2-84A0-40EB-8140-A2F7B207885F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -501,5 +510,6 @@ Global
 		{F169232C-CE32-4496-B47B-3503A5FA7FA8} = {8005734C-C156-4FDD-B9BD-245A4C26688F}
 		{FC181F6F-0145-4A7F-AC72-3D391A7E7B3F} = {8005734C-C156-4FDD-B9BD-245A4C26688F}
 		{1A661876-D190-479C-8A3C-21B9EF0126D4} = {D13F378D-BA1C-403C-BBAC-FC6983A917A7}
+		{6597F1E2-84A0-40EB-8140-A2F7B207885F} = {D13F378D-BA1C-403C-BBAC-FC6983A917A7}
 	EndGlobalSection
 EndGlobal
