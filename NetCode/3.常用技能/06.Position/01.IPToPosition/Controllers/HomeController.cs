@@ -23,8 +23,8 @@ namespace IPToPosition.Controllers
             //JsonHelper.ToJson(IPAndPositionHelper.Find("210.21.113.236"));
             var ipStr = Request.UserHostAddress;
             if (ipStr == "::1") ipStr = "127.0.0.1";
-            //ViewBag.infos = IPAndPositionHelper.Find(ipStr);
-            ViewBag.infos = IPAndPositionHelper.Find("183.209.0.207");//查询
+            ViewBag.infos = IPAndPositionHelper.Find(ipStr);
+            //ViewBag.infos = IPAndPositionHelper.Find("183.209.0.207");//查询
             return View();
         }
     }
