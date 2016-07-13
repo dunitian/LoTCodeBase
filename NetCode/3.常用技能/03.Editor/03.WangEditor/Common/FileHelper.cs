@@ -26,7 +26,7 @@ public static class FileHelper
     /// <returns></returns>
     public static bool CheckingExt(this Stream stream, params string[] fileTypes)
     {
-        if (fileTypes.Length == 0) { fileTypes = new string[] { "7173", "255216", "6677", "13780" }; }
+        if (fileTypes == null || fileTypes.Length == 0) { fileTypes = new string[] { "7173", "255216", "6677", "13780" }; }
         bool result = false;
         string fileclass = "";
 

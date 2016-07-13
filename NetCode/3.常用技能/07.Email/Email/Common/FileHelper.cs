@@ -19,14 +19,16 @@ public static class FileHelper
    */
     /// <summary>
     /// 判断扩展名是否是指定类型---默认是判断图片格式，符合返回true
-    /// eg：file,"7173", "255216", "6677", "13780" //gif  //jpg  //bmp //png
+    /// eg：图片+压缩+文档："7173", "255216", "6677", "13780", "8297", "55122", "8075", "208207"
+    /// eg：img，"7173", "255216", "6677", "13780" //gif  //jpg  //bmp //png
+    /// eg：file,"8297", "55122", "8075", "208207" //rar //7z //zip + 文档系列
     /// </summary>
     /// <param name="stream">文件流</param>
     /// <param name="fileTypes">文件扩展名</param>
     /// <returns></returns>
     public static bool CheckingExt(this Stream stream, params string[] fileTypes)
     {
-        if (fileTypes.Length == 0) { fileTypes = new string[] { "7173", "255216", "6677", "13780" }; }
+        if (fileTypes == null || fileTypes.Length == 0) { fileTypes = new string[] { "7173", "255216", "6677", "13780" }; }
         bool result = false;
         string fileclass = "";
 
