@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>WangEditor</title>
+    <title>邮件系列</title>
     <meta charset="utf-8" />
     <link href="//cdn.bootcss.com/wangeditor/2.1.10/css/wangEditor.min.css" rel="stylesheet" />
     <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -60,10 +60,7 @@
     <script src="//cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js" async></script>
     <script src="//cdn.bootcss.com/wangeditor/2.1.10/js/wangEditor.min.js"></script>
-
-    <script src="//cdn.staticfile.org/webuploader/0.1.5/webuploader.min.js"></script>
-    <script src="//7xocov.com2.z0.glb.qiniucdn.com/lotuploader1.0.1.min.js" async></script>
-    <!--<script src="Scripts/lotUploader.1.0.1.js"></script>-->
+    <script src="//7xocov.com2.z0.glb.qiniucdn.com/lotuploader1.0.2.js"></script>
     <script type="text/javascript">
         // 为页面所有的editor配置全局的密钥
         //wangEditor.config.mapAk = 'xxxxxxxxxxxxxx';
@@ -79,7 +76,8 @@
     <script type="text/javascript">
         $.lotuploader({
             lotDocId: 'lot-uploader', //ID
-            lotUrl: '/Home/Upload', //服务器Post地址
+            lotUrl: '/Home/FileUpload', //服务器Post地址
+            btnStr: '点我就上传邮件附件'
         });
     </script>
 </body>

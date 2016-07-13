@@ -11,6 +11,12 @@ public static class FileHelper
         13780：png
         255216：jpg,jpeg
         
+        239187：js
+        6787：swf
+        7368：mp3
+        4838：wma
+
+        6063：xml
 
         8297：rar
         55122：7z
