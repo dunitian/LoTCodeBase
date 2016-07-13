@@ -175,9 +175,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00.Uploader", "3.常用技能\02.uploader系列\00.Uploader\00.Uploader.csproj", "{7D153FFD-4C9D-40A0-92DF-0314830EED35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12..邮件系列", "12..邮件系列", "{D13F378D-BA1C-403C-BBAC-FC6983A917A7}"
-	ProjectSection(SolutionItems) = preProject
-		index.html = index.html
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.3提升技能", "3.3提升技能", "{0ED5A390-84CD-4253-AC3C-1671EBAB7284}"
 EndProject
