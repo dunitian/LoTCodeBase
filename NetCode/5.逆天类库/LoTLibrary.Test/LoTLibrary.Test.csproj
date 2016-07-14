@@ -56,8 +56,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="01Json\JsonHelperTest.cs" />
-    <Compile Include="02Net\DomainHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

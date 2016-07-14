@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>邮件系列</title>
+    <meta charset="utf-8" />
+    <link href="//cdn.bootcss.com/wangeditor/2.1.10/css/wangEditor.min.css" rel="stylesheet" />
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//7xocov.com2.z0.glb.qiniucdn.com/lotuploader1.0.1.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="rows">
+        <div class="form-horizontal">
+            <!--收件人邮箱-->
+            <div class="form-group">
+                <br />
+                <label class="col-sm-2 control-label">收件邮箱：</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="mailTo" placeholder="请输入收件人邮箱...">
+                </div>
+            </div>
+            <!--收件人邮箱-->
+            <div class="form-group">
+                <br />
+                <label class="col-sm-2 control-label">抄送邮箱：</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="mailCC" placeholder="请输入抄送人邮箱...">
+                </div>
+            </div>
+            <!--标题-->
+            <div class="form-group">
+                <br />
+                <label class="col-sm-2 control-label">主题名称：</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="mailSubject" placeholder="请输入邮箱主题名称...">
+                </div>
+            </div>
+            <!--编辑器-->
+            <div class="form-group">
+                <br />
+                <label class="col-sm-2 control-label">正文内容：</label>
+                <div class="col-sm-6">
+                    <div id="edit" style="min-height:20em"></div>
+                </div>
+            </div>
+            <!--表单提交-->
+            <div class="form-group">
+                <br />
+                <label class="col-sm-2 control-label"></label>
+                <div class="col-sm-6">
+                    <button id="btn" class="btn btn-success form-control">发送邮件</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="msg"></div>
+    <script src="//cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js" async></script>
+    <script src="//cdn.bootcss.com/wangeditor/2.1.10/js/wangEditor.min.js"></script>
+    <script src="//7xocov.com2.z0.glb.qiniucdn.com/lotuploader1.0.2.js"></script>
+    <script type="text/javascript">
+        // 为页面所有的editor配置全局的密钥
+        //wangEditor.config.mapAk = 'xxxxxxxxxxxxxx';
+
+        wangEditor.config.printLog = false;     //阻止输出log
+        var editor = new wangEditor('edit');
+        editor.create();
+
+        $('#btn').click(function () {
+            // 获取编辑器区域完整html代码
+            var mailTo = $('#mailTo').val();
+            var mailCC = $('#mailCC').val();
+            var mailSubject = $('#mailSubject').val();
+            var mailContent = escape(editor.$txt.html());
+            if (mailTo.length < 1 || mailCC.length < 1 || mailSubject.length < 1 || mailContent.leng < 1) {
+                $('#msg').html('<h2>除附件外，不能为空！</h2>');
+                return false;
+            }
+            $.post('/api/email?MailSubject=' + mailSubject + '&MailContent=' + mailContent + '&MailTo=' + mailTo + '&MailCC=' + mailCC, {}, function (data) {
+                data = JSON.parse(data);
+                if (data.Status) {
+                    $('#msg').html('<h2>发送成功！</h2>');
+                } else {
+                    $('#msg').html('<h2>' + data.Msg + '</h2>');
+                }
+            })
+        });
+    </script>
+</body>
+</html>
