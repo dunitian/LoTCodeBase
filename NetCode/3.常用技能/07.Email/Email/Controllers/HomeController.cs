@@ -48,6 +48,7 @@ namespace Email.Controllers
             try
             {
                 file.SaveAs(Path.Combine(dirPath, fileName));
+                file.InputStream.Dispose();
                 filePathList.Add(Path.Combine(dirPath, fileName));
             }
             catch { return Json(new { status = false, msg = "文件保存失败" }); }

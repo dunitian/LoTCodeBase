@@ -43,6 +43,7 @@ namespace _03.WangEditor.Controllers
             {
                 //todo：未来写缩略图的代码
                 file.SaveAs(Path.Combine(dirPath, fileName));
+                file.InputStream.Dispose();
                 //todo: 未来写存数据库的Code
             }
             catch { return Content("error|文件保存失败"); }

@@ -40,6 +40,7 @@ namespace _02.LoTUploader.Controllers
             {
                 //todo：缩略图
                 file.SaveAs(Path.Combine(dirPath, fileName));
+                file.InputStream.Dispose();
                 //todo: 未来写存数据库的Code
             }
             catch { return Json(new { status = false, msg = "图片保存失败" }); }
