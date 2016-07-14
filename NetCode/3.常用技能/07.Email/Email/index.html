@@ -16,7 +16,15 @@
                 <br />
                 <label class="col-sm-2 control-label">收件邮箱：</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="title" placeholder="请输入收件人邮箱...">
+                    <input type="text" class="form-control" id="mailTo" placeholder="请输入收件人邮箱...">
+                </div>
+            </div>
+            <!--收件人邮箱-->
+            <div class="form-group">
+                <br />
+                <label class="col-sm-2 control-label">抄送邮箱：</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="mailCC" placeholder="请输入抄送人邮箱...">
                 </div>
             </div>
             <!--标题-->
@@ -24,7 +32,7 @@
                 <br />
                 <label class="col-sm-2 control-label">主题名称：</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="title" placeholder="请输入邮箱主题名称...">
+                    <input type="text" class="form-control" id="mailSubject" placeholder="请输入邮箱主题名称...">
                 </div>
             </div>
             <!--编辑器-->
@@ -53,9 +61,6 @@
             </div>
         </div>
     </div>
-    <br />
-    <input id="btn1" type="button" value="获取HTML" />&nbsp;&nbsp;
-    <input id="btn2" type="button" value="获取Text" />
     <div id="msg"></div>
     <script src="//cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js" async></script>
@@ -64,20 +69,36 @@
     <script type="text/javascript">
         // 为页面所有的editor配置全局的密钥
         //wangEditor.config.mapAk = 'xxxxxxxxxxxxxx';
-        // 阻止输出log
-        wangEditor.config.printLog = false;
+
+        wangEditor.config.printLog = false;     //阻止输出log
         var editor = new wangEditor('edit');
         editor.create();
+
+        //文件上传
+        $.lotuploader({
+            lotDocId: 'lot-uploader',           //ID
+            lotUrl: '/Home/FileUpload',         //服务器Post地址
+            btnStr: '点我就上传邮件附件'
+        });
+
         $('#btn').click(function () {
             // 获取编辑器区域完整html代码
-            var html = editor.$txt.html();
-        });
-    </script>
-    <script type="text/javascript">
-        $.lotuploader({
-            lotDocId: 'lot-uploader', //ID
-            lotUrl: '/Home/FileUpload', //服务器Post地址
-            btnStr: '点我就上传邮件附件'
+            var mailTo = $('#mailTo').val();
+            var mailCC = $('#mailCC').val();
+            var mailSubject = $('#mailSubject').val();
+            var mailContent = escape(editor.$txt.html());
+            if (mailTo.length < 1 || mailCC.length < 1 || mailSubject.length < 1 || mailContent.leng < 1) {
+                $('#msg').html('<h2>除附件外，不能为空！</h2>');
+                return false;
+            }
+            $.post('/Home/SendMsg', { MailTo: mailTo, MailCC: mailCC, MailSubject: mailSubject, MailContent: mailContent }, function (data) {
+                data = eval(data);
+                if (data.Status) {
+                    $('#msg').html('<h2>发送成功！</h2>');
+                } else {
+                    $('#msg').html('<h2>' + data.Msg + '</h2>');
+                }
+            })
         });
     </script>
 </body>

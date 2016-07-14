@@ -95,10 +95,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\EmailHelper.cs" />
     <Compile Include="Common\FileHelper.cs" />
+    <Compile Include="Common\ValidationHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AjaxOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -114,7 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />

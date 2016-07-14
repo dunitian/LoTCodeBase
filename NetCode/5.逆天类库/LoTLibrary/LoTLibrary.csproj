@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DB\DapperDataAsync.cs" />
     <Compile Include="IO\FileHelper.cs" />
+    <Compile Include="Net\EmailHelper.cs" />
     <Compile Include="Net\IPAndPositionHelper.cs" />
     <Compile Include="Validation\ValidationHelper.cs" />
     <Compile Include="Json\JsonHelper.cs" />

@@ -11,7 +11,7 @@ namespace LoTLibrary
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
         /// <returns></returns>
-        public static bool ExistsData<T>(IEnumerable<T> list)
+        public static bool ExistsData<T>(this IEnumerable<T> list)
         {
             bool b = false;
             if (list != null && list.Count() > 0)

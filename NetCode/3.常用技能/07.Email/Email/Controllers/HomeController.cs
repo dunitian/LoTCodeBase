@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace Email.Controllers
@@ -12,10 +13,12 @@ namespace Email.Controllers
             return View();
         }
 
+        #region 附件路径
         /// <summary>
         /// 附件路径
         /// </summary>
-        public static IList<string> filePathList = new List<string>();
+        public static List<string> filePathList = new List<string>();
+        #endregion
 
         #region 文件上传
         /// <summary>
@@ -36,7 +39,6 @@ namespace Email.Controllers
                 return Json(new { status = false, msg = "请上传图片或压缩包" });
             }
             //todo: md5判断一下文件是否已经上传过,如果已经上传直接返回 return Json(new { status = true, msg = sqlPath });
-
             string path = string.Format("{0}/{1}", "/lotFiles", DateTime.Now.ToString("yyyy-MM-dd"));
             string fileName = string.Format("{0}{1}", Guid.NewGuid().ToString("N"), fileExt);
             string sqlPath = string.Format("{0}/{1}", path, fileName);
@@ -45,18 +47,60 @@ namespace Email.Controllers
             if (!Directory.Exists(dirPath)) { Directory.CreateDirectory(dirPath); }
             try
             {
-                //todo：缩略图
                 file.SaveAs(Path.Combine(dirPath, fileName));
-                filePathList.Add(sqlPath); //todo: 未来写存数据库的Code
+                filePathList.Add(Path.Combine(dirPath, fileName));
             }
             catch { return Json(new { status = false, msg = "文件保存失败" }); }
             return Json(new { status = true, msg = sqlPath });
         }
         #endregion
 
-        public JsonResult SendMsg()
+        #region 发邮件
+        /// <summary>
+        /// 发邮件
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public async Task<JsonResult> SendMsg(MailModel model)
         {
-            return Json("");
+            var obj = new AjaxOption<object>();
+
+            #region 校验系列
+            if (model == null)
+            {
+                obj.Msg = "内容不能为空";
+            }
+
+            if (string.IsNullOrWhiteSpace(model.MailSubject))
+            {
+                obj.Msg = "邮件主题不能为空";
+            }
+
+            if (string.IsNullOrWhiteSpace(model.MailContent))
+            {
+                obj.Msg = "邮件内容不能为空";
+            }
+
+            if (model.MailTo == null)
+            {
+                obj.Msg = "收件人邮箱不能为空";
+            }
+            #endregion
+
+            //内容解码
+            model.MailContent = System.Web.HttpUtility.UrlDecode(model.MailContent);
+
+            //添加附件
+            if (filePathList.ExistsData())
+            {
+                model.AttachmentsPath = filePathList.ToArray();
+            }
+
+            if (obj.Msg.IsNullOrWhiteSpace())
+                obj.Status = await EmailHelper.SendAsync(model);
+
+            return Json(obj);
         }
+        #endregion
     }
 }
