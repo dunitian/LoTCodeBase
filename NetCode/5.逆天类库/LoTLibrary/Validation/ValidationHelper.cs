@@ -75,13 +75,13 @@ public static partial class ValidationHelper
     /// <summary>
     /// 是否是浮点数
     /// </summary>
-    /// <param name="inputData">输入字符串</param>
+    /// <param name="objStr">输入字符串</param>
     /// <returns></returns>
-    public static bool IsDecimal(string strIn)
+    public static bool IsDecimal(this string objStr)
     {
         try
         {
-            return Regex.IsMatch(strIn, @"^(-?\d+)(\.\d+)?$");
+            return Regex.IsMatch(objStr, @"^(-?\d+)(\.\d+)?$");
         }
         catch
         {
@@ -98,7 +98,7 @@ public static partial class ValidationHelper
     /// <summary>
     /// 检测是否有中文字符
     /// </summary>
-    /// <param name="inputData"></param>
+    /// <param name="objStr"></param>
     /// <returns></returns>
     public static bool IsZhCN(this string objStr)
     {
@@ -119,7 +119,7 @@ public static partial class ValidationHelper
     /// </summary>
     /// <param name="objStr"></param>
     /// <returns></returns>
-    public static bool IsValidEmail(this string objStr)
+    public static bool IsEmail(this string objStr)
     {
         try
         {
@@ -136,21 +136,21 @@ public static partial class ValidationHelper
     /// <summary>
     /// 是否为ip
     /// </summary>
-    /// <param name="ip"></param>
+    /// <param name="objStr"></param>
     /// <returns></returns>
-    public static bool IsIP(string ip)
+    public static bool IsIP(this string objStr)
     {
-        return Regex.IsMatch(ip, @"^((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)$");
+        return Regex.IsMatch(objStr, @"^((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)$");
     }
 
     /// <summary>  
     /// 判断输入的字符串是否是表示一个IP地址  
     /// </summary>  
-    /// <param name="input">被比较的字符串</param>  
+    /// <param name="objStr">被比较的字符串</param>  
     /// <returns>是IP地址则为True</returns>  
-    public static bool IsIPv4(string input)
+    public static bool IsIPv4(this string objStr)
     {
-        string[] IPs = input.Split('.');
+        string[] IPs = objStr.Split('.');
         for (int i = 0; i < IPs.Length; i++)
         {
             if (!Regex.IsMatch(IPs[i], @"^\d+$"))
@@ -215,12 +215,12 @@ public static partial class ValidationHelper
     /// <summary>
     /// 判断输入的字符串是否是一个超链接  
     /// </summary>
-    /// <param name="input"></param>
+    /// <param name="objStr"></param>
     /// <returns></returns>
-    public static bool IsURL(string input)
+    public static bool IsURL(this string objStr)
     {
         string pattern = @"^[a-zA-Z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$";
-        return Regex.IsMatch(input, pattern);
+        return Regex.IsMatch(objStr, pattern);
     }
     #endregion
 

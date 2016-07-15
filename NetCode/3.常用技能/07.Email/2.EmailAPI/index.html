@@ -74,7 +74,7 @@
                 $('#msg').html('<h2>除附件外，不能为空！</h2>');
                 return false;
             }
-            $.post('/api/email?MailSubject=' + mailSubject + '&MailContent=' + mailContent + '&MailTo=' + mailTo + '&MailCC=' + mailCC, {}, function (data) {
+            $.post('/api/email?MailSubject=' + mailSubject + '&MailContent=' + mailContent + '&MailToList=' + mailTo + '&MailCCList=' + mailCC, {}, function (data) {
                 data = JSON.parse(data);
                 if (data.Status) {
                     $('#msg').html('<h2>发送成功！</h2>');

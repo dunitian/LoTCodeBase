@@ -5,17 +5,6 @@ namespace _2.EmailAPI.Models.Controllers
 {
     public class EmailController : ApiController
     {
-        [CrossSite]
-        public string Get()
-        {
-            return "欢迎使用LoT.Email，快使用Post发邮件吧！";
-        }
-
-        public string Get(string id)
-        {
-            return id;
-        }
-
         #region 发邮件
         /// <summary>
         /// 发邮件
@@ -43,9 +32,38 @@ namespace _2.EmailAPI.Models.Controllers
                 obj.Msg = "邮件内容不能为空";
             }
 
-            if (model.MailTo == null)
+            #region 收件人邮箱
+            if (model.MailToList != null)
+            {
+                foreach (var item in model.MailToList)
+                {
+                    if (!item.IsEmail())
+                    {
+                        model.MailToList.Remove(item);
+                    }
+                }
+            }
+            else
             {
                 obj.Msg = "收件人邮箱不能为空";
+            }
+
+            //这个一定要加
+            if (model.MailToList.Count == 0)
+            {
+                obj.Msg = "收件人邮箱不能为空";
+            }
+            #endregion
+
+            if (model.MailCCList.ExistsData())
+            {
+                foreach (var item in model.MailCCList)
+                {
+                    if (!item.IsEmail())
+                    {
+                        model.MailCCList.Remove(item);
+                    }
+                }
             }
             #endregion
 

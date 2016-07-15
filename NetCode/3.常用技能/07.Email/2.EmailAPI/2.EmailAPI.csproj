@@ -101,12 +101,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\5.逆天类库\LoTLibrary\LoTLibrary.csproj">
-      <Project>{363c92fe-db44-4767-bdc1-4a2e530bf8f6}</Project>
-      <Name>LoTLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="web.config" />
     <None Include="Properties\PublishProfiles\EmailAPI.pubxml" />
     <None Include="web.Debug.config">
@@ -115,6 +109,12 @@
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\5.逆天类库\LoTLibrary\LoTLibrary.csproj">
+      <Project>{363c92fe-db44-4767-bdc1-4a2e530bf8f6}</Project>
+      <Name>LoTLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

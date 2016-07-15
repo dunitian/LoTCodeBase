@@ -82,9 +82,38 @@ namespace Email.Controllers
                 obj.Msg = "邮件内容不能为空";
             }
 
-            if (model.MailTo == null)
+            #region 收件人邮箱
+            if (model.MailToList != null)
+            {
+                foreach (var item in model.MailToList)
+                {
+                    if (!item.IsEmail())
+                    {
+                        model.MailToList.Remove(item);
+                    }
+                }
+            }
+            else
             {
                 obj.Msg = "收件人邮箱不能为空";
+            }
+
+            //这个一定要加
+            if (model.MailToList.Count == 0)
+            {
+                obj.Msg = "收件人邮箱不能为空";
+            }
+            #endregion
+
+            if (model.MailCCList.ExistsData())
+            {
+                foreach (var item in model.MailCCList)
+                {
+                    if (!item.IsEmail())
+                    {
+                        model.MailCCList.Remove(item);
+                    }
+                }
             }
             #endregion
 
@@ -94,7 +123,7 @@ namespace Email.Controllers
             //添加附件
             if (filePathList.ExistsData())
             {
-                model.AttachmentsPath = filePathList.ToArray();
+                model.AttachmentList=filePathList;
             }
 
             if (obj.Msg.IsNullOrWhiteSpace())

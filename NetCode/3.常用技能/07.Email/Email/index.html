@@ -91,7 +91,7 @@
                 $('#msg').html('<h2>除附件外，不能为空！</h2>');
                 return false;
             }
-            $.post('/Home/SendMsg', { MailTo: mailTo, MailCC: mailCC, MailSubject: mailSubject, MailContent: mailContent }, function (data) {
+            $.post('/Home/SendMsg', { MailToList: mailTo, MailCCList: mailCC, MailSubject: mailSubject, MailContent: mailContent }, function (data) {
                 data = eval(data);
                 if (data.Status) {
                     $('#msg').html('<h2>发送成功！</h2>');

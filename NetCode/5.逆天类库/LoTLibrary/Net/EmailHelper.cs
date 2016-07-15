@@ -1,7 +1,12 @@
-﻿using System.Configuration;
-using System.Net.Mail;
+﻿using System.Net.Mail;
+using System.Configuration;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
+#region MailModel
+/// <summary>
+/// MailModel
+/// </summary>
 public class MailModel
 {
     /// <summary>
@@ -15,16 +20,17 @@ public class MailModel
     /// <summary>
     /// 收件人邮箱
     /// </summary>
-    public string[] MailTo { get; set; }
+    public List<string> MailToList { get; set; }
     /// <summary>
     /// 抄送人邮箱
     /// </summary>
-    public string[] MailCC { get; set; }
+    public List<string> MailCCList { get; set; }
     /// <summary>
     /// 附件路径
     /// </summary>
-    public string[] AttachmentsPath { get; set; }
+    public List<string> AttachmentList { get; set; }
 }
+#endregion
 
 public class EmailHelper
 {
@@ -32,6 +38,7 @@ public class EmailHelper
     private static string mailPass = ConfigurationManager.AppSettings["EmailPass"]; //登陆密码
     private static string mailSmtp = ConfigurationManager.AppSettings["EmailSmtp"]; //SMTP服务器
 
+    #region 发送邮件
     /// <summary>
     /// 发送邮件
     /// </summary>
@@ -43,12 +50,12 @@ public class EmailHelper
     /// <returns>返回发送邮箱的结果</returns>
     public static async Task<bool> SendAsync(MailModel model)
     {
-        //基本校验（如不需要可删除）
-        if (model == null || string.IsNullOrWhiteSpace(model.MailSubject) || string.IsNullOrWhiteSpace(model.MailContent) || model.MailTo == null)
-        {
-            return false;
-        }
-
+        #region 基本校验（一般都是调用前就验证了）
+        //if (model == null || string.IsNullOrWhiteSpace(model.MailSubject) || string.IsNullOrWhiteSpace(model.MailContent) || model.MailTo == null)
+        //{
+        //    return false;
+        //} 
+        #endregion
         //邮件服务设置
         using (var smtpClient = new SmtpClient())
         {
@@ -60,34 +67,26 @@ public class EmailHelper
                 //发信人邮箱
                 mailMsg.From = new MailAddress(mailFrom);
                 //收件人邮箱
-                for (int i = 0; i < model.MailTo.Length; i++)
+                foreach (var item in model.MailToList)
                 {
-                    mailMsg.To.Add(model.MailTo[i]);
+                    mailMsg.To.Add(item);
                 }
                 //抄送人邮箱
-                if (model.MailCC != null)
+                if (model.MailCCList != null && model.MailCCList.Count > 0)
                 {
-                    for (int i = 0; i < model.MailCC.Length; i++)
+                    foreach (var item in model.MailCCList)
                     {
-                        mailMsg.CC.Add(model.MailCC[i]);
+                        mailMsg.CC.Add(item);
                     }
                 }
                 //附件系列
-                if (model.AttachmentsPath != null)
+                if (model.AttachmentList != null)
                 {
-
-                    for (int i = 0; i < model.AttachmentsPath.Length; i++)
+                    foreach (var item in model.AttachmentList)
                     {
-                        try
-                        {
-                            mailMsg.Attachments.Add(new Attachment(model.AttachmentsPath[i]));
-                        }
-                        catch (System.Exception ex)
-                        {
-                            continue;
-                        }
+                        try { mailMsg.Attachments.Add(new Attachment(item)); }
+                        catch (System.Exception ex) { }
                     }
-
                 }
                 mailMsg.Subject = model.MailSubject;                //主题
                 mailMsg.Body = model.MailContent;                   //内容
@@ -107,4 +106,5 @@ public class EmailHelper
             }
         }
     }
+    #endregion
 }
