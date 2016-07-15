@@ -54,6 +54,7 @@
     <Compile Include="IO\FileHelper.cs" />
     <Compile Include="Net\EmailHelper.cs" />
     <Compile Include="Net\IPAndPositionHelper.cs" />
+    <Compile Include="Pub\FunHelper.cs" />
     <Compile Include="Validation\ValidationHelper.cs" />
     <Compile Include="Json\JsonHelper.cs" />
     <Compile Include="Net\DomainHelper.cs" />
