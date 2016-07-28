@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tag下拉列表</title>
+    <meta charset="utf-8" />
+    @Styles.Render("~/CSS/BaseCss")
+    @Styles.Render("~/CSS/Select")
+    @*<link href="~/Style/Site.css" rel="stylesheet" />
+        <link href="~/Scripts/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="~/Scripts/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+        <link href="~/Style/Site.css" rel="stylesheet" />*@
+</head>
+<body>
+    <select class="lot-tagSelect form-control" multiple data-live-search="true">
+        <optgroup label="SQL">
+            <option>MySql</option>
+            <option>Sqlite</option>
+            <option>SQLServer</option>
+        </optgroup>
+        <optgroup label="Other">
+            <option>C#</option>
+            <option>EF</option>
+            <option>MVC</option>
+            <option>Dapper</option>
+            <option>Ado.Net</option>
+        </optgroup>
+    </select>
+    @*<script src="~/Scripts/jquery-1.9.1.js"></script>
+        <script src="~/Scripts/bootstrap/bootstrap.js"></script>
+        <script src="~/Scripts/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="~/Scripts/bootstrap-select/defaults-zh_CN.min.js"></script>*@
+    @Scripts.Render("~/JS/BaseJs")
+    @Scripts.Render("~/JS/Select")
+    <script type="text/javascript">
+        $('.lot-tagSelect').selectpicker();
+    </script>
+</body>
+</html>
