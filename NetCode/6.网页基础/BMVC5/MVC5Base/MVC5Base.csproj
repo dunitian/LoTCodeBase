@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="xssurl.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -143,6 +144,7 @@
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Views\Index\List.cshtml" />
     <Content Include="Views\Index\Razor.cshtml" />
+    <Content Include="Views\Index\XssUrl.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

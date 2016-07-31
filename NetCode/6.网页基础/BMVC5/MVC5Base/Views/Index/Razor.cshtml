@@ -1,1 +1,15 @@
-﻿@ViewBag.Test
+﻿@ViewBag.Test1
+@ViewBag.Test2
+<br />
+<h2><a href="/xssurl.html">6.Razor的简单接触2</a>@*<a href="@Url.Action("XssUrl","Index",new { xss = "\"></a>\x3cscript\x3e%20alert(\x27我为NET狂-官方群① 238575862\x27)%20\x3c/script\x3e<a href=\"" })">6.Razor的简单接触2</a>*@</h2>
+<br />
+
+<button id="xss">Ajax方式</button>
+<p id="main"></p>
+<script src="//cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#xss').click(function () {
+        //$('#main').html('@ViewBag.Test2');
+        $('#main').html('@Ajax.JavaScriptStringEncode(ViewBag.Test2)');
+    });
+</script>

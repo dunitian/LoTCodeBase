@@ -35,12 +35,23 @@ namespace MVC5Base.Controllers
             return View(noteList);
         }
         /// <summary>
-        ///  6.Razor的简单接触
+        ///  6.Razor的简单接触1
         /// </summary>
         /// <returns></returns>
         public ActionResult Razor()
         {
-            ViewBag.Test = "<script>alert('xxx');</script>";
+            ViewBag.Test1 = "<script>alert('xxx');</script>";
+            ViewBag.Test2 = @"\x3cscript\x3ealert(\x27我是XSS变体1\x27)\x3c/script\x3e";
+            return View();
+        }
+        /// <summary>
+        ///  6.Razor的简单接触2
+        /// </summary>
+        /// <returns></returns>
+        [ValidateInput(false)]
+        public ActionResult XssUrl(string xss)
+        {
+            ViewBag.Test = xss;
             return View();
         }
     }
