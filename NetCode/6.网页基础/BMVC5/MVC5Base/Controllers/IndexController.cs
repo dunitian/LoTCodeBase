@@ -1,5 +1,6 @@
 ﻿using MVC5Base.Models;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MVC5Base.Controllers
@@ -48,10 +49,9 @@ namespace MVC5Base.Controllers
         ///  6.Razor的简单接触2
         /// </summary>
         /// <returns></returns>
-        [ValidateInput(false)]
-        public ActionResult XssUrl(string xss)
+        public ActionResult Test()
         {
-            ViewBag.Test = xss;
+            ViewBag.Test = HttpUtility.HtmlEncode("<a href=\"#\">我为Net狂</a><script>alert(\"xxx\")</script>");
             return View();
         }
     }
