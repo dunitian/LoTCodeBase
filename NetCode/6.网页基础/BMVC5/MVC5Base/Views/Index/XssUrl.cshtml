@@ -1,0 +1,10 @@
+﻿<h2>你已经被注入了后门</h2>
+<h2><a href="@Url.Action("Index", "Lay")">7.布局系列</a></h2>
+<p id="main"></p>
+<script src="//cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#main').html('@ViewBag.Test');
+        @*$('#main').html('@Ajax.JavaScriptStringEncode(ViewBag.Test)');*@
+    });
+</script>

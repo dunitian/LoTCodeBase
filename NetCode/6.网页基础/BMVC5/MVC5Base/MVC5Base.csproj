@@ -113,6 +113,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\LayController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -125,7 +126,6 @@
     <Content Include="Scripts\bootstrap-select\defaults-zh_CN.min.js" />
     <Content Include="Scripts\bootstrap\bootstrap.css" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Style\Site.css" />
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
@@ -145,6 +145,14 @@
     <Content Include="Views\Index\List.cshtml" />
     <Content Include="Views\Index\Razor.cshtml" />
     <Content Include="Views\Index\Test.cshtml" />
+    <Content Include="Views\Index\XssUrl.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Lay\Index.cshtml" />
+    <Content Include="Views\Shared\Seo.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Lay\Part.cshtml" />
+    <Content Include="Views\Lay\PartAsync.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

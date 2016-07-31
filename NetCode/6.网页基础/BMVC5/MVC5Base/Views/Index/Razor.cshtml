@@ -2,6 +2,7 @@
 @ViewBag.Test2
 <br />
 <h2><a href="/xssurl.html">6.Razor的简单接触2</a></h2>
+<h2><a href="@Url.Action("XssUrl", "Index", new { name=ViewBag.Test})">6.Razor的简单接触2</a></h2>
 <br />
 
 <button id="xss">Ajax方式</button>

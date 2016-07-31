@@ -10,6 +10,7 @@ namespace MVC5Base.Controllers
     /// </summary>
     public class IndexController : Controller
     {
+        [ValidateInput(false)]
         public ActionResult Index(string id)
         {
             ViewBag.ID = id;
@@ -49,10 +50,17 @@ namespace MVC5Base.Controllers
         ///  6.Razor的简单接触2
         /// </summary>
         /// <returns></returns>
+        [ValidateInput(false)]
+        public ActionResult XssUrl(string name)
+        {
+            ViewBag.Test = name;
+            return View();
+        }
         public ActionResult Test()
         {
             ViewBag.Test = HttpUtility.HtmlEncode("<a href=\"#\">我为Net狂</a><script>alert(\"xxx\")</script>");
             return View();
         }
+
     }
 }
