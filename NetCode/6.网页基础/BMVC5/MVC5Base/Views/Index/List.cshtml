@@ -1,0 +1,7 @@
+﻿@model IEnumerable<NoteInfo>
+@{
+    foreach (var item in Model)
+    {
+        <p>@item.NTitle</p>
+    }
+}
