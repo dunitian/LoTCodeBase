@@ -6,5 +6,27 @@
 }
 
 我是一个Body
-@{ Html.RenderAction("", "");}
-@{ Html.RenderAction("", "");}
+<br />
+常规写法：
+<div>
+    @{Html.Partial("Part", "Lay");}
+</div>
+<br /><hr />
+<div>
+    @{Html.RenderPartial("Part", "Lay");}
+    @*@{Html.RenderPartial("Bundle", "Home");}*@
+</div>
+<br /><hr />
+<div>
+    @{Html.RenderAction("Part", "Lay");}
+    @*@{Html.RenderAction("Bundle", "Home");}*@
+</div>
+<br /><hr />
+异步写法：（MVC6是支持RenderAction的）
+<br /><hr />
+<div id="partTwo"></div>
+@section Scripts{ 
+<script type="text/javascript">
+    $('#partTwo').load('@Url.Action("PartAsync", "Lay")');
+</script>
+}

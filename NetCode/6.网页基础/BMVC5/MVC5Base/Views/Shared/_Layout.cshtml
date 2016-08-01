@@ -14,10 +14,18 @@
     </header>
     @RenderBody()
     <footer>
+        @*@RenderSection("Footer")*@
+        @*@if (IsSectionDefined("Footer"))
+        {
+            RenderSection("Footer");
+        }
+        else
+        {
+            <strong>我是默认Footer</strong>
+        }*@
         @RenderSection("Footer", false)
     </footer>
     @Scripts.Render("~/JS/BaseJs")
     @RenderSection("Scripts", false)
 </body>
 </html>
-@Html.

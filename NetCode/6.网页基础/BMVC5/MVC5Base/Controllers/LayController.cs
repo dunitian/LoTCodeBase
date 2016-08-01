@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -22,6 +21,7 @@ namespace MVC5Base.Controllers
         /// <returns></returns>
         public PartialViewResult Part()
         {
+            ViewBag.Test = "啦啦啦";
             return PartialView();
         }
         /// <summary>
@@ -35,6 +35,7 @@ namespace MVC5Base.Controllers
                 await GetNumAsync();
             }
             catch { }
+            ViewBag.Test = "我是卖报的";
             return PartialView();
         }
         /// <summary>
