@@ -9,7 +9,7 @@ namespace MVC5Base.Controllers
             return View();
         }
         /// <summary>
-        /// 模拟登录
+        /// 8.0模拟登录~爆破演示
         /// </summary>
         /// <param name="name"></param>
         /// <param name="pass"></param>
@@ -27,6 +27,14 @@ namespace MVC5Base.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult Manager()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 8.1登录演示
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Login()
         {
             return View();
         }

@@ -25,8 +25,10 @@
 @*@{Html.RenderAction("PartAsync", "Lay");}*@
 <br /><hr />
 <div id="partTwo"></div>
-@section Scripts{ 
-<script type="text/javascript">
-    $('#partTwo').load('@Url.Action("PartAsync", "Lay")');
-</script>
+<br /><hr />
+<h2><a href="@Url.Action("Index","Form")">8.表单爆破演示</a> <a href="http://www.cnblogs.com/dunitian/p/5724872.html">点我看爆破</a></h2>
+@section Scripts{
+    <script type="text/javascript">
+        $('#partTwo').load('@Url.Action("PartAsync", "Lay")');
+    </script>
 }
