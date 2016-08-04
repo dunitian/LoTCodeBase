@@ -105,7 +105,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\common.css" />
+    <Content Include="assets\css\login.min.css" />
+    <Content Include="assets\img\backgrounds\1.jpg" />
+    <Content Include="assets\img\backgrounds\2.jpg" />
+    <Content Include="assets\img\backgrounds\3.jpg" />
+    <Content Include="assets\js\common.min.js" />
+    <Content Include="assets\js\login.js" />
+    <Content Include="assets\js\supersized\progress.gif" />
+    <Content Include="assets\js\supersized\supersized-init.js" />
+    <Content Include="assets\js\supersized\supersized.3.2.7.min.js" />
+    <Content Include="assets\js\supersized\supersized.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Login.html" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="xssurl.html" />
   </ItemGroup>
@@ -156,6 +168,7 @@
     <Content Include="Views\Lay\Part.cshtml" />
     <Content Include="Views\Lay\PartAsync.cshtml" />
     <Content Include="Views\Form\Index.cshtml" />
+    <Content Include="Views\Form\Manager.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

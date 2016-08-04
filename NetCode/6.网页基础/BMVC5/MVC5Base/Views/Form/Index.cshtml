@@ -1,4 +1,22 @@
-﻿@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@section Styles{
+    <link rel="stylesheet" href="/assets/js/supersized/supersized.min.css">
+    <link rel="stylesheet" href="/assets/css/login.min.css">
+    <link rel="stylesheet" href="/assets/css/common.css" />
+}
+
+<div class="page-container">
+    <h1>Login Page</h1>
+    <div id="form">
+        <input type="text" name="userName" placeholder="UserName">
+        <input type="password" name="passWord" placeholder="PassWord">
+        <button id="btn">Click on Here</button>
+        <div class="error"><span>+</span></div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/assets/js/supersized/supersized.3.2.7.min.js"></script>
+    <script src="/assets/js/supersized/supersized-init.js" async="async"></script>
+    <script src="/assets/js/common.min.js"></script>
+    <script src="/assets/js/login.js" async="async"></script>
 }

@@ -9,12 +9,11 @@
 <br />
 常规写法：（RenderPartial 比 Partial 性能高点）
 <div>
-    @{Html.Partial("Part", "Lay");}
+    @{Html.Partial("Part");}
 </div>
 <br /><hr />
 <div>
-    @{Html.RenderPartial("Part", "Lay");}
-    @*@{Html.RenderPartial("Bundle", "Home");}*@
+    @{Html.RenderPartial("Part");}
 </div>
 <br /><hr />
 <div>
