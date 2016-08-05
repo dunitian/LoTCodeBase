@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using MVC5Base.Models;
+using System.Web.Mvc;
 
 namespace MVC5Base.Controllers
 {
@@ -34,9 +35,10 @@ namespace MVC5Base.Controllers
         /// 8.1登录演示
         /// </summary>
         /// <returns></returns>
-        public ActionResult Login()
+        public ActionResult Login(UserInfo model)
         {
             return View();
         }
+
     }
 }

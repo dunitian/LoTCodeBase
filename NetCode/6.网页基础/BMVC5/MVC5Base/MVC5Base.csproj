@@ -118,7 +118,10 @@
     <Content Include="assets\js\supersized\supersized.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Login.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="xssurl.html" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +135,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\NoteInfo.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +144,7 @@
     <Content Include="Scripts\bootstrap-select\defaults-zh_CN.min.js" />
     <Content Include="Scripts\bootstrap\bootstrap.css" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
-    <Content Include="Style\Site.css" />
+    <Content Include="assets\css\site.css" />
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Bundle.cshtml" />
