@@ -1,5 +1,5 @@
-﻿using MVC5Base.Models;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using MVC5Base.Models;
 
 namespace MVC5Base.Controllers
 {
@@ -35,10 +35,26 @@ namespace MVC5Base.Controllers
         /// 8.1登录演示
         /// </summary>
         /// <returns></returns>
-        public ActionResult Login(UserInfo model)
+        public ActionResult Login()
         {
             return View();
         }
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(UserInfo model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.Pass == "net1")
+                {
+                    return RedirectToAction("Manager", "Form");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "密码错误");
+                }
+            }
+            return View(model);// 如果出错，则重新显示表单
+        }
     }
 }
