@@ -131,10 +131,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LayController.cs" />
+    <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\NoteInfo.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -175,6 +177,7 @@
     <Content Include="Views\Form\Manager.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5Base.pubxml" />
     <Content Include="Views\Form\Login.cshtml" />
+    <Content Include="Views\Model\Index.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

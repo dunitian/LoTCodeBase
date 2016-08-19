@@ -1,0 +1,30 @@
+﻿<h3>模拟下订单，商品编号和价格是不允许修改的，通过过度提交就可以修改那些被忽视的东西</h3>
+@{
+    var product = ViewBag.Product as Product;
+    if (product != null)
+    {
+        var total = product.Price * product.Count;
+        <h1>商品编号：@product.ID </h1>
+        <h1>商品名称：@product.Name </h1>
+        <h1>购买数量：@product.Count </h1>
+        <h1>商品价格：@product.Price </h1>
+        <h1>价格总计：@total</h1>
+    }
+}
+<br /><hr /><br />
+<form id="form1">
+    <button id="put">点位下订单（过度提交）</button>
+</form>
+<br /><hr /><br />
+<h2><a href="@Url.Action("Index","Model")">11.模型详解</a></h2>
+@section Scripts{
+    <script type="text/javascript">
+        $('#put').click(function () {
+            $.post('/Model/Put', { ID: 'SJ008-1012', Name: '小馒头', Count: 23, Price: 0.1 }, function (data) {
+                document.clear();
+                document.write(data);
+                $('#form1').text('请打开支付宝扫描支付吧~');
+            });
+        });
+    </script>
+}
