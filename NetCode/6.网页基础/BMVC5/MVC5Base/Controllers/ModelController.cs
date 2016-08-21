@@ -125,18 +125,22 @@ namespace MVC5Base.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ValidateNote(Register model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(model);
         }
 
         public JsonResult CheckName(string Name)
         {
             if (Name == "dnt")
             {
-                return Json(false);
+                return Json(false,JsonRequestBehavior.AllowGet);
             }
             else
             {
-                return Json(true);
+                return Json(true,JsonRequestBehavior.AllowGet);
             }
         }
         public JsonResult CheckEmail(string Email)

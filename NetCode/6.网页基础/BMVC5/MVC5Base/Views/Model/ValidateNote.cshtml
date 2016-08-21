@@ -13,7 +13,7 @@
             @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                @*@Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
@@ -21,7 +21,7 @@
             @Html.LabelFor(model => model.Money, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Money, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Money, "", new { @class = "text-danger" })
+                @*@Html.ValidationMessageFor(model => model.Money, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
@@ -29,7 +29,7 @@
             @Html.LabelFor(model => model.NiName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NiName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NiName, "", new { @class = "text-danger" })
+                @*@Html.ValidationMessageFor(model => model.NiName, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
@@ -37,7 +37,7 @@
             @Html.LabelFor(model => model.Pass, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Pass, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Pass, "", new { @class = "text-danger" })
+                @*@Html.ValidationMessageFor(model => model.Pass, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
@@ -58,17 +58,12 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CreateTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CreateTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CreateTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
+}
+@section Scripts{
+    @Scripts.Render("~/JS/JQVal")
 }

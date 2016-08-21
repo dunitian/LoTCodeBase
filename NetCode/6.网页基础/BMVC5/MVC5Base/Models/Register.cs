@@ -32,7 +32,7 @@ namespace MVC5Base.Models
         [Required]
         [Display(Name = "网络昵称：")]
         [StringLength(50, MinimumLength = 3)]
-        [System.Web.Mvc.Remote("CheckName", "Model")]
+        [System.Web.Mvc.Remote("CheckName", "Model",ErrorMessage ="用户名已经存在")]
         public string NiName { get; set; }
 
         /// <summary>
@@ -58,8 +58,8 @@ namespace MVC5Base.Models
         /// </summary>
         [Required]
         [Display(Name = "注册邮箱：")]
-        [System.Web.Mvc.Remote("CheckEmail", "Model")]
-        [RegularExpression(@"/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/",ErrorMessage ="邮箱格式不正确")]
+        [System.Web.Mvc.Remote("CheckEmail", "Model", ErrorMessage = "邮箱已经存在")]
+        [RegularExpression(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage ="邮箱格式不正确")]
         public string Email { get; set; }
 
         /// <summary>
