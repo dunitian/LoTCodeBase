@@ -14,16 +14,27 @@
 <br /><hr /><br />
 <form id="form1">
     <button id="put">点位下订单（过度提交）</button>
+    <button id="go">点位下订单（已经防御）</button>
 </form>
 <br /><hr /><br />
-<h2><a href="@Url.Action("Index","Model")">11.模型详解</a></h2>
+<h2><a href="@Url.Action("ModelBind","Model")">11.模型详解--模型绑定</a></h2>
 @section Scripts{
     <script type="text/javascript">
+        function documentWrite(data) {
+            document.clear();
+            document.write(data);
+            $('#form1').text('请打开支付宝扫描支付吧~');
+        }
+
         $('#put').click(function () {
-            $.post('/Model/Put', { ID: 'SJ008-1012', Name: '小馒头', Count: 23, Price: 0.1 }, function (data) {
-                document.clear();
-                document.write(data);
-                $('#form1').text('请打开支付宝扫描支付吧~');
+            $.post('/Model/Put', { ID: 'SJ008-1013', Name: '小馒头1', Count: 20, Price: 0.1 }, function (data) {
+                documentWrite(data);
+            });
+        });
+
+        $('#go').click(function () {
+            $.post('/Model/Update', { ID: 'SJ008-1013', Name: '小馒头2', Count: 10, Price: 0.1 }, function (data) {
+                documentWrite(data);
             });
         });
     </script>

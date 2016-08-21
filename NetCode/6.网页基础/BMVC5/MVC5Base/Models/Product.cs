@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-namespace MVC5Base.Models
+﻿namespace MVC5Base.Models
 {
     public partial class Product
     {

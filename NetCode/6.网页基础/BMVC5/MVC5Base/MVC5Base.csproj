@@ -136,6 +136,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\NoteInfo.cs" />
+    <Compile Include="Models\Register.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -178,6 +179,9 @@
     <None Include="Properties\PublishProfiles\MVC5Base.pubxml" />
     <Content Include="Views\Form\Login.cshtml" />
     <Content Include="Views\Model\Index.cshtml" />
+    <Content Include="Views\Model\ModelBind.cshtml" />
+    <Content Include="Views\Model\BindModel.cshtml" />
+    <Content Include="Views\Model\ValidateNote.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
