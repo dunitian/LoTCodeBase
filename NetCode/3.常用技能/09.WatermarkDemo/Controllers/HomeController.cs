@@ -9,6 +9,12 @@ namespace _09.WatermarkDemo.Controllers
 {
     public class HomeController : Controller
     {
+        /// <summary>
+        /// 按指定位置水印
+        /// </summary>
+        /// <param name="imgPath"></param>
+        /// <param name="waterImgPath"></param>
+        /// <returns></returns>
         public ActionResult Index(string imgPath = @"M:/水印/1.jpg", string waterImgPath = @"M:/水印/水印图/黑色.png")
         {
             Stopwatch timer = new Stopwatch();
@@ -42,7 +48,12 @@ namespace _09.WatermarkDemo.Controllers
 
             return View();
         }
-
+        /// <summary>
+        /// 满屏水印
+        /// </summary>
+        /// <param name="imgPath"></param>
+        /// <param name="waterImgPath"></param>
+        /// <returns></returns>
         public ActionResult New(string imgPath = @"M:/水印/3.jpg", string waterImgPath = @"M:/水印/水印图/黑色.png")
         {
             Stopwatch timer = new Stopwatch();
