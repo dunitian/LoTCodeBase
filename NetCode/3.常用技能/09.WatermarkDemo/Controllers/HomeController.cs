@@ -64,33 +64,23 @@ namespace _09.WatermarkDemo.Controllers
                     int imgWidth = image.Width;
                     int imgHeight = image.Height;
 
-                    //水印大图
-                    using (var bigWatermark = new MagickImage(new Bitmap(imgWidth, imgHeight)))
+                    //单个水印图
+                    using (var waterimg = new MagickImage(waterImgPath))
                     {
-                        //单个水印图
-                        using (var smallWater = new MagickImage(waterImgPath))
+                        int smallWidth = waterimg.Width;
+                        int smallHeight = waterimg.Height;
+
+                        int x = Convert.ToInt32(Math.Ceiling(imgWidth * 1.0 / smallWidth));
+                        int y = Convert.ToInt32(Math.Ceiling(imgHeight * 1.0 / smallHeight));
+
+                        //透明度
+                        waterimg.Evaluate(Channels.Alpha, EvaluateOperator.Divide, 2);
+                        for (int i = 0; i < x; i++)
                         {
-                            int smallWidth = smallWater.Width;
-                            int smallHeight = smallWater.Height;
-                            //透明度
-                            bigWatermark.Evaluate(Channels.Alpha, EvaluateOperator.Divide, 0);
-
-                            int x = Convert.ToInt32(Math.Ceiling(imgWidth * 1.0 / smallWidth));
-                            int y = Convert.ToInt32(Math.Ceiling(imgHeight * 1.0 / smallHeight));
-                            for (int i = 0; i < x; i++)
+                            for (int j = 0; j < y; j++)
                             {
-                                for (int j = 0; j < y; j++)
-                                {
-                                    bigWatermark.Composite(smallWater, i * smallWidth, j * smallHeight, CompositeOperator.Over);
-                                }
+                                image.Composite(waterimg, i * smallWidth, j * smallHeight, CompositeOperator.Over);//水印
                             }
-
-                            bigWatermark.Write(Path.Combine(dirPath, "1.png"));
-
-                            //透明度
-                            bigWatermark.Evaluate(Channels.Alpha, EvaluateOperator.Divide, 2);
-                            //水印（按照位置水印）
-                            image.Composite(bigWatermark, 0, 0, CompositeOperator.Over);
                         }
                     }
                     image.Write(Path.Combine(dirPath, fileName));
