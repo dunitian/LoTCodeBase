@@ -220,7 +220,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.乘法口诀", "1.面向
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.常见几何", "1.面向过程\01.基础\06.常见几何\06.常见几何.csproj", "{CECFAB9C-8741-43C2-84D2-E948081E5F35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.6数值插入2", "03.6数值插入2\03.6数值插入2.csproj", "{017E719B-C7FB-4065-ADA1-99675EFB6BCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.6数值插入2", "1.面向过程\02.数组系列\03.6数值插入2\03.6数值插入2.csproj", "{017E719B-C7FB-4065-ADA1-99675EFB6BCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
