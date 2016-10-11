@@ -6,8 +6,8 @@ namespace _04.数组扩容
     {
         static void Main(string[] args)
         {
-            DArray dArray = new DArray();
-            dArray.Add(" 毒 ").Add(" 逆 ").Add(" 天 ").Add(" 到 ").Add(" 此 ").Add(" 一 ").Add(" 游 ").Output();
+            DNTArray array = new DNTArray();
+            array.Add("告").Add("诉").Add("你").Add("一").Add("个").Add("事").Add("情").Printf().WriteLine().Add("：明天放假").Printf();
             Console.ReadKey();
         }
     }

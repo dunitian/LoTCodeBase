@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("1.临时控制台")]
+[assembly: AssemblyTitle("05.乘法口诀")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("1.临时控制台")]
+[assembly: AssemblyProduct("05.乘法口诀")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("b1bd6e3a-6a51-4459-a8a7-ef70a877f094")]
+[assembly: Guid("7bf87ba1-e6bc-4524-a537-d837ad519c78")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
