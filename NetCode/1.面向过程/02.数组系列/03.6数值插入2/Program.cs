@@ -37,7 +37,7 @@ namespace _03._6数值插入2
             bool b = true;//标识
             for (int i = 0; i < array.Length; i++)
             {
-                if (num <= array[i])
+                if (num < array[i])
                 {
                     if (b)
                     {

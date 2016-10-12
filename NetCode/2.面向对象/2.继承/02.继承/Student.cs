@@ -2,7 +2,7 @@
 
 namespace _02.继承
 {
-    public class Student : People
+    public class Student : Person
     {
         #region 属性
         /// <summary>
