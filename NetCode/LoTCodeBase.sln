@@ -234,6 +234,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.5简单工厂扩展", "2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.邮箱格式验证（非正则）", "1.面向过程\01.基础\10.邮箱格式验证（非正则）\10.邮箱格式验证（非正则）.csproj", "{6F69A32B-09F7-413B-A0C3-E6521960066D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.统计字符出现次数", "1.面向过程\01.基础\11.统计字符出现次数\11.统计字符出现次数.csproj", "{19648A11-18E4-4916-8EE3-ADE7CAEC7001}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -500,6 +502,10 @@ Global
 		{6F69A32B-09F7-413B-A0C3-E6521960066D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F69A32B-09F7-413B-A0C3-E6521960066D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F69A32B-09F7-413B-A0C3-E6521960066D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19648A11-18E4-4916-8EE3-ADE7CAEC7001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19648A11-18E4-4916-8EE3-ADE7CAEC7001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19648A11-18E4-4916-8EE3-ADE7CAEC7001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19648A11-18E4-4916-8EE3-ADE7CAEC7001}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -601,5 +607,6 @@ Global
 		{C10C8AC7-DD48-4AF5-8227-30E9AEA97B5D} = {9C6B6435-8280-4718-8D35-90BA60C82750}
 		{3AB50BCB-6971-4926-B357-0F4EC4D8656D} = {9C6B6435-8280-4718-8D35-90BA60C82750}
 		{6F69A32B-09F7-413B-A0C3-E6521960066D} = {AF894804-A766-4C5B-BBD6-9A05DC28CBAB}
+		{19648A11-18E4-4916-8EE3-ADE7CAEC7001} = {AF894804-A766-4C5B-BBD6-9A05DC28CBAB}
 	EndGlobalSection
 EndGlobal
