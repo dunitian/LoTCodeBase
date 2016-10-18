@@ -232,9 +232,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.4简单工厂", "2.面�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.5简单工厂扩展", "2.面向对象\3.多态\03.5简单工厂扩展\03.5简单工厂扩展.csproj", "{3AB50BCB-6971-4926-B357-0F4EC4D8656D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.邮箱格式验证（非正则）", "1.面向过程\01.基础\10.邮箱格式验证（非正则）\10.邮箱格式验证（非正则）.csproj", "{6F69A32B-09F7-413B-A0C3-E6521960066D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.字符串", "4.字符串", "{DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.统计字符出现次数", "1.面向过程\01.基础\11.统计字符出现次数\11.统计字符出现次数.csproj", "{19648A11-18E4-4916-8EE3-ADE7CAEC7001}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.1.邮箱格式验证（非正则）", "2.面向对象\4.字符串\1.邮箱格式验证（非正则）\4.1.邮箱格式验证（非正则）.csproj", "{6F69A32B-09F7-413B-A0C3-E6521960066D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.2.统计字符出现次数", "2.面向对象\4.字符串\2.统计字符出现次数\4.2.统计字符出现次数.csproj", "{19648A11-18E4-4916-8EE3-ADE7CAEC7001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.3.统计字符串出现次数", "2.面向对象\4.字符串\3.统计字符串出现次数\4.3.统计字符串出现次数.csproj", "{59C38E8E-6EBE-4DA0-9FB5-026032C7373A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -506,6 +510,10 @@ Global
 		{19648A11-18E4-4916-8EE3-ADE7CAEC7001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19648A11-18E4-4916-8EE3-ADE7CAEC7001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19648A11-18E4-4916-8EE3-ADE7CAEC7001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C38E8E-6EBE-4DA0-9FB5-026032C7373A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C38E8E-6EBE-4DA0-9FB5-026032C7373A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C38E8E-6EBE-4DA0-9FB5-026032C7373A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C38E8E-6EBE-4DA0-9FB5-026032C7373A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -606,7 +614,9 @@ Global
 		{620E6E58-F34B-46EC-AFC0-8A3C8677C1FA} = {AF894804-A766-4C5B-BBD6-9A05DC28CBAB}
 		{C10C8AC7-DD48-4AF5-8227-30E9AEA97B5D} = {9C6B6435-8280-4718-8D35-90BA60C82750}
 		{3AB50BCB-6971-4926-B357-0F4EC4D8656D} = {9C6B6435-8280-4718-8D35-90BA60C82750}
-		{6F69A32B-09F7-413B-A0C3-E6521960066D} = {AF894804-A766-4C5B-BBD6-9A05DC28CBAB}
-		{19648A11-18E4-4916-8EE3-ADE7CAEC7001} = {AF894804-A766-4C5B-BBD6-9A05DC28CBAB}
+		{DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E} = {179A02F9-EB17-41EB-BB9D-EBEEA3A7E816}
+		{6F69A32B-09F7-413B-A0C3-E6521960066D} = {DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E}
+		{19648A11-18E4-4916-8EE3-ADE7CAEC7001} = {DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E}
+		{59C38E8E-6EBE-4DA0-9FB5-026032C7373A} = {DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E}
 	EndGlobalSection
 EndGlobal
