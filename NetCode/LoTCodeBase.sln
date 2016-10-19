@@ -240,6 +240,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.2.统计字符出现次�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.3.统计字符串出现次数", "2.面向对象\4.字符串\3.统计字符串出现次数\4.3.统计字符串出现次数.csproj", "{59C38E8E-6EBE-4DA0-9FB5-026032C7373A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.递归案例", "1.面向过程\01.基础\10.递归案例\10.递归案例.csproj", "{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -514,6 +516,10 @@ Global
 		{59C38E8E-6EBE-4DA0-9FB5-026032C7373A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59C38E8E-6EBE-4DA0-9FB5-026032C7373A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59C38E8E-6EBE-4DA0-9FB5-026032C7373A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -618,5 +624,6 @@ Global
 		{6F69A32B-09F7-413B-A0C3-E6521960066D} = {DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E}
 		{19648A11-18E4-4916-8EE3-ADE7CAEC7001} = {DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E}
 		{59C38E8E-6EBE-4DA0-9FB5-026032C7373A} = {DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E}
+		{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A} = {AF894804-A766-4C5B-BBD6-9A05DC28CBAB}
 	EndGlobalSection
 EndGlobal
