@@ -13,8 +13,8 @@ namespace _1.集合为什么能用foreach
                 Console.WriteLine(item);
             }
 
-            var obj = new MyClass();
-            obj.Names = new string[] { "PHP", "JAVA", "IOS" };
+            var obj = new MyArray();
+            
             foreach (var item in obj.Names)
             {
                 Console.WriteLine(item);

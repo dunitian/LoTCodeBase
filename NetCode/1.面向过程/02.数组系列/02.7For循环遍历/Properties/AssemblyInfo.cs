@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("03.5简单工厂扩展")]
+[assembly: AssemblyTitle("02.7For循环遍历")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("03.5简单工厂扩展")]
+[assembly: AssemblyProduct("02.7For循环遍历")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("3ab50bcb-6971-4926-b357-0f4ec4d8656d")]
+[assembly: Guid("0da1804e-7e73-4dfb-ba30-bd4dd8f5f7e6")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

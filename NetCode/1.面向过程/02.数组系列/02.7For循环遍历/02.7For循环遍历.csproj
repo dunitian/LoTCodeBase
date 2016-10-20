@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3AB50BCB-6971-4926-B357-0F4EC4D8656D}</ProjectGuid>
+    <ProjectGuid>{0DA1804E-7E73-4DFB-BA30-BD4DD8F5F7E6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_03._5简单工厂扩展</RootNamespace>
-    <AssemblyName>03.5简单工厂扩展</AssemblyName>
+    <RootNamespace>_02._7For循环遍历</RootNamespace>
+    <AssemblyName>02.7For循环遍历</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DNTArray.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
