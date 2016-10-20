@@ -10,7 +10,7 @@ namespace _1.集合为什么能用foreach遍历
         /// <returns></returns>
         public IEnumerator GetEnumerator()
         {
-            return new MyEnumerator(this.array, this.index);
+            return new MyEnumerator(this.array, this.count);
         }
     }
 }

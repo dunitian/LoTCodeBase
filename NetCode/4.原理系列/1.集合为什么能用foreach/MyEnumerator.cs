@@ -12,10 +12,10 @@ namespace _1.集合为什么能用foreach遍历
         /// 有效数的个数
         /// </summary>
         private int count;
-        public MyEnumerator(string[] array, int index)
+        public MyEnumerator(string[] array, int count)
         {
             this.array = array;
-            this.count = index + 1;
+            this.count = count;
         }
 
         /// <summary>

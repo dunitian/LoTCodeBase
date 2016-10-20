@@ -3,7 +3,7 @@
     public class DNTArray
     {
         string[] array = new string[2];
-        int index = 0;
+        int count = 0;
 
         /// <summary>
         /// 添加元素
@@ -12,19 +12,19 @@
         /// <returns></returns>
         public DNTArray Add(string item)
         {
-            if (index == array.Length)
+            if (count == array.Length)
             {
                 string[] newArray = new string[array.Length * 2];
                 array.CopyTo(newArray, 0);
                 array = newArray;//改变引用地址
             }
-            array[index++] = item;
+            array[count++] = item;
             return this;
         }
 
         public DNTArray Printf()
         {
-            for (int i = 0; i < index; i++)
+            for (int i = 0; i < count; i++)
             {
                 System.Console.Write(array[i]);
             }
