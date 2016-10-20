@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C51D1B34-FB22-4327-BAA9-0454A2C53215}</ProjectGuid>
+    <ProjectGuid>{AC9CDA51-7656-4486-8FE5-C3C998C7E3F4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_1.集合为什么能用foreach</RootNamespace>
-    <AssemblyName>1.集合为什么能用foreach</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>饲养员喂食案例</RootNamespace>
+    <AssemblyName>饲养员喂食案例</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -43,9 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
+    <Compile Include="Animal.cs" />
+    <Compile Include="Banana.cs" />
+    <Compile Include="Carrot.cs" />
+    <Compile Include="IEat.cs" />
+    <Compile Include="Food.cs" />
+    <Compile Include="Meat.cs" />
+    <Compile Include="Monkey.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rabbit.cs" />
+    <Compile Include="Tiger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="关系图.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

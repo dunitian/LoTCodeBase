@@ -242,6 +242,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.3.统计字符串出现�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.递归案例", "1.面向过程\01.基础\10.递归案例\10.递归案例.csproj", "{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "练习", "练习", "{EBC2FF9F-A69C-44A6-B4C5-1EDD786D1AB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.饲养员喂食案例", "2.面向对象\3.多态\练习\饲养员喂食案例\1.饲养员喂食案例.csproj", "{AC9CDA51-7656-4486-8FE5-C3C998C7E3F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -520,6 +524,10 @@ Global
 		{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC9CDA51-7656-4486-8FE5-C3C998C7E3F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC9CDA51-7656-4486-8FE5-C3C998C7E3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC9CDA51-7656-4486-8FE5-C3C998C7E3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC9CDA51-7656-4486-8FE5-C3C998C7E3F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -625,5 +633,7 @@ Global
 		{19648A11-18E4-4916-8EE3-ADE7CAEC7001} = {DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E}
 		{59C38E8E-6EBE-4DA0-9FB5-026032C7373A} = {DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E}
 		{9EAEEC36-F76A-42DD-8E1B-37ED8513B34A} = {AF894804-A766-4C5B-BBD6-9A05DC28CBAB}
+		{EBC2FF9F-A69C-44A6-B4C5-1EDD786D1AB6} = {9C6B6435-8280-4718-8D35-90BA60C82750}
+		{AC9CDA51-7656-4486-8FE5-C3C998C7E3F4} = {EBC2FF9F-A69C-44A6-B4C5-1EDD786D1AB6}
 	EndGlobalSection
 EndGlobal
