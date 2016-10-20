@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyArray.cs" />
+    <Compile Include="DNTArray.cs" />
+    <Compile Include="DNTArray_Ext.cs" />
+    <Compile Include="MyEnumerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
