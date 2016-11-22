@@ -16,7 +16,8 @@ namespace CSharpStudy.Common
             //非本域名
             if (urlReferrer != null && Uri.Compare(urlReferrer, context.Request.Url, UriComponents.HostAndPort, UriFormat.SafeUnescaped, StringComparison.CurrentCulture) != 0)
             {
-                context.Response.Write(string.Format("来源地址({0})非本站，不给予显示！", urlReferrer));
+                //eg:我们网站是a.com,那么*.a.com引用都可以正常显示 *.a.com/ASHX/GReferUrl.ashx
+                //b.com引用我们的图片： <img src="http://a.com/ASHX/GReferUrl.ashx">
                 return true;
             }
             return false;

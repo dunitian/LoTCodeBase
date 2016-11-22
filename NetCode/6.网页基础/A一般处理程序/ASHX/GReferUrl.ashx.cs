@@ -10,8 +10,12 @@ namespace CSharpStudy
 
         public void ProcessRequest(HttpContext context)
         {
-            if (Common.DomainHelper.IsOtherDomain(context)) { context.Response.End(); }
-            context.Response.Write("<img src='/Images/dnt.jpg'/>");
+            context.Response.ContentType = "image/jpeg";
+
+            if (Common.DomainHelper.IsOtherDomain(context))
+                context.Response.WriteFile(context.Request.MapPath("/Images/gogogo.jpg"));
+            else
+                context.Response.WriteFile(context.Request.MapPath("/Images/dnt.jpg"));
             context.Response.End();
         }
 
