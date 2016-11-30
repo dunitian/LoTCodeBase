@@ -132,6 +132,7 @@
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LayController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,6 +183,7 @@
     <Content Include="Views\Model\ModelBind.cshtml" />
     <Content Include="Views\Model\BindModel.cshtml" />
     <Content Include="Views\Model\ValidateNote.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

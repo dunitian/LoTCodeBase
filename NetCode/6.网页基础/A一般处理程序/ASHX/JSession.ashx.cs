@@ -7,7 +7,7 @@ namespace CSharpStudy.ASHX
     /// <summary>
     /// JSession 的摘要说明
     /// </summary>
-    public class JSession : IHttpHandler, IReadOnlySessionState //想用session就必须实现IReadOnlySessionState
+    public class JSession : IHttpHandler, IRequiresSessionState //想用session就必须实现IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
@@ -22,7 +22,7 @@ namespace CSharpStudy.ASHX
             else if (methodType == "post")
             {
                 var obj = context.Request["name"];
-                if (obj != null && !obj.Equals(string.Empty))
+                if (!string.IsNullOrWhiteSpace(obj))
                 {
                     context.Session["user"] = obj;
                     //context.Session.Add("user", obj.ToString());
