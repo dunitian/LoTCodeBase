@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace MVC5Base.Controllers
 {
-    public class TestController : Controller
+    public class CacheController : Controller
     {
         /// <summary>
         /// 缓存测试
