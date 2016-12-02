@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Config.xml" />
     <Content Include="assets\css\common.css" />
     <Content Include="assets\css\login.min.css" />
     <Content Include="assets\img\backgrounds\1.jpg" />
@@ -155,9 +156,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Index.Mobile.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="web.config" />
   </ItemGroup>
