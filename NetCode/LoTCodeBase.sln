@@ -246,6 +246,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.循环", "1.循环", "{A8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.7For循环遍历", "1.面向过程\02.数组系列\03.7For循环遍历\02.7For循环遍历.csproj", "{0DA1804E-7E73-4DFB-BA30-BD4DD8F5F7E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0.ToString性能比较（Task后面会说）", "2.面向对象\4.字符串\0.ToString性能比较\0.ToString性能比较（Task后面会说）.csproj", "{F6CCE269-79A1-4CF0-AC7B-AA980FE0FED4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -524,6 +526,10 @@ Global
 		{0DA1804E-7E73-4DFB-BA30-BD4DD8F5F7E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DA1804E-7E73-4DFB-BA30-BD4DD8F5F7E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DA1804E-7E73-4DFB-BA30-BD4DD8F5F7E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6CCE269-79A1-4CF0-AC7B-AA980FE0FED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6CCE269-79A1-4CF0-AC7B-AA980FE0FED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6CCE269-79A1-4CF0-AC7B-AA980FE0FED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6CCE269-79A1-4CF0-AC7B-AA980FE0FED4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -631,5 +637,6 @@ Global
 		{AC9CDA51-7656-4486-8FE5-C3C998C7E3F4} = {EBC2FF9F-A69C-44A6-B4C5-1EDD786D1AB6}
 		{A837F643-8568-4818-9D85-9256E450F521} = {30C7082F-A6E3-4EE8-B7A6-B285DD917EC2}
 		{0DA1804E-7E73-4DFB-BA30-BD4DD8F5F7E6} = {072705CD-6A6F-4956-BD7F-F4AC8FB81C8F}
+		{F6CCE269-79A1-4CF0-AC7B-AA980FE0FED4} = {DC18F7E0-D37F-447E-B2F7-F1E08FE6ED0E}
 	EndGlobalSection
 EndGlobal

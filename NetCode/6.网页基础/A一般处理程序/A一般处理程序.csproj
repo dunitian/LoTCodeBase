@@ -94,6 +94,9 @@
     <Compile Include="ASHX\JSession.ashx.cs">
       <DependentUpon>JSession.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ASHX\KDiv.ashx.cs">
+      <DependentUpon>KDiv.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ASHX\Manager.ashx.cs">
       <DependentUpon>Manager.ashx</DependentUpon>
     </Compile>
@@ -120,6 +123,7 @@
     <Content Include="ASHX\ICookie.ashx" />
     <Content Include="ASHX\JSession.ashx" />
     <Content Include="ASHX\Manager.ashx" />
+    <Content Include="ASHX\KDiv.ashx" />
     <None Include="Properties\PublishProfiles\ASHX.pubxml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
