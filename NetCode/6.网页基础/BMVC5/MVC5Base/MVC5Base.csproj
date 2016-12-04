@@ -157,9 +157,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Index.Mobile.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Session\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="web.config" />
   </ItemGroup>
@@ -186,6 +184,8 @@
     <Content Include="Views\Model\BindModel.cshtml" />
     <Content Include="Views\Model\ValidateNote.cshtml" />
     <Content Include="Views\Cache\Index.cshtml" />
+    <Content Include="Views\Session\Login.cshtml" />
+    <Content Include="Views\Session\Index.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
