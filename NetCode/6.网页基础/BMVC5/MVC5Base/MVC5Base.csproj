@@ -134,6 +134,7 @@
     <Compile Include="Controllers\LayController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\CacheController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -156,7 +157,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Index.Mobile.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Session\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
   </ItemGroup>
