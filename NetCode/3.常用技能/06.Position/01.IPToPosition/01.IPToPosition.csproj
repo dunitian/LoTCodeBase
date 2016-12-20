@@ -103,6 +103,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="App_Data\IPDB20160610.dat" />
+    <Content Include="App_Data\IPDB20161201.dat" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
