@@ -17,6 +17,11 @@ namespace NetBase
             num2 = num1 - num2;//y=(x+y)-y=x
             num1 = num1 - num2;//x=(x+y)-x=y
             Console.WriteLine("num1： " + num1 + "  num2： " + num2);
+            
+            //new add:
+            int x = 3, y = 5;
+            (x, y) = (y, x);
+            Console.WriteLine("x： " + x + "  y： " + x);
             Console.ReadKey();
         }
     }
